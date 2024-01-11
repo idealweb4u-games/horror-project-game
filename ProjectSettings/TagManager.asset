@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CinemachineTarget
+  - Item
+  - Demon
+  - Baby
+  - Sunak
+  - Enemy
+  - FlickableObject
+  - UIItem
+  - SunakPoint
+  - HorrorItem
   layers:
   - Default
   - TransparentFX
@@ -13,11 +23,11 @@ TagManager:
   - UI
   - 
   - 
-  - RCC
-  - RCC_WheelCollider
-  - RCC_DetachablePart
-  - RCC_Trailer
-  - RCC_Crasher
+  - Character
+  - Ground
+  - Demon
+  - 
+  - 
   - 
   - 
   - 
