@@ -12,3 +12,10 @@ ScriptedImporter:
   wrapperCodePath: 
   wrapperClassName: 
   wrapperCodeNamespace: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196525
+  packageName: Starter Assets - First Person Character Controller | URP
+  packageVersion: 1.2
+  assetPath: Assets/StarterAssets/InputSystem/StarterAssets.inputactions
+  uploadId: 562678

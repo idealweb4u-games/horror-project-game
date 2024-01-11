@@ -6,3 +6,10 @@ NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196525
+  packageName: Starter Assets - First Person Character Controller | URP
+  packageVersion: 1.2
+  assetPath: Assets/StarterAssets/Settings/Very Low_PipelineAsset.asset
+  uploadId: 562678
