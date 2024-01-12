@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 4750330908416372615}
   m_IndirectSpecularColor: {r: 0.23055941, g: 0.25135162, b: 0.27955678, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -59378,7 +59378,7 @@ Light:
   m_GameObject: {fileID: 4458735140359236451}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 1
+  m_Type: 3
   m_Shape: 0
   m_Color: {r: 0.9198113, g: 0.96345544, b: 1, a: 1}
   m_Intensity: 0.6
@@ -59420,7 +59420,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
