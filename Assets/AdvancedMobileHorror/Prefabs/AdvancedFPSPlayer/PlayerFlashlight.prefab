@@ -25,13 +25,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3678451971273599268}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.011421751, y: -0.050346445, z: 0.25053474, w: 0.9667301}
   m_LocalPosition: {x: -6.03, y: 13.86, z: 4.23}
   m_LocalScale: {x: 75, y: 75, z: 75}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8914197340225689583}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0.18, y: -5.916, z: 29.049}
 --- !u!33 &1146297693361306683
 MeshFilter:
@@ -52,7 +51,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -95,7 +93,6 @@ GameObject:
   - component: {fileID: 6441274055147688472}
   - component: {fileID: 6441274055147688473}
   - component: {fileID: 6441274055147688478}
-  - component: {fileID: -6761992212944409171}
   m_Layer: 8
   m_Name: PlayerFlashlight
   m_TagString: Untagged
@@ -110,15 +107,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6441274055147688474}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6721228572543220780}
   - {fileID: 1077115456124917092}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &6441274055147688472
 Light:
@@ -303,29 +299,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-6761992212944409171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6441274055147688474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
 --- !u!1 &8903867285564460720
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,20 +322,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8903867285564460720}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.61201686, y: 0.325789, z: -0.6126491, w: 0.3794181}
   m_LocalPosition: {x: -0.0772, y: 0.2692, z: 0.0694}
   m_LocalScale: {x: 0.1875416, y: 0.18754156, z: 0.18754159}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6441274055147688475}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -3.74, y: 447.783, z: -120.058}
 --- !u!1001 &6542640349651246023
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 6441274055147688475}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 00e5a827393a7401faa9f7a138d88dbe,
@@ -947,7 +918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 00e5a827393a7401faa9f7a138d88dbe,
         type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4d059f69681094e8aad2b76fd2d030f6, type: 2}
     - target: {fileID: 2412161367050800168, guid: 00e5a827393a7401faa9f7a138d88dbe,
@@ -1186,13 +1157,6 @@ PrefabInstance:
       value: -0.000000027436679
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2412161367050800168, guid: 00e5a827393a7401faa9f7a138d88dbe,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4055399348231041950}
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e5a827393a7401faa9f7a138d88dbe, type: 3}
 --- !u!4 &6721228572543220780 stripped
 Transform:
