@@ -1,9 +1,29 @@
 fileFormatVersion: 2
 guid: 541adcfa5bcc33747b6257792f5ede93
 ModelImporter:
-  serializedVersion: 22103
+  serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ladder
+    second: {fileID: 2100000, guid: aa0d0f6e47ceb4d4fb61ec61a5db0104, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nail
+    second: {fileID: 2100000, guid: 27c4135ecad0b6b4b894f76fcd9a7327, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Step01
+    second: {fileID: 2100000, guid: ab8c31fbb2d9fec428bea7ba6258af98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steps2
+    second: {fileID: 2100000, guid: eb1b8820f69a71e4c9cbf0aeb2aa7bf2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -16,8 +36,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -40,6 +58,7 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
