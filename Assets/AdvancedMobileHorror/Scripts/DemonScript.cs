@@ -217,7 +217,9 @@ namespace AdvancedHorrorFPS
         }
     }
 
-    public enum BehoviourType
+
+    /*
+    public enum BehoviourType // TEST: Uncomment later
     {
         Patrolling,
         Idle,
@@ -227,5 +229,6 @@ namespace AdvancedHorrorFPS
         Chasing,
         WakingUp
     }
+    */
 }
 
