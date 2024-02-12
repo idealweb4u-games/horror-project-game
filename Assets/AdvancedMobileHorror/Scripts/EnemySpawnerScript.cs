@@ -43,6 +43,7 @@ namespace AdvancedHorrorFPS
                     randomPosition = EnemySpawnerScript.Instance.Points_Demon[Random.Range(0, EnemySpawnerScript.Instance.Points_Demon.Count)];
                     GameObject newDemon = Instantiate(DemonPrefab, randomPosition.position, Quaternion.identity);
                     Demons.Add(newDemon);
+                    canSpawn = false; // TEST
                 }
             }
         }
