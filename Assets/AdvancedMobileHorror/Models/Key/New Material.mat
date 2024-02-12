@@ -12,7 +12,10 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+<<<<<<< HEAD
   - _ENVIRONMENTREFLECTIONS_OFF
+=======
+>>>>>>> 836c5b1bcbf53de84fc75994afb876e794d39746
   - _NORMALMAP
   m_InvalidKeywords:
   - _GLOSSYREFLECTIONS_OFF
@@ -98,7 +101,11 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
+<<<<<<< HEAD
     - _EnvironmentReflections: 0
+=======
+    - _EnvironmentReflections: 1
+>>>>>>> 836c5b1bcbf53de84fc75994afb876e794d39746
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
