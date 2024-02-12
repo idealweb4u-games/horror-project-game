@@ -12,6 +12,7 @@ namespace AdvancedHorrorFPS
         public Transform Player;
         public float UpdateRate = 0.1f;
         private NavMeshAgent Agent;
+        private Animator animator;
         public NavMeshTriangulation Triangulation;
         public EnemyDetection DetectionCheck;
         [SerializeField] private Transform AttackZone;
@@ -49,6 +50,7 @@ namespace AdvancedHorrorFPS
         private void Awake()
         {
             Agent = GetComponent<NavMeshAgent>();
+            animator = GetComponent<Animator>();
             OnStateChange += StateChangeHandler;
             DetectionCheck.GainSight += GainSightHandler;
             DetectionCheck.LoseSight += LoseSightHandler;
@@ -183,10 +185,12 @@ namespace AdvancedHorrorFPS
 
         private void Attack() // Attack script from Demon
         {
+            /*
             if (Agent.enabled)
             {
                 Agent.isStopped = true;
             }
+            */
             if (Time.time > LastAttackTime + 2)
             {
                 LastAttackTime = Time.time;
@@ -194,6 +198,7 @@ namespace AdvancedHorrorFPS
                 {
                     if (attacked == false)
                     {
+                        animator.SetTrigger("Attack"); // TEST
                         Agent.enabled = false;
                         GetComponent<CapsuleCollider>().enabled = false;
                         attacked = true;
@@ -206,6 +211,7 @@ namespace AdvancedHorrorFPS
                 }
                 else
                 {
+                    //animator.SetTrigger("Attack");
                     attacked = true;
                     // audioSource.PlayOneShot(Audio_Hits[UnityEngine.Random.Range(0, Audio_Hits.Length)]);
                     HeroPlayerScript.Instance.GetDamage(AttackDamage);
