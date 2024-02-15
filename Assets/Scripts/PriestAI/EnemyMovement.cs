@@ -20,13 +20,13 @@ namespace AdvancedHorrorFPS
 
         [SerializeField] private int waypointIndex = 0;
         public Vector3[] Waypoints = new Vector3[6];
-
+        public AudioClip[] enemySound=new AudioClip[2];
         private float LastAttackTime = 0;
         public bool attacked = false;
 
         public EnemyState DefaultState;
         private EnemyState _state;
-
+        private AudioSource audioSource;
         public EnemyState State
         {
             get
@@ -54,6 +54,9 @@ namespace AdvancedHorrorFPS
             OnStateChange += StateChangeHandler;
             DetectionCheck.GainSight += GainSightHandler;
             DetectionCheck.LoseSight += LoseSightHandler;
+            audioSource=GetComponent<AudioSource>();
+            audioSource.clip = enemySound[0];
+            audioSource.Play();
         }
 
 

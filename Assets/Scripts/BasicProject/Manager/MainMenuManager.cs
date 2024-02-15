@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public GameObject SeetingScreen;
     public void ExitButton() {
         Application.Quit();
     }

@@ -13,7 +13,6 @@ namespace AdvancedHorrorFPS
         public float AngleForOpening = 60;
         private Animation animation;
         public bool leftDoor = false;
-        public bool customDoor; // TEST
 
         private void Start()
         {
@@ -69,51 +68,39 @@ namespace AdvancedHorrorFPS
                     {
                         effect.Disable();
                     }
-                    if (customDoor == false)
+                    if (isOpened == false)
                     {
-                        if (isOpened == false)
+                        if(leftDoor)
                         {
-                            if(leftDoor)
-                            {
-                                animation["Custom_Animation_DoorLeft_Open"].time = 0;
-                                animation["Custom_Animation_DoorLeft_Open"].speed = 1;
-                                animation.Play("Custom_Animation_DoorLeft_Open");
-                            }
-                            else
-                            {
-                                animation["Custom_Animation_DoorRight_Open"].time = 0;
-                                animation["Custom_Animation_DoorRight_Open"].speed = 1;
-                                animation.Play("Custom_Animation_DoorRight_Open");
-                            }
-                            isOpened = true;
-                            AudioManager.Instance.Play_Door_Wooden_Open();
+                            animation["Custom_Animation_DoorLeft_Open"].time = 0;
+                            animation["Custom_Animation_DoorLeft_Open"].speed = 1;
+                            animation.Play("Custom_Animation_DoorLeft_Open");
                         }
                         else
                         {
-                            isOpened = false;
-                            AudioManager.Instance.Play_Door_Close();
-                            if (leftDoor)
-                            {
-                                animation["Custom_Animation_DoorLeft_Open"].time = animation["Custom_Animation_DoorLeft_Open"].length;
-                                animation["Custom_Animation_DoorLeft_Open"].speed = -1;
-                                animation.Play("Custom_Animation_DoorLeft_Open");
-                            }
-                            else
-                            {
-                                animation["Custom_Animation_DoorRight_Open"].time = animation["Custom_Animation_DoorRight_Open"].length;
-                                animation["Custom_Animation_DoorRight_Open"].speed = -1;
-                                animation.Play("Custom_Animation_DoorRight_Open");
-                            }
+                            animation["Custom_Animation_DoorRight_Open"].time = 0;
+                            animation["Custom_Animation_DoorRight_Open"].speed = 1;
+                            animation.Play("Custom_Animation_DoorRight_Open");
                         }
+                        isOpened = true;
+                        AudioManager.Instance.Play_Door_Wooden_Open();
                     }
                     else
                     {
-                        if (isOpened == false)
+                        isOpened = false;
+                        AudioManager.Instance.Play_Door_Close();
+                        if (leftDoor)
                         {
-                            gameObject.transform.localRotation = Quaternion.Euler(95, 0, 0);
-                            BabyVanish.instance?.DoorOpened();
+                            animation["Custom_Animation_DoorLeft_Open"].time = animation["Custom_Animation_DoorLeft_Open"].length;
+                            animation["Custom_Animation_DoorLeft_Open"].speed = -1;
+                            animation.Play("Custom_Animation_DoorLeft_Open");
                         }
-                        //gameObject.GetComponent<BoxCollider>().enabled = false;
+                        else
+                        {
+                            animation["Custom_Animation_DoorRight_Open"].time = animation["Custom_Animation_DoorRight_Open"].length;
+                            animation["Custom_Animation_DoorRight_Open"].speed = -1;
+                            animation.Play("Custom_Animation_DoorRight_Open");
+                        }
                     }
                 }
             }

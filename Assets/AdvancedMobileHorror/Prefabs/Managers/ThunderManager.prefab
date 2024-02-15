@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2728153830437573812}
   - component: {fileID: 3681608669517009462}
   - component: {fileID: 8349596927781846801}
-  - component: {fileID: -671807167162502926}
   m_Layer: 0
   m_Name: ThunderManager
   m_TagString: Untagged
@@ -27,7 +26,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222406286988251589}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,6 +34,7 @@ Transform:
   - {fileID: 1222406287800139974}
   - {fileID: 1222406287829333525}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &2728153830437573812
 Light:
@@ -218,35 +217,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-671807167162502926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222406286988251589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
 --- !u!1001 &197869841033188567
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
+    serializedVersion: 2
     m_TransformParent: {fileID: 1222406286988251594}
     m_Modifications:
     - target: {fileID: 1317344228988766462, guid: c13195ff09896014bb92825fcc5d6c36,
@@ -310,9 +286,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13195ff09896014bb92825fcc5d6c36, type: 3}
 --- !u!4 &1222406287829333525 stripped
 Transform:
@@ -325,7 +299,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
+    serializedVersion: 2
     m_TransformParent: {fileID: 1222406286988251594}
     m_Modifications:
     - target: {fileID: 2672506335356039956, guid: c910e7e7fca40c4478170313e4d2d003,
@@ -389,9 +363,7 @@ PrefabInstance:
       value: Rain_Particle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c910e7e7fca40c4478170313e4d2d003, type: 3}
 --- !u!4 &1222406287800139974 stripped
 Transform:
