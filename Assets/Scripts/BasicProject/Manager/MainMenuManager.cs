@@ -21,4 +21,35 @@ public class MainMenuManager : MonoBehaviour
         gameObject.SetActive(false);
         // AdmobAds.instance.ShowInterstitialAd();
     }
+
+    //Main Menu Buttons
+
+    public void MainMenuBtn()
+    {
+
+    }
+
+    public void NewGameBtn()
+    {
+
+    }
+
+    public void LoadGameBtn()
+    {
+
+    }
+
+    public void settingBtn()
+    {
+
+    }
+
+    //
+    public void levelSelectBtn()
+    {
+
+    }
+
+    
+
 }
