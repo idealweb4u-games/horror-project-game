@@ -51,10 +51,16 @@ namespace AdvancedHorrorFPS
                     if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
                     {
                         // Put your desired behavior here
+                        StartCoroutine(EndLevel());
                     }
                 }
             }
-            
+        }
+
+        IEnumerator EndLevel()
+        {
+            yield return new WaitForSeconds(4.5f);
+            HeroPlayerScript.Instance.GetDamage(100);
         }
     }
 }
