@@ -14,7 +14,6 @@ public class BabyVanish : MonoBehaviour
     public Vector3 babyEndRotation;
     [SerializeField] private float rotationTime = 1.5f;
     private bool doorOpened = false;
-
     public void Awake()
     {
         if (instance == null)
