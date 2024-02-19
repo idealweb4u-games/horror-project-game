@@ -61,6 +61,7 @@ namespace AdvancedHorrorFPS
         {
             yield return new WaitForSeconds(4.5f);
             HeroPlayerScript.Instance.GetDamage(100);
+            // Go to next level!
         }
     }
 }
