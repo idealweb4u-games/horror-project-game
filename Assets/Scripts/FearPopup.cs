@@ -6,6 +6,7 @@ public class FearPopup : MonoBehaviour
 {
     [SerializeField] private GameObject popUp;
     private bool alreadyPlayed = false;
+    [SerializeField] private float destroyTime = 4.1f;
 
     void OnTriggerEnter(Collider collider)
     {
@@ -13,7 +14,7 @@ public class FearPopup : MonoBehaviour
         {
             alreadyPlayed = true;
             popUp.SetActive(true);
-            Destroy(gameObject, 4.1f);       
+            Destroy(gameObject, destroyTime);       
         }
     }
 }

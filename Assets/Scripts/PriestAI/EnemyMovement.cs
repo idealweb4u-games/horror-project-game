@@ -54,9 +54,9 @@ namespace AdvancedHorrorFPS
             OnStateChange += StateChangeHandler;
             DetectionCheck.GainSight += GainSightHandler;
             DetectionCheck.LoseSight += LoseSightHandler;
-            audioSource=GetComponent<AudioSource>();
-            audioSource.clip = enemySound[0];
-            audioSource.Play();
+           // audioSource=GetComponent<AudioSource>();
+           // audioSource.clip = enemySound[0];
+           // audioSource.Play();
         }
 
 
