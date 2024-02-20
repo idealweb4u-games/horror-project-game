@@ -10,7 +10,7 @@ public class SplashScreenManager : MonoBehaviour
         StartCoroutine(LoadMenu());
     }
     IEnumerator LoadMenu() {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(8);
         SceneManager.LoadScene(1);
     }
 }
