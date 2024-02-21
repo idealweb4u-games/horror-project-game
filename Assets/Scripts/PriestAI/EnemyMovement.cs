@@ -65,12 +65,14 @@ namespace AdvancedHorrorFPS
             State = EnemyState.Chase;
             Agent.speed = sprintSpeed;
             Debug.Log("Player Detetced");
+            animator.SetBool("Chase", true);
         }
         private void LoseSightHandler(HeroPlayerScript player)
         {
             State = DefaultState; // Revert back to last state
             Agent.speed = idleSpeed;
             Debug.Log("Lost Sight Of Player");
+            animator.SetBool("Chase", false);
         }
 
         private void OnDisable()
