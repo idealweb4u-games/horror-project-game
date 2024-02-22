@@ -15,23 +15,21 @@ public class LevelManager :Singleton<LevelManager> {
     private Session session;
     public void startLevel(int index, UnityAction onCompleteCallBack,UnityAction onGameOverCallBack) {
         //Debug.Log("cureent level" + index);
-        player = VehicleManager.Instance.currentVehicle;
+      //  player = VehicleManager.Instance.currentVehicle;
         currentlevel = Levels[index].GetComponent<Level>();
         Levels[index].SetActive(true);
-        player.transform.position = Levels[index].GetComponent<Level_Items>().startPosition.position;
-        player.transform.rotation = Levels[index].GetComponent<Level_Items>().startPosition.rotation;
-        //Debug.Log("here in level manager");
+        //player.transform.position = Levels[index].GetComponent<Level_Items>().startPosition.position;
+        //player.transform.rotation = Levels[index].GetComponent<Level_Items>().startPosition.rotation;
         onComplete.AddListener(onCompleteCallBack);
         onGameOver.AddListener(onGameOverCallBack);
-        currentlevel.onComplete.AddListener(() => {
-            onComplete?.Invoke();
-            //Debug.Log("Oncomplete");
-            onComplete.RemoveAllListeners();
-        });
-        currentlevel.onGameOver.AddListener(() => {
-            onGameOver?.Invoke();
-            onGameOver.RemoveAllListeners();
-        });
-        currentlevel.initialized();
+        //currentlevel.onComplete.AddListener(() => {
+        //    onComplete?.Invoke();
+        //    onComplete.RemoveAllListeners();
+        //});
+        //currentlevel.onGameOver.AddListener(() => {
+        //    onGameOver?.Invoke();
+        //    onGameOver.RemoveAllListeners();
+        //});
+        //currentlevel.initialized();
     }
 }

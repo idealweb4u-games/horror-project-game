@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "LevelData", menuName = "ScriptableObject/LevelData")]
 public class LevelsData : ScriptableObject {
@@ -7,6 +8,6 @@ public class LevelsData : ScriptableObject {
 [System.Serializable]
 public class LevelClass {
     public string levelName;
-    public int levelTime;
-    public string levelDistance;
+    public string levelDescription;
+    public Image levelImage;
 }

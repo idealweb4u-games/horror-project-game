@@ -32,13 +32,13 @@ public class MainMenuManager : MonoBehaviour
        Application.OpenURL("itms-apps://itunes.apple.com/app/idYOUR_ID");
     }
     public void Play() {
-        SceneLoad.Instance.LoadScene(4);
+        SceneLoad.Instance.LoadScene(3);
         SoundManager.Instance.PlayEffect();
     }
 
     public void LevelSelection() {
         SoundManager.Instance.PlayEffect();
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
     public void SettingPanel(bool val) {
         SettingsPanel.SetActive(val);
