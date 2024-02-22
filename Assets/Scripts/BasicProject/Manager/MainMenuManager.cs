@@ -1,85 +1,76 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-
-    public GameObject levelSelectionPanel;
-    public GameObject settings;
-    public GameObject mainMenu;
-
+    public GameObject SettingsPanel;
+    public Slider effects;
+    public Slider music;
+    private void Start() {
+        if (PlayerPrefs.GetInt("Checks") == 0) {
+            PlayerPrefs.SetFloat("EffectsVolume", 1);
+            PlayerPrefs.SetFloat("MusicVolume", 1);
+            PlayerPrefs.SetInt("Checks", 1);
+            //PlayerPrefs.SetInt("Coins", 100000);
+        } else {
+            GetEffectVolume();
+            GetMusicVolume();
+        }
+        SoundManager.Instance.PlayMusic();
+    }
     public void ExitButton() {
         Application.Quit();
     }
     public void AboutUs() {
-       // Application.OpenURL("https://play.google.com/store/apps/developer?id=Fun+and+Learn");
+        Application.OpenURL("https://play.google.com/store/apps/developer?id=Fun+and+Learn");
     }
     public void RateUs() {
-#if UNITY_ANDROID
-      //  Application.OpenURL("market://details?id=com.FunAndLearn.CarParking");
-#elif UNITY_IPHONE
- Application.OpenURL("itms-apps://itunes.apple.com/app/idYOUR_ID");
-#endif
+       Application.OpenURL("itms-apps://itunes.apple.com/app/idYOUR_ID");
     }
     public void Play() {
-        gameObject.SetActive(false);
-        // AdmobAds.instance.ShowInterstitialAd();
+        SceneManager.LoadScene(5);
+        SoundManager.Instance.PlayEffect();
     }
 
-    //Main Menu Buttons
-    public void MainMenuBtn()
-    {
-        mainMenu.SetActive(true);
-        settings.SetActive(false);
-        levelSelectionPanel.SetActive(false);
-    }
-
-    public void NewGameBtn()
-    {
-        LoadMenu();
-    }
-
-    //coroutine for start Game
-    public void LoadMenu()
-    {
-        
+    public void LevelSelection() {
+        SoundManager.Instance.PlayEffect();
         SceneManager.LoadScene(3);
     }
-
-
-    public void LoadGameBtn()
-    {
-
+    public void SettingPanel(bool val) {
+        SettingsPanel.SetActive(val);
     }
-
-    public void settingBtn()
-    {
-        settings.SetActive(true);
-        mainMenu.SetActive(false);
-        levelSelectionPanel.SetActive(false);
+    #region SetVolume
+    public void SetEffectVolume() {
+        PlayerPrefs.SetFloat("EffectsVolume", effects.value);
+        SoundManager.Instance.EffectsSource.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("EffectsVolume");
     }
-
-    public void Exit()
-    {
-        Application.Quit();
+    public void GetEffectVolume() {
+       SoundManager.Instance. EffectsSource.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("EffectsVolume");
     }
-
-
-    //Middle Btns
-    public void GameTutorialBtn()
-    {
-
+    public void SetMusicVolume() {
+        PlayerPrefs.SetFloat("MusicVolume", music.value);
+        SoundManager.Instance.MusicSource.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MusicVolume");
     }
-
-    public void levelSelectBtn()
-    {
-        levelSelectionPanel.SetActive(true);
-        settings.SetActive(false);
-        mainMenu.SetActive(false);
+    public void GetMusicVolume() {
+        SoundManager.Instance.MusicSource.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MusicVolume");
     }
-
-    
+    public void GetSoundSettings() {
+        GetEffectVolume();
+        GetMusicVolume();
+        SoundManager.Instance.PlayEffect();
+    }
+    public void ResetDefault() {
+        PlayerPrefs.SetFloat("MusicVolume",1);
+        PlayerPrefs.SetFloat("EffectsVolume", 1);
+        effects.value = 1;
+        music.value = 1;
+        SoundManager.Instance.MusicSource.GetComponent<AudioSource>().volume = 1;
+        SoundManager.Instance.EffectsSource.GetComponent<AudioSource>().volume = 1;
+        SoundManager.Instance.PlayEffect();
+    }
+    #endregion SetVolume
 
 }
