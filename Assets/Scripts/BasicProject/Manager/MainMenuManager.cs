@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject SettingsPanel;
     public Slider effects;
     public Slider music;
+    public Session session;
     private void Start() {
         if (PlayerPrefs.GetInt("Checks") == 0) {
             PlayerPrefs.SetFloat("EffectsVolume", 1);
@@ -31,7 +32,7 @@ public class MainMenuManager : MonoBehaviour
        Application.OpenURL("itms-apps://itunes.apple.com/app/idYOUR_ID");
     }
     public void Play() {
-        SceneManager.LoadScene(5);
+        SceneLoad.Instance.LoadScene(4);
         SoundManager.Instance.PlayEffect();
     }
 
@@ -58,8 +59,8 @@ public class MainMenuManager : MonoBehaviour
         SoundManager.Instance.MusicSource.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MusicVolume");
     }
     public void GetSoundSettings() {
-        GetEffectVolume();
-        GetMusicVolume();
+        effects.value = PlayerPrefs.GetFloat("EffectsVolume");
+        music.value= PlayerPrefs.GetFloat("MusicVolume");
         SoundManager.Instance.PlayEffect();
     }
     public void ResetDefault() {
