@@ -187,6 +187,28 @@ namespace AdvancedHorrorFPS
             }
         }
 
+    public void StartTracking(Transform newTarget)
+    {
+        Player = newTarget;
+        State = EnemyState.Track;
+        Agent.speed = sprintSpeed;
+        StartCoroutine(TrackTarget());
+    }
+
+    private IEnumerator TrackTarget()
+    {
+        WaitForSeconds Wait = new WaitForSeconds(UpdateRate);
+        while(true)
+        {
+            if (Agent.enabled)
+            {
+                Agent.SetDestination(Player.transform.position);
+            }
+            yield return Wait;
+        }
+    }
+
+
 
         private void Attack() // Attack script from Demon
         {

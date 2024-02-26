@@ -16,6 +16,8 @@ TagManager:
   - HorrorItem
   - ShakableObject
   - DeadBody
+  - BabyBottle
+  - Vile
   layers:
   - Default
   - TransparentFX
