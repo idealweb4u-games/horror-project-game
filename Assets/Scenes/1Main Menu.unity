@@ -900,6 +900,7 @@ MonoBehaviour:
   effects: {fileID: 1401690574}
   music: {fileID: 2059744295}
   session: {fileID: 11400000, guid: d0f936c76ccf83b4080d6a15286fc964, type: 2}
+  clip: {fileID: 8300000, guid: 392812de93e69f14cb75fb03357d74e2, type: 3}
 --- !u!1 &226918601
 GameObject:
   m_ObjectHideFlags: 0
