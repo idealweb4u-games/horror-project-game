@@ -16,3 +16,4 @@ MonoBehaviour:
   carNumber: 0
   totalLevel: 0
   unlocklevels: 0
+  Loading: {fileID: 3195883360817006213, guid: effe64b7e06817448b822f6876dca9ea, type: 3}

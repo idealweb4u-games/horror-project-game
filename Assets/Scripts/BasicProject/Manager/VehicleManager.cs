@@ -18,7 +18,7 @@ public class VehicleManager : Singleton<VehicleManager>
         foreach (Transform vehicle in vehicles) {
             vehicle.gameObject.SetActive(false);
         }
-        currentVehicle = vehicles[session.carNumber].gameObject;
+       // currentVehicle = vehicles[session.carNumber].gameObject;
         currentVehicle.SetActive(true);
     }
 }
