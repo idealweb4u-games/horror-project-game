@@ -68,5 +68,10 @@ namespace AdvancedHorrorFPS
             Panel_Settings.SetActive(false);
             Panel_MainMenu.SetActive(true);
         }
+
+        public void Click_LevelSelect()
+        {
+            SceneManager.LoadScene("Level Selection");
+        }
     }
 }

@@ -57,15 +57,12 @@ namespace AdvancedHorrorFPS
 			canJump = true;
         }
 
-		public void StopPlayer()
-		{
+		public void StopPlayer() {
 			MoveSpeed = 0f;
 			SprintSpeed = 0f;
 			JumpHeight = 0f;
 			canJump = false;
 		}
-
-
 		private void LateUpdate()
         {
 			RotationUpdate();
