@@ -19,7 +19,8 @@ public class GameplayManager : Singleton<GameplayManager> {
                UIManager.Instance.showLevelFail();
            }
             );
-
+        SoundManager.Instance.AssignMusicClip(SoundManager.Instance.backgroundClip);
+        SoundManager.Instance.PlayMusic();
     }
    
     public void home() {

@@ -9,5 +9,5 @@ public class LevelsData : ScriptableObject {
 public class LevelClass {
     public string levelName;
     public string levelDescription;
-    public Image levelImage;
+    public Sprite levelImage;
 }

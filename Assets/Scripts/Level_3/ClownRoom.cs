@@ -19,6 +19,7 @@ namespace AdvancedHorrorFPS
             {
                 instance = this;
             }
+            SoundManager.Instance.MusicSource.Stop();
         }
 
         void OnTriggerEnter(Collider collider)
