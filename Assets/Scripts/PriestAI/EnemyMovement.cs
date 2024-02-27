@@ -245,5 +245,15 @@ namespace AdvancedHorrorFPS
                 }
             }
         }
+
+        public void DeathAnimation()
+        {
+            animator.SetTrigger("Dead");
+        }
+
+        public void OnDeath() // Called from Witch's Death Animation
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

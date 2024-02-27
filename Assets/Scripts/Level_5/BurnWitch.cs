@@ -38,7 +38,8 @@ namespace AdvancedHorrorFPS
         IEnumerator KillWitch()
         {
             yield return new WaitForSeconds(4f);
-            witch.SetActive(false);
+            witch.GetComponent<EnemyMovement>().DeathAnimation();
+            //witch.SetActive(false);
         
         }
     }
