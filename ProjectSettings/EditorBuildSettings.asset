@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/UpdatedScene/OptimizeSceneWInterior.unity
     guid: 4f19670eb7ca3c04d8d726970b7299dd
   - enabled: 1
-    path: Assets/Scenes/Level_3.unity
-    guid: b8d145930f95e2247abb0bad6e5a3a0e
-  - enabled: 1
     path: Assets/Scenes/0Splash Screen.unity
     guid: 1adb18c2279494e08abdd956abd00e9f
   - enabled: 1
@@ -27,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/simpleLevel Selection.unity
     guid: e7005dfde3fa846188ddfa8e7c4c7dac
   - enabled: 1
+    path: Assets/Scenes/Level_3.unity
+    guid: b8d145930f95e2247abb0bad6e5a3a0e
+  - enabled: 0
     path: Assets/Scenes/GamePlay.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:

@@ -8,7 +8,9 @@ public class LevelButtonSizeUp : MonoBehaviour
     public GameObject Lock;
     public GameObject Play;
     public GameObject Details;
-    public float sizeY = 1.1f;
+    public Image LevelImage;
+    public TMPro.TMP_Text LevelNumber;
+    public float sizeY = 1.2f;
 
     public void OnSelectButton() {
         RectTransform rectTransform = GetComponent<RectTransform>();

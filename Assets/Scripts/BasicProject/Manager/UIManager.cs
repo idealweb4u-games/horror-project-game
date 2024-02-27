@@ -42,8 +42,7 @@ public class UIManager : Singleton<UIManager> {
     private void ShowLevelData() {
         LevelName.GetComponent<TextMeshPro>().text = levelData.levelClasses[session.level].levelName;
         Description.GetComponent<TextMeshPro>().text = levelData.levelClasses[session.level].levelDescription;
-        Description.GetComponent<TextMeshPro>().text = levelData.levelClasses[session.level].levelDescription;
-        levelImage = levelData.levelClasses[session.level].levelImage;
+        levelImage.sprite = levelData.levelClasses[session.level].levelImage;
     }
 
 }

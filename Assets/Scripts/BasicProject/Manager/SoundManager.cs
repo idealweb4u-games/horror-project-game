@@ -7,7 +7,13 @@ public class SoundManager : Singleton<SoundManager>
 {
 	public AudioSource EffectsSource;
 	public AudioSource MusicSource;
+	public AudioClip backgroundClip;
+	public AudioClip loadingClip;
 	#region PlayAudio
+	public void PlayBackgroundMusic() {
+		SoundManager.Instance.AssignMusicClip(backgroundClip);
+		SoundManager.Instance.PlayMusic();
+	}
 	public void PlayEffect() {
 		if (EffectsSource.clip != null) {
 			EffectsSource.Play();

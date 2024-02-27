@@ -2324,10 +2324,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " The player will be given hints at the start of the \Llevel. Now the player
-    will hear some sort of sound coming out \Lfrom a house,  Baby would not be at
-    a single place he would change his  milk bottle on the specific place he will
-    cross the "
+  m_text: '"Through the foggy graveyard, the spectral laughter of a vengeful spirit
+    filled the night air, a bone-chilling reminder that the echoes of the past can
+    haunt the living."the laughter of ghostly children echoed from the rusted swings,
+    a haunting reminder of innocence lost to the passage of time'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 210701856a063432a970d5ad6f66ea4d, type: 2}
   m_sharedMaterial: {fileID: -7961295622504603482, guid: 210701856a063432a970d5ad6f66ea4d,
@@ -2355,8 +2355,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.4
-  m_fontSizeBase: 15.4
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3685,7 +3685,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -27, y: 27}
-  m_SizeDelta: {x: 370.0894, y: 59.135}
+  m_SizeDelta: {x: 341.4, y: 59.135}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &928225086
 MonoBehaviour:
