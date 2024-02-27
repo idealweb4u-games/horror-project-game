@@ -10,6 +10,7 @@ public class LevelButtonSizeUp : MonoBehaviour
     public GameObject Details;
     public Image LevelImage;
     public TMPro.TMP_Text LevelNumber;
+    public TMPro.TMP_Text LevelName;
     public float sizeY = 1.2f;
 
     public void OnSelectButton() {

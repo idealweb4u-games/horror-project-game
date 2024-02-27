@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour {
     public Session session;
-    public Sprite[] levelImage;
-    public string[] levelDetails;
+    public LevelsData levelsData;
     private List<Transform> levels = new List<Transform>();
     private int
         totalLevels,
@@ -26,9 +25,9 @@ public class LevelSelection : MonoBehaviour {
         for (int i = 0; i < levels.Count; i++) {
             //add count and image here.
             count = i;
-            levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelImage.sprite=levelImage[i];
+            levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelImage.sprite = levelsData.levelClasses[i].levelImage; 
             levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelNumber.text = ""+ ++count;
-            //add details text
+            levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelName.text = levelsData.levelClasses[i].levelName;
         }
        unlocklevels= PlayerPrefs.GetInt("unlocklevels");
         Debug.Log("unlocklevels"+unlocklevels);
