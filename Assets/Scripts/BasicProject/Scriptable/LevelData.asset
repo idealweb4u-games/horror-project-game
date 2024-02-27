@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bc9b120bea440499449941f8fdf27e, type: 3}
+  m_Name: LevelData
+  m_EditorClassIdentifier: 
+  levelClasses:
+  - levelName: The head pined baby boy
+    levelDescription: '"Behind every door, a nightmare waits patiently, ready to
+      consume the curious." The Pinned head baby doll is waiting impatiently for
+      you to bring what she wants. There are some notes she left for you. Be careful
+      !! Don''t get caught by her.'
+    levelImage: {fileID: 21300000, guid: 4a6e1333612814e488605c8c15217df0, type: 3}
+  - levelName: The Blind Follower
+    levelDescription: '"In the shadows, something stirs, whispering secrets only
+      the bravest would dare to hear." Someone is gonna follow you, a restless creature
+      haven''t sleept for long time. Its time to make them sleep. But they won''t
+      let you do it.'
+    levelImage: {fileID: 21300000, guid: c7a00d8f4a2b5954e91f695c961b0dc8, type: 3}
+  - levelName: The Clawn Chaser
+    levelDescription: '"Locked doors can be opened, but beware the secrets they guard.
+      Some doors should never be unlocked."  If you dare to open them make sure you
+      don''t get these doors locked again.'
+    levelImage: {fileID: 21300000, guid: 2cc0d8d6b52b97d41be56a377bb33316, type: 3}
+  - levelName: The Graveyard pumpkin
+    levelDescription: '"Footsteps echo in the darkness, but you''re not alone. Unseen
+      eyes watch your every move." There are two paths for each way, but you have
+      to choose your right one, so not to get harmed.'
+    levelImage: {fileID: 21300000, guid: d70c1f3db4828784d8e8f27bdbfc47b7, type: 3}
+  - levelName: The Witch Skeleton
+    levelDescription: '"A distant cry pierces the air, a desperate plea from the
+      depths of despair. Can you save them, or are you already lost?" As the full
+      moon rises, the witch''s power ascends, casting shadows that twist reality
+      and conjure nightmares from the depths of the unholy. '
+    levelImage: {fileID: 21300000, guid: 098ac270bbe2af94888c02c90b624008, type: 3}
+  - levelName: The Bed Monster
+    levelDescription: '"Listen closely; the walls have ears, and they share the tales
+      of the tormented souls who walked these halls before you." In the flickering
+      candlelight, the mosnter''s eyes gleamed with a malevolent wisdom, revealing
+      the twisted beauty that lies within the heart of darkness'
+    levelImage: {fileID: 21300000, guid: 098ac270bbe2af94888c02c90b624008, type: 3}
+  - levelName: 'The Bodiless Birds: '
+    levelDescription: '"A murder of crows, black as the void, descended upon the
+      forsaken town, their beaks stained with the secrets of the damned, carrying
+      tales of terror in the flutter of their inky wings." Remember: the abyss also
+      stares back. Face the void, or become one with it'
+    levelImage: {fileID: 21300000, guid: d70c1f3db4828784d8e8f27bdbfc47b7, type: 3}
+  - levelName: The Demon Tree
+    levelDescription: '"In the heart of the forest, where the trees whisper malevolent
+      secrets, an ancient evil awakens. The path ahead is shrouded in darkness."
+      The trees stood like silent sentinels, their twisted forms casting haunting
+      shadows that danced with the spirits of the forgotten'
+    levelImage: {fileID: 21300000, guid: 098ac270bbe2af94888c02c90b624008, type: 3}
+  - levelName: The Floating Skulls
+    levelDescription: '"Amidst the darkness, the skull''s vacant sockets whispered
+      of forgotten souls, a silent testament to the ephemeral nature of existence."
+      a silent challenge to mortality, as if mocking the fragility of the living
+      with its bone-white visage.'
+    levelImage: {fileID: 21300000, guid: 098ac270bbe2af94888c02c90b624008, type: 3}
+  - levelName: "The Young Boy Laughter\u2019s, Asking for help"
+    levelDescription: '"Through the foggy graveyard, the spectral laughter of a vengeful
+      spirit filled the night air, a bone-chilling reminder that the echoes of the
+      past can haunt the living."the laughter of ghostly children echoed from the
+      rusted swings, a haunting reminder of innocence lost to the passage of time'
+    levelImage: {fileID: 21300000, guid: d70c1f3db4828784d8e8f27bdbfc47b7, type: 3}

@@ -1,4 +1,3 @@
-using StarterAssets;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +7,7 @@ namespace AdvancedHorrorFPS
     {
         public static HeroPlayerScript Instance;
         public GameObject LadderPointInCamera;
-        public FirstPersonController firstPersonController;
+       public FirstPersonController firstPersonController;
         public CharacterController characterController;
         public Transform DemonComingPoint;
         public int Health = 100;

@@ -217,15 +217,15 @@ namespace AdvancedHorrorFPS
         }
     }
 
-    public enum BehoviourType
-    {
-        Patrolling,
-        Idle,
-        Attacking,
-        Dead,
-        GettingHit,
-        Chasing,
-        WakingUp
-    }
+    //public enum BehoviourType
+    //{
+    //    Patrolling,
+    //    Idle,
+    //    Attacking,
+    //    Dead,
+    //    GettingHit,
+    //    Chasing,
+    //    WakingUp
+    //}
 }
 

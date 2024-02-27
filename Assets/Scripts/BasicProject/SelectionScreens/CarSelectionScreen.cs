@@ -103,7 +103,7 @@ public class CarSelectionScreen : MonoBehaviour {
         cars[index].gameObject.SetActive(true);
     }
     public void carNumber(int index) {
-        session.carNumber = currentCar;
+   //     session.carNumber = currentCar;
         loading.SetActive(true);
         SceneManager.LoadScene("GamePlay");
     }
