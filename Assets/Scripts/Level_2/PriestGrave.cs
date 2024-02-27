@@ -10,7 +10,7 @@ namespace AdvancedHorrorFPS
 
         void OnTriggerStay(Collider other)
         {
-            if (other.CompareTag("DeadBody") && !body.isHolding)
+            if ((other.CompareTag("DeadBody") || other.CompareTag("BabyBottle")) && !body.isHolding)
             {
                 Debug.Log("Follower has died");
                 priest.SetActive(false);
