@@ -11,7 +11,9 @@ public class UIManager : Singleton<UIManager> {
         levelComplete,
         levelFail,
         pauseDlg,
-        startDlg;
+        startDlg,
+        playerCanvas
+        ;
     public TMPro.TMP_Text LevelName;
     public TMPro.TMP_Text Description;
     public Image levelImage;
@@ -41,7 +43,9 @@ public class UIManager : Singleton<UIManager> {
         SoundManager.Instance.PlayEffect();
         SoundManager.Instance.MusicSource.Stop();
         startDlg.SetActive(false);
-        LevelManager.Instance.currentlevel.GetComponent<Level_Items>().CameraCutScene.SetActive(false);
+        LevelManager.Instance.currentlevel.GetComponent<Level_Items>().CameraCutScene.SetActive(true);
+        GameplayManager.Instance.Camera.SetActive(false);
+        playerCanvas.SetActive(false);
         StartCoroutine(CutScene());
     }
     private void ShowLevelData() {
@@ -49,7 +53,6 @@ public class UIManager : Singleton<UIManager> {
         Description.text = levelData.levelClasses[session.level].levelDescription;
         levelImage.sprite = levelData.levelClasses[session.level].levelImage;
         GameplayManager.Instance.Player.SetActive(false);
-        GameplayManager.Instance.Camera.SetActive(false);
     }
     IEnumerator CutScene() {
 
@@ -57,6 +60,7 @@ public class UIManager : Singleton<UIManager> {
         yield return new WaitForSeconds(time);
         GameplayManager.Instance.Player.SetActive(true);
         GameplayManager.Instance.Camera.SetActive(true);
+        playerCanvas.SetActive(true);
         LevelManager.Instance.currentlevel.GetComponent<Level_Items>().CameraCutScene.SetActive(false);
     }
 
