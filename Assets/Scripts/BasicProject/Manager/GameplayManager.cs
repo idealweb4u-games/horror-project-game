@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameplayManager : Singleton<GameplayManager> {
     public Session session;
-    private GameObject player;
+    public GameObject Camera;
+    public GameObject Player;
     private int levelindex;
     public void Start() {
         LevelManager.Instance.startLevel(
@@ -19,8 +20,7 @@ public class GameplayManager : Singleton<GameplayManager> {
                UIManager.Instance.showLevelFail();
            }
             );
-        SoundManager.Instance.AssignMusicClip(SoundManager.Instance.backgroundClip);
-        SoundManager.Instance.PlayMusic();
+        SoundManager.Instance.PlayBackgroundMusic();
     }
    
     public void home() {
