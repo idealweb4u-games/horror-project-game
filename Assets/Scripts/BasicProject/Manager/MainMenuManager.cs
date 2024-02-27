@@ -10,7 +10,6 @@ public class MainMenuManager : MonoBehaviour
     public Slider effects;
     public Slider music;
     public Session session;
-    public AudioClip clip;
     private void Start() {
         if (PlayerPrefs.GetInt("Checks") == 0) {
             PlayerPrefs.SetFloat("EffectsVolume", 1);
@@ -21,8 +20,7 @@ public class MainMenuManager : MonoBehaviour
             GetEffectVolume();
             GetMusicVolume();
         }
-        SoundManager.Instance.AssignMusicClip(clip);
-        SoundManager.Instance.PlayMusic();
+      SoundManager.Instance.PlayBackgroundMusic();
     }
     public void ExitButton() {
         Application.Quit();
@@ -40,7 +38,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void LevelSelection() {
         SoundManager.Instance.PlayEffect();
-        SceneManager.LoadScene(2);
+        SceneLoad.Instance.LoadScene(2);
     }
     public void SettingPanel(bool val) {
         SettingsPanel.SetActive(val);

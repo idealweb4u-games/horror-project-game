@@ -6455,6 +6455,8 @@ MonoBehaviour:
   DontDestroy: 1
   EffectsSource: {fileID: 1864415675}
   MusicSource: {fileID: 1433728659}
+  backgroundClip: {fileID: 8300000, guid: 392812de93e69f14cb75fb03357d74e2, type: 3}
+  loadingClip: {fileID: 8300000, guid: 22aa0bc46c550de43b92bcbfa74bf3d1, type: 3}
 --- !u!1 &1917819184
 GameObject:
   m_ObjectHideFlags: 0
@@ -7024,7 +7026,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DontDestroy: 1
   session: {fileID: 11400000, guid: d0f936c76ccf83b4080d6a15286fc964, type: 2}
-  loadingClip: {fileID: 8300000, guid: 22aa0bc46c550de43b92bcbfa74bf3d1, type: 3}
 --- !u!4 &1945539879
 Transform:
   m_ObjectHideFlags: 0

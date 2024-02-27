@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: e6c46adbcc0b94769bd2bae77aff973d
-=======
-guid: 2da45a800c59b2a4a939c78c18e8d83a
->>>>>>> d1530c26d2b3c7ef0c2c731655f13df4aaf956bb
+guid: 9f9997d1c475a4b04a1098e3cc27b5b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -125,24 +121,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-<<<<<<< HEAD
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-=======
-    maxTextureSize: 512
-    resizeAlgorithm: 0
-    textureFormat: 49
->>>>>>> d1530c26d2b3c7ef0c2c731655f13df4aaf956bb
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-<<<<<<< HEAD
     overridden: 0
-=======
-    overridden: 1
->>>>>>> d1530c26d2b3c7ef0c2c731655f13df4aaf956bb
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -159,7 +145,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
   - serializedVersion: 3
     buildTarget: VisionOS
     maxTextureSize: 2048
@@ -173,8 +158,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-=======
->>>>>>> d1530c26d2b3c7ef0c2c731655f13df4aaf956bb
   spriteSheet:
     serializedVersion: 2
     sprites: []

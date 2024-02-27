@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class SceneLoad : Singleton<SceneLoad> {
     public Session session;
-    public AudioClip loadingClip;
     private GameObject loadingScreen;
     public void LoadScene(int n) {
-        SoundManager.Instance.AssignMusicClip(loadingClip);
+        SoundManager.Instance.AssignMusicClip(SoundManager.Instance. loadingClip);
         SoundManager.Instance.PlayMusic();
         loadingScreen = Instantiate(session.Loading, transform);
         StartCoroutine(StartLoad(n));
