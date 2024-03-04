@@ -15,9 +15,8 @@ TagManager:
   - SunakPoint
   - HorrorItem
   - ShakableObject
-  - DeadBody
-  - BabyBottle
   - Vile
+  - Collectable
   layers:
   - Default
   - TransparentFX
