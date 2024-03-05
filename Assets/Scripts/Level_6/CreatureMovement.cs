@@ -50,6 +50,12 @@ namespace AdvancedHorrorFPS
             DetectionCheck.GainSight += GainSightHandler;
             DetectionCheck.LoseSight += LoseSightHandler;
         }
+        /*
+        void Start() // TEST
+        {
+            Agent.updateRotation = false; // TEST?
+        }
+        */
 
         private void GainSightHandler(HeroPlayerScript player)
         {
@@ -142,10 +148,21 @@ namespace AdvancedHorrorFPS
                 {
                     Agent.SetDestination(Player.transform.position);
 
-                    Vector3 lookAtPlayer = Player.transform.position;
-                   // lookAtPlayer.y = transform.position.y; // TEST
-                    transform.LookAt(lookAtPlayer);
+                    //transform.LookAt(new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z));
                     //animator.SetBool("Chase", true);
+
+                // TEST BELOW: //
+                    Vector3 directionToPlayer = Player.transform.position - transform.position;
+                    directionToPlayer.y = 0f; // Ensure rotation is only in the horizontal plane
+
+                    // Rotate the enemy's body towards the player
+                    if (directionToPlayer != Vector3.zero)
+                    {
+                        Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
+                        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 280f * Time.deltaTime);
+                    }
+                // END OF TEST //
+
                 }
                 yield return Wait;
             }
@@ -186,6 +203,19 @@ namespace AdvancedHorrorFPS
                     attacked = true;
                     // audioSource.PlayOneShot(Audio_Hits[UnityEngine.Random.Range(0, Audio_Hits.Length)]);
                     HeroPlayerScript.Instance.GetDamage(AttackDamage);
+                }
+            }
+        }
+
+        private void OnDrawGizmos() // TEST rotation of enemy
+        {
+            // Draw path if agent is currently following one
+            if (Agent != null && Agent.hasPath)
+            {
+                Gizmos.color = Color.green;
+                for (int i = 0; i < Agent.path.corners.Length - 1; i++)
+                {
+                    Gizmos.DrawLine(Agent.path.corners[i], Agent.path.corners[i + 1]);
                 }
             }
         }
