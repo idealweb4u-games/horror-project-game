@@ -73,3 +73,6 @@ crashlytics-build.properties
 ProjectSettings/ProjectVersion.txt
 Packages/manifest.json
 Packages/packages-lock.json
+*.json
+*.json
+*.json
