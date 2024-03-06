@@ -13,15 +13,5 @@ public class SplashScreenManager : MonoBehaviour
         yield return new WaitForSeconds(8);
         SceneManager.LoadScene(1);
     }
-    public void PlayVideo() {
-        ClearRenderTexture();
-        videoPlayer.Play();
-    }
-
-    private void ClearRenderTexture() {
-        RenderTexture rt = RenderTexture.active;
-        RenderTexture.active = videoPlayer.targetTexture;
-        GL.Clear(true, true, Color.clear);
-        RenderTexture.active = rt;
-    }
+   
 }
