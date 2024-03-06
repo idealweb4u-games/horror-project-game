@@ -5,13 +5,14 @@ namespace AdvancedHorrorFPS
     public class BoxScript : MonoBehaviour
     {
         public bool isHolding = false;
+        //public float liftAmount = 0.2f;
         Rigidbody rigidbody;
+        public Vector3 offset; // TEST
 
         void Start()
         {
             rigidbody = GetComponent<Rigidbody>();
         }
-
         public void Interact()
         {
             if (!isHolding && !HeroPlayerScript.Instance.isHoldingBox)
@@ -21,7 +22,9 @@ namespace AdvancedHorrorFPS
                 rigidbody.isKinematic = true;
                 rigidbody.useGravity = false;
                 transform.parent = TouchpadFPSLook.Instance.transform;
-                transform.localPosition = transform.localPosition + transform.up * 0.2f;
+                //transform.localPosition = transform.localPosition + transform.up * liftAmount;
+                transform.localPosition = HeroPlayerScript.Instance.HoldingItemPoint.localPosition + offset; // Added
+               // transform.position = HeroPlayerScript.Instance.HoldingItemPoint.localPosition; // Added
                 AudioManager.Instance.Play_Item_Grab();
             }
             else if(isHolding && HeroPlayerScript.Instance.isHoldingBox)

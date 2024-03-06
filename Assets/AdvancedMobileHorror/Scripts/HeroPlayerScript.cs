@@ -17,6 +17,7 @@ namespace AdvancedHorrorFPS
         public GameObject FPSHands;
         public FlashLightScript FlashLight;
         public bool isHoldingBox = false;
+        public Transform HoldingItemPoint; // Added
 
 
         void Start()
