@@ -76,3 +76,7 @@ Packages/packages-lock.json
 *.json
 *.json
 *.json
+.utmp/RelWithDebInfo/r6b4f2t1/armeabi-v7a/.ninja_log
+.utmp/RelWithDebInfo/r6b4f2t1/armeabi-v7a/.ninja_deps
+.utmp/RelWithDebInfo/r6b4f2t1/arm64-v8a/.ninja_log
+.utmp/RelWithDebInfo/r6b4f2t1/arm64-v8a/.ninja_deps
