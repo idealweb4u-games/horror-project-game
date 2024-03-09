@@ -4,9 +4,9 @@ using UnityEngine;
 
 public enum EnemyState
 {
-    Spawn,
-    Idle,
-    Patrol,
-    Chase,
-    Track
+    Spawn, // Empty state
+    Idle, // Wander around
+    Patrol, // Patrol area
+    Chase, // Chase the player
+    Track // Follow player no matter what
 }

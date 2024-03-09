@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22450750}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -109,7 +108,6 @@ RectTransform:
   - {fileID: 22486632}
   - {fileID: 22483060}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -137,15 +135,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementRange: 50
-  HorizontalAxisName: Horizontal
-  VerticalAxisName: Vertical
   HideOnRelease: 1
   MoveBase: 1
   SnapsToFinger: 1
-  JoystickMoveAxis: 3
+  JoystickMoveAxis: -1
   JoystickBase: {fileID: 11480696}
   Stick: {fileID: 11489796}
   TouchZone: {fileID: 22450750}
+  HorizontalValue: 0
+  VerticalValue: 0
 --- !u!1 &151076
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +175,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22450750}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
