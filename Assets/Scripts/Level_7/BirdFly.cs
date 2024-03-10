@@ -9,22 +9,25 @@ namespace AdvancedHorrorFPS
     public class BirdFly : MonoBehaviour
     {
         public Transform Player;
+        
         public float UpdateRate = 0.1f;
-        public int AttackDamage = 25;
+        public int attackDamage = 25;
         public float attackCoolDown = 3f;
-        public float divingCoolDown = .75f;
-        public bool canDamage = false;
-        private NavMeshAgent Agent;
-        public NavMeshTriangulation Triangulation;
-        public float IdleLocationRadius = 5f; 
+        public float divingCoolDown = 0.75f;
+        public float wanderRadius = 5f; 
         public float divingSpeed = 10f;
         public float wanderSpeed = 2f;
-        private bool onCooldown = false;
-        private bool isDiving = false;
+
+        private NavMeshAgent Agent;
         private Coroutine FollowingCoroutine;
         private Vector3 PlayersLastLocation;
         private Vector3 BirdsLastLocation;
         private Rigidbody rb;
+
+        private bool canDamage = false;
+        private bool onCooldown = false;
+        private bool isDiving = false;
+
 
         private void Awake()
         {
@@ -32,7 +35,7 @@ namespace AdvancedHorrorFPS
             rb = GetComponent<Rigidbody>();
         }
 
-        void Start()
+        private void Start()
         {
             FollowingCoroutine = StartCoroutine(Wandering());
         }
@@ -49,7 +52,7 @@ namespace AdvancedHorrorFPS
                 }
                 else if (Agent.remainingDistance <= Agent.stoppingDistance)
                 {
-                    Vector2 point = Random.insideUnitCircle * IdleLocationRadius; // Random point in unity circle multiplied by radius
+                    Vector2 point = Random.insideUnitCircle * wanderRadius; // Random point in unity circle multiplied by radius
                     NavMeshHit hit;
                     if (NavMesh.SamplePosition(Agent.transform.position + new Vector3(point.x, 0, point.y), out hit, 3f, Agent.areaMask))
                     {
@@ -88,7 +91,6 @@ namespace AdvancedHorrorFPS
         {
             if (canDamage && other.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Collided with player");
                 DamagePlayer();
                 canDamage = false;
             }
@@ -97,7 +99,6 @@ namespace AdvancedHorrorFPS
         {
             if (other.gameObject.CompareTag("Player") && !onCooldown && !isDiving)
             {
-                Debug.Log("Chase Player!!!");
                 PlayersLastLocation = Player.transform.position; // Players last known position
                 Agent.enabled = false; // Disable agent
                 BirdsLastLocation = transform.position; // Birds last position before diving
@@ -126,7 +127,7 @@ namespace AdvancedHorrorFPS
             {
             // attacked = true;
                 // audioSource.PlayOneShot(Audio_Hits[UnityEngine.Random.Range(0, Audio_Hits.Length)]);
-                HeroPlayerScript.Instance.GetDamage(AttackDamage);
+                HeroPlayerScript.Instance.GetDamage(attackDamage);
             }
         }
 
