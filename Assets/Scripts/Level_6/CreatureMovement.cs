@@ -20,7 +20,6 @@ namespace AdvancedHorrorFPS
         public bool attacked = false;
         public float wanderRadius = 5f;
 
-    // TEST //
         public EnemyState DefaultState;
         private EnemyState _state;
         private AudioSource audioSource;
@@ -50,26 +49,20 @@ namespace AdvancedHorrorFPS
             DetectionCheck.GainSight += GainSightHandler;
             DetectionCheck.LoseSight += LoseSightHandler;
         }
-        /*
-        void Start() // TEST
-        {
-            Agent.updateRotation = false; // TEST?
-        }
-        */
 
         private void GainSightHandler(HeroPlayerScript player)
         {
-            Debug.Log("Player Detetced");
+           // Debug.Log("Player Detetced");
         }
         private void LoseSightHandler(HeroPlayerScript player)
         {
             State = DefaultState;
-            Debug.Log("Lost Sight Of Player");
+          //  Debug.Log("Lost Sight Of Player");
         }
 
         void FixedUpdate()
         {
-            if (floorDetection)//FloorDetection.instance.canChase)
+            if (floorDetection)
             {
                 StartCoroutine(TrackTarget());
             }
@@ -140,40 +133,37 @@ namespace AdvancedHorrorFPS
         private IEnumerator TrackTarget()
         {
             animator.SetBool("Chase", true);
-            Agent.isStopped = false;
+            if (Agent.isOnNavMesh)
+            {
+                Agent.isStopped = false;
+            }
             WaitForSeconds Wait = new WaitForSeconds(UpdateRate);
-            while(floorDetection.canChase)//FloorDetection.instance.canChase)
+            while(floorDetection.canChase)
             {
                 if (Agent.enabled)
                 {
                     Agent.SetDestination(Player.transform.position);
-
-                    //transform.LookAt(new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z));
-                    //animator.SetBool("Chase", true);
-
-                // TEST BELOW: //
                     Vector3 directionToPlayer = Player.transform.position - transform.position;
-                    directionToPlayer.y = 0f; // Ensure rotation is only in the horizontal plane
+                    directionToPlayer.y = 0f;
 
-                    // Rotate the enemy's body towards the player
                     if (directionToPlayer != Vector3.zero)
                     {
-                        Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
+                        Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer) * Quaternion.Euler(0, 90, 0);
                         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 280f * Time.deltaTime);
                     }
-                // END OF TEST //
-
+                    if ((Player.transform.position - AttackZone.transform.position).sqrMagnitude < 1.65f)
+                    {
+                        Attack();
+                    }
                 }
                 yield return Wait;
             }
-            Debug.Log("No longer chasing");
             animator.SetBool("Chase", false);
             StopMovement();
         }
 
         public void StopMovement()
         {
-            //Agent.Stop();
             Agent.isStopped = true;
         }
 
@@ -186,7 +176,7 @@ namespace AdvancedHorrorFPS
                 {
                     if (attacked == false)
                     {
-                        animator.SetTrigger("Attack"); // TEST
+                        animator.SetTrigger("Attack");
                         Agent.enabled = false;
                         GetComponent<CapsuleCollider>().enabled = false;
                         attacked = true;
@@ -199,23 +189,10 @@ namespace AdvancedHorrorFPS
                 }
                 else
                 {
-                    //animator.SetTrigger("Attack");
+                    animator.SetTrigger("Attack");
                     attacked = true;
                     // audioSource.PlayOneShot(Audio_Hits[UnityEngine.Random.Range(0, Audio_Hits.Length)]);
                     HeroPlayerScript.Instance.GetDamage(AttackDamage);
-                }
-            }
-        }
-
-        private void OnDrawGizmos() // TEST rotation of enemy
-        {
-            // Draw path if agent is currently following one
-            if (Agent != null && Agent.hasPath)
-            {
-                Gizmos.color = Color.green;
-                for (int i = 0; i < Agent.path.corners.Length - 1; i++)
-                {
-                    Gizmos.DrawLine(Agent.path.corners[i], Agent.path.corners[i + 1]);
                 }
             }
         }
