@@ -73,3 +73,5 @@ crashlytics-build.properties
 ProjectSettings/ProjectVersion.txt
 /.utmp
 /.utmp
+.utmp/RelWithDebInfo/r6b4f2t1/armeabi-v7a/.ninja_log
+/.utmp
