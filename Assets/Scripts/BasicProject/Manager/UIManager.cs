@@ -45,7 +45,7 @@ public class UIManager : Singleton<UIManager> {
         SoundManager.Instance.MusicSource.Stop();
         LevelManager.Instance.currentlevel.GetComponent<Level_Items>().Enemy.SetActive(false);
         LevelManager.Instance.currentlevel.GetComponent<Level_Items>().CameraCutScene.SetActive(true);
-        GameplayManager.Instance.Camera.SetActive(false);
+       // GameplayManager.Instance.Camera.SetActive(false);
         startDlg.SetActive(false);
         playerCanvas.SetActive(false);
         pauseButton.SetActive(false);
