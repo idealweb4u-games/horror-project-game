@@ -24,7 +24,7 @@ namespace AdvancedHorrorFPS
         private Vector3 BirdsLastLocation;
         private Rigidbody rb;
 
-        private bool canDamage = false;
+        private bool canDamage = true;
         private bool onCooldown = false;
         private bool isDiving = false;
 
@@ -52,7 +52,7 @@ namespace AdvancedHorrorFPS
                 }
                 else if (Agent.remainingDistance <= Agent.stoppingDistance)
                 {
-                    Vector2 point = Random.insideUnitCircle * wanderRadius; // Random point in unity circle multiplied by radius
+                    Vector2 point = Random.insideUnitCircle * wanderRadius; // Random point in unit circle multiplied by radius
                     NavMeshHit hit;
                     if (NavMesh.SamplePosition(Agent.transform.position + new Vector3(point.x, 0, point.y), out hit, 3f, Agent.areaMask))
                     {
@@ -66,7 +66,6 @@ namespace AdvancedHorrorFPS
         // If player in range then swoop down towards the player. Rest in the air for a few seconds. If player still in range then swoop down again.
         private IEnumerator SwoopAttack()
         {
-            //rb.isKinematic = false;
             onCooldown = true;
             isDiving = true;
             Vector3 direction = (PlayersLastLocation - transform.position).normalized;
@@ -78,9 +77,11 @@ namespace AdvancedHorrorFPS
             rb.velocity = Vector3.zero;
             isDiving = false;
             Agent.enabled = true;
-            //rb.isKinematic = true;
             canDamage = false;
             FollowingCoroutine = StartCoroutine(Wandering());
+
+           // yield return new WaitForSeconds(.4f);
+           // canDamage = false;
 
             yield return new WaitForSeconds(attackCoolDown);
             onCooldown = false;
@@ -89,6 +90,7 @@ namespace AdvancedHorrorFPS
 
         private void OnCollisionEnter(Collision other)
         {
+            Debug.Log("Collided with player");
             if (canDamage && other.gameObject.CompareTag("Player"))
             {
                 DamagePlayer();
@@ -100,7 +102,7 @@ namespace AdvancedHorrorFPS
             if (other.gameObject.CompareTag("Player") && !onCooldown && !isDiving)
             {
                 PlayersLastLocation = Player.transform.position; // Players last known position
-                Agent.enabled = false; // Disable agent
+                Agent.enabled = false;
                 BirdsLastLocation = transform.position; // Birds last position before diving
                 FollowingCoroutine = StartCoroutine(SwoopAttack());
             }
@@ -110,23 +112,15 @@ namespace AdvancedHorrorFPS
         {
             if (AdvancedGameManager.Instance.gameType == GameType.DieWhenYouAreCaught)
             {
-            //  if (attacked == false)
-            // {
-                   // animator.SetTrigger("Attack"); // TEST
-                    Agent.enabled = false;
-                 //   GetComponent<CapsuleCollider>().enabled = false;
-                // attacked = true;
-                    transform.parent = Camera.main.transform;
-                    transform.localEulerAngles = new Vector3(0, -180, 0);
-                    transform.localPosition = HeroPlayerScript.Instance.DemonComingPoint.localPosition;
-                    HeroPlayerScript.Instance.GetDamage(100);
-                    AudioManager.Instance.Play_DemonKilling();
-            //  }
+                Agent.enabled = false;
+                transform.parent = Camera.main.transform;
+                transform.localEulerAngles = new Vector3(0, -180, 0);
+                transform.localPosition = HeroPlayerScript.Instance.DemonComingPoint.localPosition;
+                HeroPlayerScript.Instance.GetDamage(100);
+                AudioManager.Instance.Play_DemonKilling();
             }
             else
             {
-            // attacked = true;
-                // audioSource.PlayOneShot(Audio_Hits[UnityEngine.Random.Range(0, Audio_Hits.Length)]);
                 HeroPlayerScript.Instance.GetDamage(attackDamage);
             }
         }
