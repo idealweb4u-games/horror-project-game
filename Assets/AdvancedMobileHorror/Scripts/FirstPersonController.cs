@@ -78,7 +78,7 @@ namespace AdvancedHorrorFPS
 		{
 			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
 			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
-			Debug.Log("On Ground"); // TEST
+			//Debug.Log("On Ground"); // TEST
 		}
 
 		public Vector2 _input;
