@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5a15864f3ab2d224bb786a1a48ad586d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156928
+  packageName: Old Hand Torch
+  packageVersion: 1.0
+  assetPath: Assets/HandTorch/Scripts/ToggleLight.cs
+  uploadId: 341070

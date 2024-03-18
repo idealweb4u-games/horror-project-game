@@ -5,6 +5,7 @@ using UnityEngine;
 public class SummonGraves : MonoBehaviour
 {
     public GameObject[] graves;
+    [SerializeField] private Animator animator;
     public float spawnCoolDown;
     public int maxSpawnAmount;
     private float startCoolDown = 10f;
@@ -42,6 +43,7 @@ public class SummonGraves : MonoBehaviour
         {
             graves[i].gameObject.SetActive(false);
         }
+        animator.SetTrigger("isSummoning");
         yield return new WaitForSeconds(2f);
         nextRandom = true;
     }
@@ -50,6 +52,12 @@ public class SummonGraves : MonoBehaviour
     {
         nextRandom = false; 
         yield return new WaitForSeconds(spawnCoolDown);
+        animator.SetTrigger("isSummoning");
+        if (animator.GetBool("isBurning") == true)
+        {
+            yield return new WaitUntil(() => animator.GetBool("isBurning") == false);
+        }
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < graves.Length; i++)
         {
             graves[i].gameObject.SetActive(false);

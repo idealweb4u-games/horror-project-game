@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class DemonMovement : MonoBehaviour {
+	/*
 	private Animator anim;
 	int hIdles;
 	int hAngry;
@@ -51,4 +52,5 @@ public class DemonMovement : MonoBehaviour {
 			}
 		}
 	}
+	*/
 }

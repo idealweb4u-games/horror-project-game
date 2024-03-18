@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 31984df88f2acbb499acc610f35c65a1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156928
+  packageName: Old Hand Torch
+  packageVersion: 1.0
+  assetPath: Assets/HandTorch/Scripts/RotateObject.cs
+  uploadId: 341070

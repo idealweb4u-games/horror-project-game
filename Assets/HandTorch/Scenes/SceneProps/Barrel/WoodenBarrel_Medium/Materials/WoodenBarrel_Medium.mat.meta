@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7dae711641194424eb6e9818855fd38e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156928
+  packageName: Old Hand Torch
+  packageVersion: 1.0
+  assetPath: Assets/HandTorch/Scenes/SceneProps/Barrel/WoodenBarrel_Medium/Materials/WoodenBarrel_Medium.mat
+  uploadId: 341070

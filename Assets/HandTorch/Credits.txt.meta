@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 452c8bacd0e90184d9aa3259bf4a4af8
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156928
+  packageName: Old Hand Torch
+  packageVersion: 1.0
+  assetPath: Assets/HandTorch/Credits.txt
+  uploadId: 341070
