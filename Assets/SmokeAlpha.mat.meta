@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SmokeAlpha.mat.meta
 guid: 75beb8d13c7178841bdbdebee7f218bf
+========
+guid: 74df7d2231b92364cbc3cb59d400985c
+>>>>>>>> main:Assets/3DHorrorAssets/Level9Props/emission.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
