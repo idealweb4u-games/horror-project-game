@@ -17,6 +17,7 @@ TagManager:
   - ShakableObject
   - Vile
   - Collectable
+  - DeadBody
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - Ground
   - Demon
   - Priest
-  - 
+  - PP
   - 
   - 
   - 

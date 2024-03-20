@@ -46,13 +46,13 @@ MonoBehaviour:
       of the tormented souls who walked these halls before you." In the flickering
       candlelight, the mosnter''s eyes gleamed with a malevolent wisdom, revealing
       the twisted beauty that lies within the heart of darkness'
-    levelImage: {fileID: 21300000, guid: 098ac270bbe2af94888c02c90b624008, type: 3}
+    levelImage: {fileID: 21300000, guid: ae0399a50d0518a448b4b3ca79cb21bf, type: 3}
   - levelName: 'The Bodiless Birds: '
     levelDescription: '"A murder of crows, black as the void, descended upon the
       forsaken town, their beaks stained with the secrets of the damned, carrying
       tales of terror in the flutter of their inky wings." Remember: the abyss also
       stares back. Face the void, or become one with it'
-    levelImage: {fileID: 21300000, guid: d70c1f3db4828784d8e8f27bdbfc47b7, type: 3}
+    levelImage: {fileID: 21300000, guid: fce084995b014a54a80335f890b87f53, type: 3}
   - levelName: The Demon Tree
     levelDescription: '"In the heart of the forest, where the trees whisper malevolent
       secrets, an ancient evil awakens. The path ahead is shrouded in darkness."

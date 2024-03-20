@@ -17,7 +17,7 @@ public class LevelSelection : MonoBehaviour {
         ;
     private void Start() {
         SoundManager.Instance.PlayBackgroundMusic();
-        PlayerPrefs.SetInt("unlocklevels",3);
+        PlayerPrefs.SetInt("unlocklevels",8);
       foreach(Transform child in transform) {
             levels.Add(child);
       }
