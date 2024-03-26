@@ -214,7 +214,7 @@ Material:
     - _BaseColor: {r: 0, g: 0.68851364, b: 0.754717, a: 0.5}
     - _BumpDirection: {r: 1, g: 1, b: -1, a: 1}
     - _BumpTiling: {r: 1, g: 1, b: -2, a: 3}
-    - _Color: {r: 0, g: 0.68851364, b: 0.75471693, a: 0.5}
+    - _Color: {r: 0, g: 0.68851364, b: 0.754717, a: 0.5}
     - _ColorTint: {r: 0.74509805, g: 0.7023594, b: 0.5727028, a: 1}
     - _DistortParams: {r: 1, g: 1, b: 2, a: 1.15}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
@@ -242,7 +242,6 @@ Material:
     - _WorldLightDir: {r: 0, g: 0.1, b: -0.5, a: 0}
     - _fogColor: {r: 0.29211843, g: 0.4276772, b: 0.5686275, a: 1}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!114 &1028234818069499835
 MonoBehaviour:
   m_ObjectHideFlags: 11
