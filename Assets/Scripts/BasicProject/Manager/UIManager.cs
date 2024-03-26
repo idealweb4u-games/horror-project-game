@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using AdvancedHorrorFPS;
 
 public class UIManager : Singleton<UIManager> {
     public LevelsData levelData;
+    public AudioManager audioManager;
+    public ParticleSystem rain;
+    public ParticleSystem fire;
+    public AudioSource audioSource;
     public Session session;
     public GameObject
         levelComplete,

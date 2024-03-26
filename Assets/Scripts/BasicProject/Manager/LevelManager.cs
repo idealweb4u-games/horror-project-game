@@ -14,8 +14,10 @@ public class LevelManager :Singleton<LevelManager> {
     public void startLevel(int index, UnityAction onCompleteCallBack,UnityAction onGameOverCallBack) {
         currentlevel = Levels[index].GetComponent<Level>();
         Levels[index].SetActive(true);
-       GameplayManager.Instance.Player.transform.position = Levels[index].GetComponent<Level_Items>().startPosition.position;
+       if(!Levels[index].GetComponent<Level_Items>().rain) { UIManager.Instance.rain.gameObject.SetActive(false); }
+        GameplayManager.Instance.Player.transform.position = Levels[index].GetComponent<Level_Items>().startPosition.position;
         GameplayManager.Instance.Player.transform.rotation = Levels[index].GetComponent<Level_Items>().startPosition.rotation;
+        
         onComplete.AddListener(onCompleteCallBack);
         onGameOver.AddListener(onGameOverCallBack);
         currentlevel.onComplete.AddListener(() => {

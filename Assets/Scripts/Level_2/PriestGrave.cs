@@ -13,7 +13,12 @@ namespace AdvancedHorrorFPS
             if (other.CompareTag("Collectable") && !body.isHolding)
             {
                 Debug.Log("Follower has died");
-                priest.SetActive(false);
+                priest.transform.position= body.transform.position;
+                UIManager.Instance.fire.transform.position= body.transform.position;
+                UIManager.Instance.fire.Play();
+                UIManager.Instance.fire.gameObject.SetActive(true);
+                UIManager.Instance.audioSource.clip = UIManager.Instance.audioManager.Audio_DemonKilling[2];
+                UIManager.Instance.audioSource.Play();
 
             }
         }
