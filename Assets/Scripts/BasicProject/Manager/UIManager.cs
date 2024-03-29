@@ -26,8 +26,10 @@ public class UIManager : Singleton<UIManager> {
     public Image levelImage;
     private void Start() {
         ShowLevelData();
+        Time.timeScale = 0f;
     }
     public void showlevelComplete() {
+        Time.timeScale = 0;
         SoundManager.Instance.PlayEffect();
         levelComplete.SetActive(true);
     }
@@ -36,16 +38,17 @@ public class UIManager : Singleton<UIManager> {
         levelFail.SetActive(true);
     }
     public void pause() {
-       // Time.timeScale = 0;
+        Time.timeScale = 0;
         SoundManager.Instance.PlayEffect();
        pauseDlg.SetActive(true);
     }
     public void resume() {
-       // Time.timeScale = 1;
+        Time.timeScale = 1;
         SoundManager.Instance.PlayEffect();
         pauseDlg.SetActive(false);
     }
     public void startButton() {
+        Time.timeScale = 1f;
         SoundManager.Instance.PlayEffect();
         SoundManager.Instance.MusicSource.Stop();
         LevelManager.Instance.currentlevel.GetComponent<Level_Items>().Enemy.SetActive(false);
@@ -77,5 +80,18 @@ public class UIManager : Singleton<UIManager> {
         pauseButton.SetActive(true);
         skipButton.SetActive(false);
     }
-
+    public void EndingCameraCutScene() {
+        StartCoroutine(LevelEnding());
+        
+    }
+    IEnumerator LevelEnding() {
+        GameplayManager.Instance.Camera.transform.position = LevelManager.Instance.currentlevel.GetComponent<Level_Items>().cameraEndPos.position;
+        GameplayManager.Instance.Camera.transform.rotation = LevelManager.Instance.currentlevel.GetComponent<Level_Items>().cameraEndPos.rotation;
+        UIManager.Instance.audioSource.clip = UIManager.Instance.audioManager.Audio_DemonKilling[2];
+        UIManager.Instance.audioSource.Play();
+        UIManager.Instance.fire.Play();
+        UIManager.Instance.fire.gameObject.SetActive(true);
+        yield return new WaitForSeconds(7);
+        showlevelComplete();
+    }
 }

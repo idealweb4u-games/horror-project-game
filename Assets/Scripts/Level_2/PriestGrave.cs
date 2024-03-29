@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 namespace AdvancedHorrorFPS
 {
     public class PriestGrave : MonoBehaviour
@@ -10,15 +11,18 @@ namespace AdvancedHorrorFPS
 
         void OnTriggerStay(Collider other)
         {
-            if (other.CompareTag("Collectable") && !body.isHolding)
-            {
+                Debug.Log("Follower has dewtedte");
+            if (other.CompareTag("DeadBody") /*&& !body.isHolding*/) {
                 Debug.Log("Follower has died");
+                body.transform.position =transform.position;
                 priest.transform.position= body.transform.position;
-                UIManager.Instance.fire.transform.position= body.transform.position;
-                UIManager.Instance.fire.Play();
-                UIManager.Instance.fire.gameObject.SetActive(true);
-                UIManager.Instance.audioSource.clip = UIManager.Instance.audioManager.Audio_DemonKilling[2];
-                UIManager.Instance.audioSource.Play();
+                priest.transform.GetComponent<EnemyMovement>().DeathAnimation();
+                priest.transform.GetComponent<EnemyMovement>().enabled = false;
+                UIManager.Instance.EndingCameraCutScene();
+
+
+
+
 
             }
         }
