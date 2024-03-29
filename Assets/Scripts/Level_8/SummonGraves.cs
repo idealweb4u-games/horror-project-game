@@ -57,7 +57,7 @@ public class SummonGraves : MonoBehaviour
         {
             yield return new WaitUntil(() => animator.GetBool("isBurning") == false);
             maxSpawnAmount += 10;
-            startCoolDown -= 2f;
+            startCoolDown -= 1f;
             Debug.Log("Tree grows angry");
         }
         yield return new WaitForSeconds(0.5f);
