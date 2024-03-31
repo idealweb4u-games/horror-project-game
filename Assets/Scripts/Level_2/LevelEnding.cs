@@ -14,6 +14,7 @@ namespace AdvancedHorrorFPS
         {
             if (other.CompareTag("Collectable") ) {
                 Debug.Log("Follower has died");
+                GameplayManager.Instance.Player.SetActive(false);
                 collectable.transform.position = transform.position;
                 if(ExtraItems != null) {ExtraItems.SetActive(true);}
                 Enemy.transform.position= collectable.transform.position;

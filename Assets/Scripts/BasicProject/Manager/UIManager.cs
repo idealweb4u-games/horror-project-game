@@ -92,7 +92,7 @@ public class UIManager : Singleton<UIManager> {
         GameplayManager.Instance.Camera.transform.position = LevelManager.Instance.currentlevel.GetComponent<Level_Items>().cameraEndPos.position;
         UIManager.Instance.audioSource.clip = UIManager.Instance.audioManager.Audio_DemonKilling[2];
         UIManager.Instance.audioSource.Play();
-        GameplayManager.Instance.Player.SetActive(false);
+        
         if (LevelManager.Instance.currentlevel.GetComponent<Level_Items>().fire) {
         UIManager.Instance.fire.Play();
         UIManager.Instance.fire.gameObject.SetActive(true);
