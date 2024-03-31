@@ -330,7 +330,7 @@ Transform:
   - {fileID: 5037883856255830431}
   - {fileID: 4120991016696144415}
   - {fileID: 8432968449231457414}
-  - {fileID: 3446964658354328603}
+  - {fileID: 5153785471474797928}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1509237780248608157
@@ -1057,37 +1057,6 @@ MonoBehaviour:
   startColor: {r: 0, g: 0, b: 0, a: 1}
   endColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   speed: 2
---- !u!1 &2407261102243584810
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3446964658354328603}
-  m_Layer: 0
-  m_Name: CutScene
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3446964658354328603
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2407261102243584810}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5803148735920860524}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2501487877832955413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,6 +3516,80 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &207357501257946880
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5803148735920860524}
+    m_Modifications:
+    - target: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447001674826064905, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+        type: 3}
+      propertyPath: m_Name
+      value: CutScene
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfcd53444ff7a2f408d3d4f6614fc043, type: 3}
+--- !u!4 &5153785471474797928 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5000475636006722152, guid: cfcd53444ff7a2f408d3d4f6614fc043,
+    type: 3}
+  m_PrefabInstance: {fileID: 207357501257946880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2742043530974809745
 PrefabInstance:
   m_ObjectHideFlags: 0

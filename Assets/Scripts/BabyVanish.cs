@@ -31,35 +31,35 @@ public class BabyVanish : MonoBehaviour
             alreadyPlayed = true;
             Destroy(redLight);
             enemy.SetActive(false); 
-            StartCoroutine(RotateBaby());      
+          //  StartCoroutine(RotateBaby());      
         }
     }
 
-    public void DoorOpened()
-    {
-        doorOpened = true;
-    }
+    //public void DoorOpened()
+    //{
+    //    doorOpened = true;
+    //}
 
 
-    IEnumerator RotateBaby()
-    {
-        yield return new WaitForSeconds(rotationTime);
-        // ROTATE BABY
-        //babyDoll.transform.rotation = Quaternion.Euler(babyEndRotation);
-        babyDoll.transform.localRotation = Quaternion.Euler(babyEndRotation);
-        yield return new WaitForSeconds(2f);
-        babyDoll.SetActive(false); 
-        ShakeObject.instance?.StartShaking();
-        LightFlickerEffect.instance?.StartLightFlicker();
+    //IEnumerator RotateBaby()
+    //{
+    //    yield return new WaitForSeconds(rotationTime);
+    //    // ROTATE BABY
+    //    //babyDoll.transform.rotation = Quaternion.Euler(babyEndRotation);
+    //    babyDoll.transform.localRotation = Quaternion.Euler(babyEndRotation);
+    //    yield return new WaitForSeconds(2f);
+    //    babyDoll.SetActive(false); 
+    //    ShakeObject.instance?.StartShaking();
+    //    LightFlickerEffect.instance?.StartLightFlicker();
 
-        // CHANGE so that jumpscare happens after placing down bottle
-        yield return new WaitForSeconds(4.5f);
-        BabyJumpScare();
-    }
+    //    // CHANGE so that jumpscare happens after placing down bottle
+    //    yield return new WaitForSeconds(4.5f);
+    //    BabyJumpScare();
+    //}
 
-    public void BabyJumpScare()
-    {
-        jumpScareDoll.SetActive(true);
-        bloodDisplay.SetActive(true);
-    }
+    //public void BabyJumpScare()
+    //{
+    //    jumpScareDoll.SetActive(true);
+    //    bloodDisplay.SetActive(true);
+    //}
 }
