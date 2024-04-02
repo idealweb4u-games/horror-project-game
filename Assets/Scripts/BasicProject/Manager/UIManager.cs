@@ -7,6 +7,7 @@ using AdvancedHorrorFPS;
 
 public class UIManager : Singleton<UIManager> {
     public LevelsData levelData;
+    public GameObject PlayerHands;
     public AudioManager audioManager;
     public ParticleSystem rain;
     public ParticleSystem fire;
@@ -85,12 +86,17 @@ public class UIManager : Singleton<UIManager> {
         
     }
     IEnumerator LevelEnding() {
+        GameplayManager.Instance.Camera.GetComponent<TouchpadFPSLook>().enabled = false;
+        PlayerHands.SetActive(false);
+        GameplayManager.Instance.Camera.transform.rotation= LevelManager.Instance.currentlevel.GetComponent<Level_Items>().cameraEndPos.rotation;
         GameplayManager.Instance.Camera.transform.position = LevelManager.Instance.currentlevel.GetComponent<Level_Items>().cameraEndPos.position;
-        GameplayManager.Instance.Camera.transform.rotation = LevelManager.Instance.currentlevel.GetComponent<Level_Items>().cameraEndPos.rotation;
         UIManager.Instance.audioSource.clip = UIManager.Instance.audioManager.Audio_DemonKilling[2];
         UIManager.Instance.audioSource.Play();
+        
+        if (LevelManager.Instance.currentlevel.GetComponent<Level_Items>().fire) {
         UIManager.Instance.fire.Play();
         UIManager.Instance.fire.gameObject.SetActive(true);
+        }
         yield return new WaitForSeconds(7);
         showlevelComplete();
     }
