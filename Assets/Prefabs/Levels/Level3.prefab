@@ -695,7 +695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1186734134372277382
 Transform:
   m_ObjectHideFlags: 0
@@ -5352,10 +5352,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9053633007460565464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acfb08145ee70794198c49a7ea23d32c, type: 3}
+  m_Script: {fileID: 11500000, guid: 16b1acebadb2dbb4e81427a374cc604b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 8099756383117190606}
+  Enemy: {fileID: 1579725494034027402}
   collectable: {fileID: 504254483844609425}
   ExtraItems: {fileID: 5234432828343109839}
 --- !u!54 &4148653319531520546
@@ -6037,8 +6037,6 @@ MonoBehaviour:
   - {x: 565, y: 30, z: 94}
   - {x: 553, y: 30, z: 94}
   - {x: 565, y: 30, z: 94}
-  enemySound:
-  - {fileID: 8300000, guid: 3611bf09f2d74442c8250fde72ac1294, type: 3}
   attacked: 0
   DefaultState: 2
   IdleLocationRadius: 5
@@ -6848,8 +6846,6 @@ MonoBehaviour:
   - {x: 572, y: 30, z: 100}
   - {x: 563, y: 30, z: 100}
   - {x: 572, y: 30, z: 100}
-  enemySound:
-  - {fileID: 8300000, guid: 3611bf09f2d74442c8250fde72ac1294, type: 3}
   attacked: 0
   DefaultState: 2
   IdleLocationRadius: 5
@@ -11797,8 +11793,6 @@ MonoBehaviour:
   - {x: 564, y: 30, z: 87}
   - {x: 572, y: 30, z: 87}
   - {x: 556, y: 30, z: 87}
-  enemySound:
-  - {fileID: 8300000, guid: 3611bf09f2d74442c8250fde72ac1294, type: 3}
   attacked: 0
   DefaultState: 2
   IdleLocationRadius: 5

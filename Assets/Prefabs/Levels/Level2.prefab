@@ -1882,7 +1882,7 @@ GameObject:
   - component: {fileID: 2492744503818084221}
   - component: {fileID: 7114614642753386762}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Level2Nav
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2004,7 +2004,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 6827261f5bb2e464f87e76facfcac650, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1207b41ac007d8c4eb37f5aaf226de1b, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1321654213349839073
 GameObject:
@@ -2807,11 +2807,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1615721908665717449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acfb08145ee70794198c49a7ea23d32c, type: 3}
+  m_Script: {fileID: 11500000, guid: 16b1acebadb2dbb4e81427a374cc604b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priest: {fileID: 2906281017127136626}
-  body: {fileID: 8854918658609963239}
+  Enemy: {fileID: 2906281017127136626}
+  collectable: {fileID: 8854918658609963239}
+  ExtraItems: {fileID: 0}
 --- !u!54 &8508598836032997757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4925,7 +4926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2633184730858529314}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4957,6 +4958,7 @@ MonoBehaviour:
   CameraCutScene: {fileID: 173368619970617557}
   Enemy: {fileID: 2906281017127136626}
   rain: 0
+  fire: 1
   cameraEndPos: {fileID: 486770568963551459}
   timeCutScene: 60
 --- !u!1 &2661756472509028695
@@ -5563,7 +5565,6 @@ MonoBehaviour:
   - {x: 467.8, y: 16.8207, z: 415.04}
   - {x: 504, y: 16.8207, z: 415.04}
   - {x: 504, y: 16.8207, z: 406}
-  enemySound: []
   attacked: 0
   DefaultState: 2
   IdleLocationRadius: 9
@@ -17931,7 +17932,7 @@ GameObject:
   - component: {fileID: 3502730894095517212}
   m_Layer: 0
   m_Name: PriestBody
-  m_TagString: DeadBody
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
