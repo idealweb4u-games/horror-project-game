@@ -1,7 +1,5 @@
 # ninja log v5
-1	431	7301231532312885	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4a4c590da99d8d45
-435	967	7301231536202033	D:/UnityProjects/IdealWeb4U/HorrorGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/r6b4f2t1/obj/armeabi-v7a/libswappywrapper.so	4084eeb81267f26b
-1	797	7318516281331147	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4a4c590da99d8d45
-798	1649	7318516288164522	D:/UnityProjects/IdealWeb4U/HorrorGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/r6b4f2t1/obj/armeabi-v7a/libswappywrapper.so	4084eeb81267f26b
 1	324	7325314466946416	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4a4c590da99d8d45
 325	1049	7325314471740097	D:/UnityProjects/IdealWeb4U/HorrorGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/r6b4f2t1/obj/armeabi-v7a/libswappywrapper.so	4084eeb81267f26b
+2	582	7337549346374845	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4a4c590da99d8d45
+583	1618	7337549355444065	D:/UnityProjects/IdealWeb4U/HorrorGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/r6b4f2t1/obj/armeabi-v7a/libswappywrapper.so	4084eeb81267f26b
