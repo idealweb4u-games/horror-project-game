@@ -18,6 +18,7 @@ namespace AdvancedHorrorFPS
         public Camera CurrentEventCamera { get; set; }
 
         public float MovementRange = 50f;
+        public float DoubleTouchThreshold = .3f;
 
         public bool HideOnRelease;
         public bool MoveBase = true;
@@ -35,6 +36,7 @@ namespace AdvancedHorrorFPS
         private RectTransform _stickTransform;
 
         private float _oneOverMovementRange;
+        private float _timeSinceLastTouch;
 
         public float HorizontalValue;
         public float VerticalValue;
@@ -146,6 +148,20 @@ namespace AdvancedHorrorFPS
                 _baseTransform.position = localBasePosition;
                 _stickTransform.position = localStickPosition;
                 _intermediateStickPosition = _stickTransform.anchoredPosition;
+
+                //Debug.Log("Joystick: Touch"); // TEST
+                // Check for double touch
+                float currentTime = Time.time;
+                if (currentTime - _timeSinceLastTouch <= DoubleTouchThreshold)
+                {
+                    Debug.Log("Joystick: Double Touch"); // TEST
+                    HeroPlayerScript.Instance.CheckMovement(true);
+                }
+                else
+                {
+                    HeroPlayerScript.Instance.CheckMovement(false);
+                }
+                _timeSinceLastTouch = currentTime;
             }
             else
             {

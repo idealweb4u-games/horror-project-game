@@ -26,10 +26,12 @@ namespace AdvancedHorrorFPS
 		private CharacterController _controller;
 		public GameObject Camera;
 		private bool canJump = true;
+		private float speedHolder;
 
 		private void Start()
 		{
 			_controller = GetComponent<CharacterController>();
+			speedHolder = MoveSpeed;
 		}
 
 		private void Update()
@@ -56,6 +58,18 @@ namespace AdvancedHorrorFPS
 			yield return new WaitForSeconds(1);
 			canJump = true;
         }
+
+		public void ChangeSpeed(bool sprint)
+		{
+			if (sprint)
+			{
+				MoveSpeed = SprintSpeed;
+			}
+			else
+			{
+				MoveSpeed = speedHolder;
+			}
+		}
 
 		public void StopPlayer() {
 			MoveSpeed = 0f;
