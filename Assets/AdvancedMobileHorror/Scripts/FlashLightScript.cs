@@ -17,6 +17,8 @@ namespace AdvancedHorrorFPS
         public AudioSource audioSource;
         public Transform aimPoint;
         public LayerMask layerMask;
+        
+        private bool flashlightOn = false;
 
         void Awake()
         {
@@ -57,16 +59,26 @@ namespace AdvancedHorrorFPS
 
             if (AdvancedGameManager.Instance.controllerType == ControllerType.PcAndConsole)
             {
-                if (Input.GetKeyUp(KeyCode.F))
+                if (Input.GetKeyUp(KeyCode.F) && !flashlightOn)
                 {
                     FlashLightScript.Instance.FlashLight_Decision(true);
                     AudioManager.Instance.Play_Flashlight_Open();
+                    flashlightOn = true;
                 }
-                else if (Input.GetMouseButtonDown(1) && AdvancedGameManager.Instance.controllerType == ControllerType.PcAndConsole)
+                else if (Input.GetKeyUp(KeyCode.F) && flashlightOn)
+                {
+                    FlashLightScript.Instance.FlashLight_Decision(false);
+                    AudioManager.Instance.Play_Flashlight_Close();
+                    GameCanvas.Instance.FlashLight_BlueEffect_Up();
+                    flashlightOn = false;
+                }
+
+
+                if (Input.GetMouseButtonDown(1) && AdvancedGameManager.Instance.controllerType == ControllerType.PcAndConsole)
                 {
                     GameCanvas.Instance.FlashLight_BlueEffect_Down();
                 }
-                else if (Input.GetMouseButtonUp(1) && AdvancedGameManager.Instance.controllerType == ControllerType.PcAndConsole)
+                if (Input.GetMouseButtonUp(1) && AdvancedGameManager.Instance.controllerType == ControllerType.PcAndConsole)
                 {
                     GameCanvas.Instance.FlashLight_BlueEffect_Up();
                 }

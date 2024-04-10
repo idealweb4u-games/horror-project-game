@@ -11,7 +11,7 @@ namespace AdvancedHorrorFPS
 
         void Start()
         {
-           // rigidbody = GetComponent<Rigidbody>();
+            rigidbody = GetComponent<Rigidbody>();
         }
         public void Interact()
         {
@@ -19,8 +19,8 @@ namespace AdvancedHorrorFPS
             {
                 isHolding = true;
                 HeroPlayerScript.Instance.isHoldingBox = true;
-                //rigidbody.isKinematic = true;
-                //rigidbody.useGravity = false;
+                rigidbody.isKinematic = true;
+                rigidbody.useGravity = false;
                 transform.parent = TouchpadFPSLook.Instance.transform;
                 //transform.localPosition = transform.localPosition + transform.up * liftAmount;
                 transform.localPosition = HeroPlayerScript.Instance.HoldingItemPoint.localPosition + offset; // Added
@@ -31,8 +31,8 @@ namespace AdvancedHorrorFPS
             {
                 isHolding = false;
                 HeroPlayerScript.Instance.isHoldingBox = false;
-                //rigidbody.isKinematic = false;
-                //rigidbody.useGravity = true;
+                rigidbody.isKinematic = false;
+                rigidbody.useGravity = true;
                 transform.parent = null;
                 AudioManager.Instance.Play_Item_Grab();
             }
