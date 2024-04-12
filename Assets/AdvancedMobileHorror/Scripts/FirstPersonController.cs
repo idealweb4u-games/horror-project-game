@@ -8,6 +8,10 @@ namespace AdvancedHorrorFPS
 	{
 		public float MoveSpeed = 4.0f;
 		public float SprintSpeed = 6.0f;
+		public float MaxStamina = 100f;
+		public float StaminaRegenRate = 12f;
+		public float StaminaCost = 25f;
+		public float StaminaRegenTime = 3f;
 		public float RotationSpeed = 1.0f;
 		public float SpeedChangeRate = 10.0f;
 		public float JumpHeight = 1.2f;
@@ -27,11 +31,15 @@ namespace AdvancedHorrorFPS
 		public GameObject Camera;
 		private bool canJump = true;
 		private float speedHolder;
+		private float currentStamina;
+		private bool onStaminaCooldown = false;
+		private bool isSprinting = false;
 
 		private void Start()
 		{
 			_controller = GetComponent<CharacterController>();
 			speedHolder = MoveSpeed;
+			currentStamina = MaxStamina;
 		}
 
 		private void Update()
@@ -61,13 +69,15 @@ namespace AdvancedHorrorFPS
 
 		public void ChangeSpeed(bool sprint)
 		{
-			if (sprint)
+			if (sprint )//&& )
 			{
 				MoveSpeed = SprintSpeed;
+				isSprinting = true;
 			}
 			else
 			{
 				MoveSpeed = speedHolder;
+				isSprinting = false;
 			}
 		}
 
@@ -104,10 +114,32 @@ namespace AdvancedHorrorFPS
 			if (AdvancedGameManager.Instance.controllerType == ControllerType.Mobile)
 			{
 				_input = new Vector2(SimpleJoystick.Instance.HorizontalValue, SimpleJoystick.Instance.VerticalValue);
+			/// START OF TESTING ///
+				if (isSprinting && currentStamina > 0 && !onStaminaCooldown) 
+				{
+					currentStamina -= StaminaCost * Time.deltaTime;
+				}
+				else
+				{
+					ChangeSpeed(false);
+				}
+			/// END OF TESTING ///
 			}
 			else
             {
 				_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+			/// START OF TESTING ///
+				if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && !onStaminaCooldown)
+				{
+					currentStamina -= StaminaCost * Time.deltaTime; // Reduce stamina
+					ChangeSpeed(true);
+				}
+				else
+				{
+					ChangeSpeed(false);
+				}
+			/// END OF TESTING ///
 			}
 			if (_input == Vector2.zero) targetSpeed = 0.0f;
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
@@ -130,6 +162,19 @@ namespace AdvancedHorrorFPS
 				AudioManager.Instance.Play_Player_Walk();
 			}
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
+		/// START OF TESTING ///
+			if (currentStamina < MaxStamina)
+            {
+                currentStamina += StaminaRegenRate * Time.deltaTime;
+                currentStamina = Mathf.Clamp(currentStamina, 0f, MaxStamina);
+            }
+			if (currentStamina <= 0 && !onStaminaCooldown)
+            {
+                onStaminaCooldown = true;
+                StartCoroutine(StaminaCooldown());
+            }
+		/// END OF TESTING ///
 		}
 
 		private void JumpAndGravity()
@@ -157,6 +202,12 @@ namespace AdvancedHorrorFPS
 			if (lfAngle < -360f) lfAngle += 360f;
 			if (lfAngle > 360f) lfAngle -= 360f;
 			return Mathf.Clamp(lfAngle, lfMin, lfMax);
+		}
+
+		private IEnumerator StaminaCooldown() // Make player wait some time if they reach 0 stamina
+		{
+			yield return new WaitForSeconds(StaminaRegenTime);
+			onStaminaCooldown = false;
 		}
 
 		private void OnDrawGizmosSelected()
