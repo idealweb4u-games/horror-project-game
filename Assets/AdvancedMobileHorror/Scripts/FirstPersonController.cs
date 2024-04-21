@@ -29,9 +29,10 @@ namespace AdvancedHorrorFPS
 		private float _terminalVelocity = 53.0f;
 		private CharacterController _controller;
 		public GameObject Camera;
+		public AudioSource NoStaminaAudio;
 		private bool canJump = true;
 		private float speedHolder;
-		private float currentStamina;
+		public float currentStamina; //private
 		private bool onStaminaCooldown = false;
 		private bool isSprinting = false;
 
@@ -206,6 +207,7 @@ namespace AdvancedHorrorFPS
 
 		private IEnumerator StaminaCooldown() // Make player wait some time if they reach 0 stamina
 		{
+			NoStaminaAudio.Play();
 			yield return new WaitForSeconds(StaminaRegenTime);
 			onStaminaCooldown = false;
 		}

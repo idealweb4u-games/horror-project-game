@@ -18,6 +18,7 @@ namespace AdvancedHorrorFPS
         public FlashLightScript FlashLight;
         public bool isHoldingBox = false;
         public Transform HoldingItemPoint; // Added
+        public bool isInvincible = false;
 
 
         void Start()
