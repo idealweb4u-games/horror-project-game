@@ -30,11 +30,14 @@ namespace AdvancedHorrorFPS
 		private CharacterController _controller;
 		public GameObject Camera;
 		public AudioSource NoStaminaAudio;
+		public GameObject BlurScreen;
 		private bool canJump = true;
 		private float speedHolder;
 		public float currentStamina; //private
 		private bool onStaminaCooldown = false;
 		private bool isSprinting = false;
+
+		//public Volume volume;
 
 		private void Start()
 		{
@@ -48,6 +51,7 @@ namespace AdvancedHorrorFPS
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			//CheckStamina(); // TEST: Check if causes lag
 		}
 
 		public void Jump()
@@ -208,8 +212,34 @@ namespace AdvancedHorrorFPS
 		private IEnumerator StaminaCooldown() // Make player wait some time if they reach 0 stamina
 		{
 			NoStaminaAudio.Play();
+			BlurScreen.SetActive(true);
 			yield return new WaitForSeconds(StaminaRegenTime);
 			onStaminaCooldown = false;
+			BlurScreen.SetActive(false);
+		}
+
+		public void CheckStamina()
+		{
+			if (currentStamina < Mathf.RoundToInt(MaxStamina * .25f) && currentStamina > Mathf.RoundToInt(MaxStamina * .15f)) // If stamina is less then 25% but greater then 15%
+			{
+				Debug.Log("Less than 25% stamina");
+				VisualEffects.Instance?.ChangeBlurEffect(1);
+			}
+			if (currentStamina < Mathf.RoundToInt(MaxStamina * .16f) && currentStamina > Mathf.RoundToInt(MaxStamina * .05f)) // If stamina is less then 15% but greater then 5%
+			{
+				Debug.Log("Less than 15% stamina");
+				VisualEffects.Instance?.ChangeBlurEffect(2);
+			}
+			if (currentStamina < Mathf.RoundToInt(MaxStamina * .06f) && currentStamina > Mathf.RoundToInt(MaxStamina * 0f)) // If stamina is less then 5% but greater then 0%
+			{
+				Debug.Log("Less than 5% stamina");
+				VisualEffects.Instance?.ChangeBlurEffect(3);
+			}
+			if (currentStamina <= 0f)
+			{
+				VisualEffects.Instance?.ChangeBlurEffect(4);
+				Debug.Log("Out of Stamina!");
+			}
 		}
 
 		private void OnDrawGizmosSelected()
