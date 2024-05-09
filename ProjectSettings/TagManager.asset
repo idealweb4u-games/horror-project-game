@@ -18,6 +18,7 @@ TagManager:
   - Vile
   - Collectable
   - DeadBody
+  - Book
   layers:
   - Default
   - TransparentFX
@@ -32,7 +33,7 @@ TagManager:
   - Demon
   - Priest
   - PP
-  - 
+  - Zombie
   - 
   - 
   - 
