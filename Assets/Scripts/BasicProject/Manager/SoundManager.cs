@@ -10,6 +10,13 @@ public class SoundManager : Singleton<SoundManager>
 	public AudioClip backgroundClip;
 	public AudioClip loadingClip;
 	#region PlayAudio
+
+	void Start() // TEST DELTE LATER
+	{
+		EffectsSource.volume = 0.5f;
+		MusicSource.volume = 0.5f;
+
+	}
 	public void PlayBackgroundMusic() {
 		SoundManager.Instance.AssignMusicClip(backgroundClip);
 		SoundManager.Instance.PlayMusic();
