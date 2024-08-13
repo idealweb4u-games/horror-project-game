@@ -6,26 +6,29 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/0Splash Screen.unity
+    path: Assets/Scenes/MainGame/0Splash Screen.unity
     guid: 444607222725941f6bf9d700584338d3
   - enabled: 1
-    path: Assets/Scenes/1Main Menu.unity
+    path: Assets/Scenes/MainGame/1Main Menu.unity
     guid: 3a53290f8151142d68c4670e83c3325c
   - enabled: 1
-    path: Assets/Scenes/simpleLevel Selection.unity
+    path: Assets/Scenes/MainGame/simpleLevel Selection.unity
     guid: e7005dfde3fa846188ddfa8e7c4c7dac
   - enabled: 0
     path: Assets/Scenes/aaa.unity
-    guid: 00a24192ff116bd499c3b672c43217c5
+    guid: cbee4cd8fc79709488c1e2aeab1a08e8
   - enabled: 0
-    path: Assets/Scenes/Level_3.unity
+    path: Assets/Scenes/AllLevels/Level_3.unity
     guid: b8d145930f95e2247abb0bad6e5a3a0e
   - enabled: 0
     path: Assets/Scenes/GamePlay.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/MainGame/Main Gameplay.unity
+    guid: ab137aff038e9774b9b4d52775a61e1d
+  - enabled: 0
     path: Assets/Scenes/GamePlayLevelsScene.unity
-    guid: b1a040584eadf244e8c7e80ed622f893
+    guid: c64f1f548d3371044afe91fc8000d4da
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
