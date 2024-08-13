@@ -33,11 +33,11 @@ public class LevelSelection : MonoBehaviour {
         Debug.Log("unlocklevels"+unlocklevels);
         for (int i = 0; i <= unlocklevels; i++) {
             levels[i].transform.GetComponent<LevelButtonSizeUp>().Lock.SetActive(false);
-            levels[i].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true);
+           // levels[i].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true);
         }
         for (int i = 0; i <= unlocklevels; i++) {
             levels[i].transform.GetComponent<LevelButtonSizeUp>().Lock.SetActive(false);
-            levels[i].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true);
+          //  levels[i].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true);
         }
     }
     public void levelNumber(int index) {
@@ -50,9 +50,11 @@ public class LevelSelection : MonoBehaviour {
         foreach (Transform level in levels) {
             level.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
             level.transform.GetComponent<LevelButtonSizeUp>().Details.SetActive(false);
+            level.transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(false); // TEST
         }
         levels[index].GetComponent<RectTransform>().localScale = new Vector2(1, 1.12f);
         levels[index].transform.GetComponent<LevelButtonSizeUp>().Details.SetActive(true);
+        levels[index].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true); // TEST
         levelNumber(index);
         SoundManager.Instance.PlayEffect();
     }
