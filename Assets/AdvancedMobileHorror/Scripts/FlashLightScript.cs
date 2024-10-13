@@ -31,7 +31,7 @@ namespace AdvancedHorrorFPS
         public void FlashLight_Decision(bool decision)
         {
             Light.enabled = decision;
-            GameCanvas.Instance.Indicator_BlueLight.SetActive(decision);
+            //GameCanvas.Instance.Indicator_BlueLight.SetActive(decision);
         }
 
         private void Start()
@@ -92,17 +92,17 @@ namespace AdvancedHorrorFPS
             }
         }
 
-        
+        /*
         public void PlayAudioBlueLight()
         {
-            //audioSource.Play();
+            audioSource.Play();
         }
 
         public void StopAudioBlueLight()
         {
-            //audioSource.Stop();
+            audioSource.Stop();
         }
-        
+        */
 
         void LateUpdate()
         {
