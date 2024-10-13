@@ -31,7 +31,7 @@ namespace AdvancedHorrorFPS
         public void FlashLight_Decision(bool decision)
         {
             Light.enabled = decision;
-            GameCanvas.Instance.Indicator_BlueLight.SetActive(decision);
+            //GameCanvas.Instance.Indicator_BlueLight.SetActive(decision);
         }
 
         private void Start()
@@ -73,25 +73,26 @@ namespace AdvancedHorrorFPS
                 {
                     FlashLightScript.Instance.FlashLight_Decision(false);
                     AudioManager.Instance.Play_Flashlight_Close();
-                    GameCanvas.Instance.FlashLight_BlueEffect_Up();
+                    //GameCanvas.Instance.FlashLight_BlueEffect_Up();
                     flashlightOn = false;
                 }
 
 
-                if (Input.GetMouseButtonDown(1) && AdvancedGameManager.Instance.controllerType == ControllerType.PcAndConsole)
-                {
-                    GameCanvas.Instance.FlashLight_BlueEffect_Down();
-                    //isOn = true;
-                }
-                if (Input.GetMouseButtonUp(1) && AdvancedGameManager.Instance.controllerType == ControllerType.PcAndConsole)
-                {
-                    GameCanvas.Instance.FlashLight_BlueEffect_Up();
-                    isOn = false;
-                    //StartCoroutine()
-                }
+                //if (Input.GetMouseButtonDown(1) && AdvancedGameManager.Instance.controllerType == ControllerType.PcAndConsole)
+                //{
+                //    GameCanvas.Instance.FlashLight_BlueEffect_Down();
+                //    //isOn = true;
+                //}
+                //if (Input.GetMouseButtonUp(1) && AdvancedGameManager.Instance.controllerType == ControllerType.PcAndConsole)
+                //{
+                //    GameCanvas.Instance.FlashLight_BlueEffect_Up();
+                //    isOn = false;
+                //    //StartCoroutine()
+                //}
             }
         }
 
+        /*
         public void PlayAudioBlueLight()
         {
             audioSource.Play();
@@ -101,6 +102,7 @@ namespace AdvancedHorrorFPS
         {
             audioSource.Stop();
         }
+        */
 
         void LateUpdate()
         {
@@ -111,7 +113,7 @@ namespace AdvancedHorrorFPS
             transform.position = positionTarget.position;
 
 
-
+            /*
             if (GameCanvas.Instance.isFlashBlueNow && BlueBattery > 0)
             {
                 BlueBattery = BlueBattery - Time.deltaTime * BatterySpendNumber * 2;
@@ -125,6 +127,7 @@ namespace AdvancedHorrorFPS
                     isOn = true;
                     StartCoroutine(FlashLightDamage());
                 }
+            */
                 /*
                 var directionLeft2 = Quaternion.AngleAxis(20, aimPoint.transform.right * -1) * Vector3.forward;
                 var directionLeft = Quaternion.AngleAxis(10, aimPoint.transform.right * -1) * Vector3.forward;
@@ -158,6 +161,7 @@ namespace AdvancedHorrorFPS
                 }
                 */
             }
+        /*
             else if (BlueBattery < 100)
             {
                 BlueBattery = BlueBattery + Time.deltaTime * BatterySpendNumber;
@@ -214,6 +218,7 @@ namespace AdvancedHorrorFPS
             }
 
         }
+        */
 
     }
 }
