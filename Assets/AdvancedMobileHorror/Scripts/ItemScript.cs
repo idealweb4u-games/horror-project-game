@@ -24,7 +24,7 @@ namespace AdvancedHorrorFPS
                 GetComponent<DoorScript>().TryToOpen();
             }
             else if (itemType == ItemType.Key)
-            {
+            { 
                 AudioManager.Instance.Play_Item_Grab();
                 GetComponent<KeyScript>().isGrabbed = true;
                 HeroPlayerScript.Instance.Grab_Key(GetComponent<KeyScript>().KeyID);
