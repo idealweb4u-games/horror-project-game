@@ -16,6 +16,7 @@ namespace AdvancedHorrorFPS
         public GameObject Button_Jump;
         public LayerMask layerMaskForInteract;
         public Color BlueLightcolor;
+        public Color WhiteLightColor;
         public GameObject Panel_GameUI;
         public GameObject Panel_Pause;
         public GameObject Panel_Health;
@@ -37,6 +38,8 @@ namespace AdvancedHorrorFPS
         private bool isGameOver = false;
         [HideInInspector]
         public bool isPaused = false;
+
+        private bool isFlashlightBtnPressed = false;
 
         private void Awake()
         {
@@ -261,7 +264,28 @@ namespace AdvancedHorrorFPS
         {
             FlashLightScript.Instance.FlashLight_Decision(true);
             Button_Flashlight.GetComponent<Image>().color = BlueLightcolor;
-            AudioManager.Instance.Play_Flashlight_Open();
+            AudioManager.Instance.Play_Flashlight_Open();            
+        }
+
+        public void FlashLight_TurnOff()
+        {
+            FlashLightScript.Instance.FlashLight_Decision(false);
+            Button_Flashlight.GetComponent<Image>().color = WhiteLightColor;
+            AudioManager.Instance.Play_Flashlight_Close();
+        }
+
+        public void FlashLight_Switch()
+        {
+            if (isFlashlightBtnPressed == true)
+            {
+                FlashLight_TurnOff();
+            }
+            else
+            {
+                FlashLight_Click();
+            }
+
+            isFlashlightBtnPressed = !isFlashlightBtnPressed;
         }
 
         /*
