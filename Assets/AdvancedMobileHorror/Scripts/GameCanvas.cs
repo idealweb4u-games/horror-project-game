@@ -264,6 +264,7 @@ namespace AdvancedHorrorFPS
             AudioManager.Instance.Play_Flashlight_Open();
         }
 
+        /*
         public void FlashLight_BlueEffect_Down()
         {
             if (FlashLightScript.Instance.Light.enabled && !isFlashBlueNow && FlashLightScript.Instance.BlueBattery > 0)
@@ -273,7 +274,9 @@ namespace AdvancedHorrorFPS
                 AudioManager.Instance.Play_Flashlight_Close();
             }
         }
+        */
 
+        /*
         public void FlashLight_BlueEffect_Up()
         {
             if (FlashLightScript.Instance.Light.enabled && isFlashBlueNow)
@@ -294,6 +297,7 @@ namespace AdvancedHorrorFPS
                 FlashLightScript.Instance.Light.intensity = 3;
             }
         }
+        */
 
         public void Drop_GrabbedLadder(Transform LadderPutPoint)
         {
