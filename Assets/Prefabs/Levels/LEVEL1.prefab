@@ -3445,6 +3445,7 @@ MonoBehaviour:
   - {fileID: 8755768355802046823}
   dollPositions: []
   blinkEffectToAdd: {fileID: 7622963406445169431}
+  bottle: {fileID: 3086722345332094939}
 --- !u!114 &7622963406445169431
 MonoBehaviour:
   m_ObjectHideFlags: 0

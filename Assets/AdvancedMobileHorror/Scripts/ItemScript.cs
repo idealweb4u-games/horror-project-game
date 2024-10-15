@@ -10,6 +10,7 @@ namespace AdvancedHorrorFPS
         public bool isOpened = false;
         public bool playerInRange = false;
 
+        [HideInInspector] public bool isBottleGrabbed = false;
         public void Interact()
         {
             if (itemType == ItemType.Flashlight)
@@ -41,6 +42,7 @@ namespace AdvancedHorrorFPS
             else if(itemType == ItemType.Box)
             {
                 GetComponent<BoxScript>().Interact();
+                            
             }
             else if (itemType == ItemType.LadderPuttingArea)
             {
