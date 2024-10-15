@@ -111,6 +111,10 @@ namespace AdvancedHorrorFPS
                 }
                 Lock.SetActive(true);
             }
+            else if(itemType == ItemType.Table)
+            {
+                GetComponent<TableManager>().PlaceBottle();
+            }
         }
 
         
@@ -180,6 +184,7 @@ namespace AdvancedHorrorFPS
         None,
         Drawer,
         Box,
-        MedKit
+        MedKit,
+        Table
     }
 }

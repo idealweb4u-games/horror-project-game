@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class TableManager : MonoBehaviour
 {
-    [SerializeField] private GameObject tableToInteract;
-    //Position, which depends on which table is intera
-    [SerializeField] private Transform[] bottlePositions;
-    [SerializeField] private BlinkEffect blinkEffectToAdd;
+    [SerializeField] private GameObject bottleToPlace;
+    [HideInInspector] public bool isBottlePlaced = false;
+
+
+    public void PlaceBottle()
+    {
+        isBottlePlaced = true;
+        bottleToPlace.gameObject.SetActive(true);
+    }
     
 }

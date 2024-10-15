@@ -15,14 +15,7 @@ namespace AdvancedHorrorFPS
         void Awake()
         {
             
-            if (gameObject.CompareTag("Table"))
-            {
-                ren = GetComponent<Renderer>();
-            }
-            else
-            {
-                ren = GetComponentInChildren<Renderer>();
-            }
+            ren = GetComponentInChildren<Renderer>();
             a = ren.material;
             a.EnableKeyword("_EMISSION");
         }
