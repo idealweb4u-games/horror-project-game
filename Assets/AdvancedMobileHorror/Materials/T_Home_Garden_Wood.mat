@@ -126,7 +126,6 @@ Material:
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.38235295, g: 0.37391868, b: 0.37391868, a: 1}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!114 &1329660742753982055
 MonoBehaviour:
   m_ObjectHideFlags: 11

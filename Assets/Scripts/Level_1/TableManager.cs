@@ -18,14 +18,23 @@ public class TableManager : MonoBehaviour
         AssignTableToInteract();
     }
 
+    //Make the correct Table blink 
     private void AssignTableToInteract()
     {
         tableIndex = Random.Range(0, tablesInteractable.Length);
         tableToInteract = tablesInteractable[tableIndex];
-        if(tableToInteract.AddComponent<BlinkEffect>() == null)
+
+        BlinkEffect blinkEffect = tableToInteract.GetComponent<BlinkEffect>();
+
+        if (blinkEffect == null)
         {
-            tableToInteract.AddComponent<BlinkEffect>();
+            blinkEffect = tableToInteract.AddComponent<BlinkEffect>();
         }
-        
+
+        blinkEffect.startColor = new Color(55f / 255f, 55f / 255f, 55f / 255f); 
+        blinkEffect.speed = 1.5f;
+
+        //Debug.Log($"Assigned BlinkEffect to table index: {tableIndex}");
     }
+
 }
