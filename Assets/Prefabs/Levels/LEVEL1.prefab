@@ -1060,7 +1060,6 @@ MonoBehaviour:
   Lock: {fileID: 0}
   isOpened: 0
   playerInRange: 0
-  isBottleGrabbed: 0
 --- !u!1 &1377202248494887654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,7 +1937,6 @@ MonoBehaviour:
   Lock: {fileID: 0}
   isOpened: 0
   playerInRange: 0
-  isBottleGrabbed: 0
 --- !u!114 &2269609536905514052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2396,7 +2394,6 @@ MonoBehaviour:
   Lock: {fileID: 0}
   isOpened: 0
   playerInRange: 0
-  isBottleGrabbed: 0
 --- !u!65 &4704971612970437320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2794,9 +2791,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3516446021987066796}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.7071072, y: -0.000000053385047, z: 0.70710635, w: 0.000000053385108}
+  m_LocalPosition: {x: 12.851401, y: 1.7062098, z: 33.5536}
+  m_LocalScale: {x: -1, y: -1, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6727693547111334979}
@@ -2804,7 +2801,7 @@ Transform:
   - {fileID: 6899316004046568031}
   - {fileID: 3347565629916851593}
   - {fileID: 8066506785743553289}
-  m_Father: {fileID: 5037883856255830431}
+  m_Father: {fileID: 3966976478282849427}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3722776485668885711
 GameObject:
@@ -4215,7 +4212,6 @@ MonoBehaviour:
   Lock: {fileID: 0}
   isOpened: 0
   playerInRange: 0
-  isBottleGrabbed: 0
 --- !u!114 &7926349191501414310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4450,6 +4446,7 @@ Transform:
   - {fileID: 2927503409667340111}
   - {fileID: 7549214351009819258}
   - {fileID: 4262944680956970484}
+  - {fileID: 3781447261955611104}
   - {fileID: 1100437008353003409}
   - {fileID: 8632172103005028867}
   - {fileID: 7200859373722286009}
@@ -4841,7 +4838,6 @@ MonoBehaviour:
   Lock: {fileID: 0}
   isOpened: 0
   playerInRange: 0
-  isBottleGrabbed: 0
 --- !u!114 &373799482640245752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4947,7 +4943,6 @@ MonoBehaviour:
   Lock: {fileID: 0}
   isOpened: 0
   playerInRange: 0
-  isBottleGrabbed: 0
 --- !u!114 &2282559007978548054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5055,7 +5050,6 @@ MonoBehaviour:
   Lock: {fileID: 0}
   isOpened: 0
   playerInRange: 0
-  isBottleGrabbed: 0
 --- !u!114 &7075643629182436651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5271,7 +5265,6 @@ MonoBehaviour:
   Lock: {fileID: 0}
   isOpened: 0
   playerInRange: 0
-  isBottleGrabbed: 0
 --- !u!114 &1929012822619947062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5363,7 +5356,6 @@ Transform:
   - {fileID: 2165694742920745691}
   - {fileID: 6201386516794931505}
   - {fileID: 8218959220974381882}
-  - {fileID: 3781447261955611104}
   - {fileID: 11581523812901405}
   m_Father: {fileID: 5803148735920860524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

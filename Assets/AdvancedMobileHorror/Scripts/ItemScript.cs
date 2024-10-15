@@ -10,7 +10,7 @@ namespace AdvancedHorrorFPS
         public bool isOpened = false;
         public bool playerInRange = false;
 
-        [HideInInspector] public bool isBottleGrabbed = false;
+        [HideInInspector] public static bool isBottleGrabbed = false;
         public void Interact()
         {
             if (itemType == ItemType.Flashlight)
@@ -42,7 +42,8 @@ namespace AdvancedHorrorFPS
             else if(itemType == ItemType.Box)
             {
                 GetComponent<BoxScript>().Interact();
-                            
+                isBottleGrabbed = true;
+                Debug.Log(isBottleGrabbed);
             }
             else if (itemType == ItemType.LadderPuttingArea)
             {
@@ -113,7 +114,16 @@ namespace AdvancedHorrorFPS
             }
             else if(itemType == ItemType.Table)
             {
-                GetComponent<TableManager>().PlaceBottle();
+                if(isBottleGrabbed)
+                {
+                    GetComponent<TableManager>().PlaceBottle();
+                    Debug.Log(isBottleGrabbed);
+                }
+                else
+                {
+                    Debug.Log(isBottleGrabbed);
+                }
+                
             }
         }
 
