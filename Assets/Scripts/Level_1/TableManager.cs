@@ -13,6 +13,11 @@ public class TableManager : MonoBehaviour
     private int tableIndex;
     private GameObject tableToInteract;
 
+    private void Start()
+    {
+        AssignTableToInteract();
+    }
+
     private void AssignTableToInteract()
     {
         tableIndex = Random.Range(0, tablesInteractable.Length);
