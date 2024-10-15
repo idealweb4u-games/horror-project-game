@@ -1,18 +1,26 @@
+using AdvancedHorrorFPS;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TableManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject[] tablesInteractable;
+    //Position, which depends on which table is interactable now
+    [SerializeField] private Transform[] dollPositions;
+    [SerializeField] private BlinkEffect blinkEffectToAdd;
 
-    // Update is called once per frame
-    void Update()
+    private int tableIndex;
+    private GameObject tableToInteract;
+
+    private void AssignTableToInteract()
     {
+        tableIndex = Random.Range(0, tablesInteractable.Length);
+        tableToInteract = tablesInteractable[tableIndex];
+        if(tableToInteract.AddComponent<BlinkEffect>() == null)
+        {
+            tableToInteract.AddComponent<BlinkEffect>();
+        }
         
     }
 }
