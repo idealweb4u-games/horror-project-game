@@ -42,7 +42,7 @@ namespace AdvancedHorrorFPS
             else if(itemType == ItemType.Box)
             {
                 GetComponent<BoxScript>().Interact();
-                isBottleGrabbed = true;
+                isBottleGrabbed = true; // used for Level 1
                 Debug.Log(isBottleGrabbed);
             }
             else if (itemType == ItemType.LadderPuttingArea)
