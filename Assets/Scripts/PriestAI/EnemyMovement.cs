@@ -21,7 +21,7 @@ namespace AdvancedHorrorFPS
 
         [SerializeField] private int waypointIndex = 0;
         public Vector3[] Waypoints = new Vector3[6];
-      //  public AudioClip[] enemySound=new AudioClip[2];
+        //  public AudioClip[] enemySound=new AudioClip[2];
         private float LastAttackTime = 0;
         public bool attacked = false;
 
@@ -36,14 +36,14 @@ namespace AdvancedHorrorFPS
             }
             set
             {
-                OnStateChange?.Invoke(_state, value); 
+                OnStateChange?.Invoke(_state, value);
                 _state = value;
             }
         }
 
         public delegate void StateChangeEvent(EnemyState oldState, EnemyState newState);
         public StateChangeEvent OnStateChange;
-        public float IdleLocationRadius = 5f; 
+        public float IdleLocationRadius = 5f;
         public float sprintSpeed = 4f;
         public float idleSpeed = 2;
         private Coroutine FollowingCoroutine;
@@ -55,9 +55,9 @@ namespace AdvancedHorrorFPS
             OnStateChange += StateChangeHandler;
             DetectionCheck.GainSight += GainSightHandler;
             DetectionCheck.LoseSight += LoseSightHandler;
-           // audioSource=GetComponent<AudioSource>();
-           // audioSource.clip = enemySound[0];
-           // audioSource.Play();
+            // audioSource=GetComponent<AudioSource>();
+            // audioSource.clip = enemySound[0];
+            // audioSource.Play();
         }
 
 
@@ -91,9 +91,13 @@ namespace AdvancedHorrorFPS
             Triangulation = Triangulation;
             Spawn();
         }
-        private void Update()
+
+        private void FixedUpdate()
         {
-            //ChangeEnemyPositionManual();
+            if (TableManager.Instance.isBottlePlaced)
+            {
+                State = EnemyState.Die;
+            }
         }
 
         private void StateChangeHandler(EnemyState oldState, EnemyState newState)
@@ -112,14 +116,18 @@ namespace AdvancedHorrorFPS
                 switch (newState)
                 {
                     case EnemyState.Idle:
-                          FollowingCoroutine = StartCoroutine(IdleMotion());
+                        FollowingCoroutine = StartCoroutine(IdleMotion());
                         break;
                     case EnemyState.Patrol:
-                         FollowingCoroutine = StartCoroutine(PatrolMotion());
+                        FollowingCoroutine = StartCoroutine(PatrolMotion());
                         break;
                     case EnemyState.Chase:
-                         FollowingCoroutine = StartCoroutine(FollowTarget());
+                        FollowingCoroutine = StartCoroutine(FollowTarget());
                         break;
+                    case EnemyState.Die:
+                        TurnToBones();
+                        break;
+
                 }
             }
         }
@@ -148,29 +156,29 @@ namespace AdvancedHorrorFPS
             }
         }
 
-            private IEnumerator PatrolMotion() 
+        private IEnumerator PatrolMotion()
+        {
+            WaitForSeconds wait = new WaitForSeconds(UpdateRate);
+
+            yield return new WaitUntil(() => Agent.enabled && Agent.isOnNavMesh); // Wait till enemy is on the navmesh
+            Agent.SetDestination(Waypoints[waypointIndex]);
+
+            while (true)
             {
-                WaitForSeconds wait = new WaitForSeconds(UpdateRate);
-
-                yield return new WaitUntil(() => Agent.enabled && Agent.isOnNavMesh); // Wait till enemy is on the navmesh
-                Agent.SetDestination(Waypoints[waypointIndex]);
-
-                while (true)
+                if (Agent.isOnNavMesh && Agent.enabled && Agent.remainingDistance <= Agent.stoppingDistance)
                 {
-                   if (Agent.isOnNavMesh && Agent.enabled && Agent.remainingDistance <= Agent.stoppingDistance)
-                    {
-                        waypointIndex++; 
-                    } 
-
-                    if (waypointIndex >= Waypoints.Length)
-                    {
-                        waypointIndex = 0; 
-                    }
-
-                    Agent.SetDestination(Waypoints[waypointIndex]);
-                    yield return wait;
+                    waypointIndex++;
                 }
+
+                if (waypointIndex >= Waypoints.Length)
+                {
+                    waypointIndex = 0;
+                }
+
+                Agent.SetDestination(Waypoints[waypointIndex]);
+                yield return wait;
             }
+        }
 
         private IEnumerator FollowTarget()
         {
@@ -180,7 +188,6 @@ namespace AdvancedHorrorFPS
             {
                 if (Agent.enabled)
                 {
-
                     if (Agent.isOnNavMesh)
                     {
                         Agent.SetDestination(Player.position);
@@ -190,11 +197,10 @@ namespace AdvancedHorrorFPS
                         Debug.LogError("Agent is not on a valid NavMesh!");
                         ChangeEnemyPositionManual();
                     }
-
                     if ((Player.transform.position - AttackZone.transform.position).sqrMagnitude < 1.65f)
                     {
                         Attack();
-                      //  yield return false;
+                        //  yield return false;
                     }
                 }
                 yield return wait;
@@ -203,35 +209,39 @@ namespace AdvancedHorrorFPS
 
         private void ChangeEnemyPositionManual()
         {
-            if(Player!= null && Vector3.Distance(transform.position, Player.position) < 50)
+            if (Player != null && Vector3.Distance(transform.position, Player.position) < 50)
             {
                 transform.LookAt(Player.position);
-                transform.position = Vector3.Lerp(transform.position, Player.position, Time.deltaTime * idleSpeed );
+                transform.position = Vector3.Lerp(transform.position, Player.position, Time.deltaTime * idleSpeed);
             }
         }
 
-    public void StartTracking(Transform newTarget)
-    {
-        Player = newTarget;
-        State = EnemyState.Track;
-        Agent.speed = sprintSpeed;
-        StartCoroutine(TrackTarget());
-    }
-
-    private IEnumerator TrackTarget()
-    {
-        WaitForSeconds Wait = new WaitForSeconds(UpdateRate);
-        while(true)
+        public void StartTracking(Transform newTarget)
         {
-            if (Agent.enabled)
-            {
-                Agent.SetDestination(Player.transform.position);
-            }
-            yield return Wait;
+            Player = newTarget;
+            State = EnemyState.Track;
+            Agent.speed = sprintSpeed;
+            StartCoroutine(TrackTarget());
         }
-    }
 
+        private IEnumerator TrackTarget()
+        {
+            WaitForSeconds Wait = new WaitForSeconds(UpdateRate);
+            while (true)
+            {
+                if (Agent.enabled)
+                {
+                    Agent.SetDestination(Player.transform.position);
+                }
+                yield return Wait;
+            }
+        }
 
+        //TODO set the animation(or just transform) enemy to the bunch of bones
+        private void TurnToBones()
+        {
+            Debug.Log("Enemy turns into bones");
+        }
 
         private void Attack() // Attack script from Demon
         {

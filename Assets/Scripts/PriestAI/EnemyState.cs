@@ -8,5 +8,6 @@ public enum EnemyState
     Idle, // Wander around
     Patrol, // Patrol area
     Chase, // Chase the player
-    Track // Follow player no matter what
+    Track, // Follow player no matter what
+    Die //Stop doing anything after the task is completed
 }
