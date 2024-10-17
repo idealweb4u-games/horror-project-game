@@ -86,6 +86,10 @@ public class RandomObjectsPosManager : MonoBehaviour
             ChangeDollPosition();
             Debug.Log("Doll changes position from coroutine");
             yield return new WaitForSeconds(timeBeforeChange);
+            if (!dollPrefab.activeSelf)
+            {
+                yield break;
+            }
         }
     }
 }

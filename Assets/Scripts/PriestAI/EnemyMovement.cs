@@ -197,7 +197,7 @@ namespace AdvancedHorrorFPS
                     }
                     else
                     {
-                        Debug.LogError("Agent is not on a valid NavMesh!");
+                        //Debug.LogError("Agent is not on a valid NavMesh!");
                         ChangeEnemyPositionManual();
                     }
                     if ((Player.transform.position - AttackZone.transform.position).sqrMagnitude < 1.65f)

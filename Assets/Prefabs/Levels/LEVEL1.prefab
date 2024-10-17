@@ -1829,7 +1829,7 @@ MonoBehaviour:
   lineOfSightLayer:
     serializedVersion: 2
     m_Bits: 257
-  fieldOfView: 5
+  fieldOfView: 35
   threshold: 1
 --- !u!1 &1957449178128145992
 GameObject:
@@ -7004,7 +7004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a05d819217e69d43975f272aa689d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  note: {fileID: 0}
+  enemyMovementScript: {fileID: 9170083629713923716}
+  note: {fileID: 7098116038871904664}
 --- !u!136 &469307595642354765
 CapsuleCollider:
   m_ObjectHideFlags: 0
