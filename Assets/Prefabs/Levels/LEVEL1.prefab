@@ -1734,8 +1734,8 @@ MonoBehaviour:
   lineOfSightLayer:
     serializedVersion: 2
     m_Bits: 257
-  fieldOfView: 200
-  threshold: 8
+  fieldOfView: 5
+  threshold: 1
 --- !u!1 &1957449178128145992
 GameObject:
   m_ObjectHideFlags: 0

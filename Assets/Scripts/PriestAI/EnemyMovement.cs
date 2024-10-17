@@ -209,11 +209,8 @@ namespace AdvancedHorrorFPS
 
         private void ChangeEnemyPositionManual()
         {
-            if (Player != null && Vector3.Distance(transform.position, Player.position) < 50)
-            {
-                transform.LookAt(Player.position);
-                transform.position = Vector3.Lerp(transform.position, Player.position, Time.deltaTime * idleSpeed);
-            }
+            transform.LookAt(Player.position);
+            transform.position = Vector3.Lerp(transform.position, Player.position, Time.deltaTime * idleSpeed * 1.5f);
         }
 
         public void StartTracking(Transform newTarget)
@@ -240,6 +237,7 @@ namespace AdvancedHorrorFPS
         //TODO set the animation(or just transform) enemy to the bunch of bones
         private void TurnToBones()
         {
+            transform.position = Player.transform.position + new Vector3(2.0f, 0.0f, 0.0f); //teleport enemy to the player 
             Debug.Log("Enemy turns into bones");
         }
 

@@ -16,7 +16,7 @@ namespace AdvancedHorrorFPS
         public LoseSightEvent LoseSight;
 
         public float fieldOfView = 90f;
-        public float threshold = 2f;
+        public float threshold = 1f;
 
         private Coroutine CheckLineOfSightCoroutine;
 
