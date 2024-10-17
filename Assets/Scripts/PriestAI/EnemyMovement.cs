@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -90,6 +91,10 @@ namespace AdvancedHorrorFPS
             Triangulation = Triangulation;
             Spawn();
         }
+        private void Update()
+        {
+            //ChangeEnemyPositionManual();
+        }
 
         private void StateChangeHandler(EnemyState oldState, EnemyState newState)
         {
@@ -175,7 +180,16 @@ namespace AdvancedHorrorFPS
             {
                 if (Agent.enabled)
                 {
-                    Agent.SetDestination(Player.transform.position);
+
+                    if (Agent.isOnNavMesh)
+                    {
+                        Agent.SetDestination(Player.position);
+                    }
+                    else
+                    {
+                        Debug.LogError("Agent is not on a valid NavMesh!");
+                        ChangeEnemyPositionManual();
+                    }
 
                     if ((Player.transform.position - AttackZone.transform.position).sqrMagnitude < 1.65f)
                     {
@@ -184,6 +198,15 @@ namespace AdvancedHorrorFPS
                     }
                 }
                 yield return wait;
+            }
+        }
+
+        private void ChangeEnemyPositionManual()
+        {
+            if(Player!= null && Vector3.Distance(transform.position, Player.position) < 50)
+            {
+                transform.LookAt(Player.position);
+                transform.position = Vector3.Lerp(transform.position, Player.position, Time.deltaTime * idleSpeed );
             }
         }
 
