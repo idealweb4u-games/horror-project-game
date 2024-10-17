@@ -28,6 +28,9 @@ namespace AdvancedHorrorFPS
         public EnemyState DefaultState;
         private EnemyState _state;
         private AudioSource audioSource;
+
+        [SerializeField] private Transform finalDollPosition;
+
         public EnemyState State
         {
             get
@@ -237,7 +240,8 @@ namespace AdvancedHorrorFPS
         //TODO set the animation(or just transform) enemy to the bunch of bones
         private void TurnToBones()
         {
-            transform.position = Player.transform.position + new Vector3(2.0f, 0.0f, 0.0f); //teleport enemy to the player 
+            transform.position = finalDollPosition.position; //teleport enemy to the player 
+            transform.LookAt(Player.transform.position);
             Debug.Log("Enemy turns into bones");
         }
 

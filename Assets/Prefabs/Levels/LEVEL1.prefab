@@ -3071,6 +3071,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3772551201666254384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9053221419465172060}
+  m_Layer: 0
+  m_Name: FinalDollPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9053221419465172060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3772551201666254384}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -36.29, y: -0.25, z: -8.545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 11581523812901405}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3885139730731852532
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,6 +4175,7 @@ Transform:
   m_Children:
   - {fileID: 2842683570858864934}
   - {fileID: 2055340133525324297}
+  - {fileID: 9053221419465172060}
   m_Father: {fileID: 5037883856255830431}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5218578655543521637
@@ -7487,7 +7519,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e82e3b56033e8f443af6b9b19f2eb55d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.6
+      value: 17.522
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e82e3b56033e8f443af6b9b19f2eb55d,
         type: 3}
@@ -8592,6 +8624,7 @@ MonoBehaviour:
   - {x: 412, y: 17, z: 477}
   attacked: 0
   DefaultState: 2
+  finalDollPosition: {fileID: 9053221419465172060}
   IdleLocationRadius: 1
   sprintSpeed: 2.5
   idleSpeed: 1.03
