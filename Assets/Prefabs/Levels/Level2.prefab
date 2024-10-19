@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.046666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 1207b41ac007d8c4eb37f5aaf226de1b, type: 2}
   m_BuildHeightMesh: 0
@@ -2700,7 +2700,6 @@ GameObject:
   - component: {fileID: 6265808141417553667}
   - component: {fileID: 2724303117549044520}
   - component: {fileID: 3205693535385444930}
-  - component: {fileID: 7182779354112921050}
   - component: {fileID: 8508598836032997757}
   m_Layer: 0
   m_Name: FollowersGrave
@@ -2798,21 +2797,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5894817, y: 0.664148, z: 2.6136012}
   m_Center: {x: 0.045278367, y: 0.3320742, z: -0.19029474}
---- !u!114 &7182779354112921050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615721908665717449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b1acebadb2dbb4e81427a374cc604b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: {fileID: 2906281017127136626}
-  collectable: {fileID: 8854918658609963239}
-  ExtraItems: {fileID: 0}
 --- !u!54 &8508598836032997757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5567,6 +5551,7 @@ MonoBehaviour:
   - {x: 504, y: 16.8207, z: 406}
   attacked: 0
   DefaultState: 2
+  finalDollPosition: {fileID: 0}
   IdleLocationRadius: 9
   sprintSpeed: 4
   idleSpeed: 2
