@@ -6,8 +6,6 @@ namespace AdvancedHorrorFPS
     public class BoxScript : MonoBehaviour
     {
         public bool isHolding = false;
-        [SerializeField]private bool isLevelTwo = false;
-        [SerializeField] private Transform pointToFollow;
         //public float liftAmount = 0.2f;
         Rigidbody rigidbody;
         public Vector3 offset; // TEST

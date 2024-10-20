@@ -10,7 +10,10 @@ namespace AdvancedHorrorFPS
         public bool isOpened = false;
         public bool playerInRange = false;
 
+        
+
         [HideInInspector] public static bool isBottleGrabbed = false;
+        [HideInInspector] public static bool isEnemyPlaced = false;
         public void Interact()
         {
             if (itemType == ItemType.Flashlight)
@@ -41,7 +44,14 @@ namespace AdvancedHorrorFPS
             }
             else if(itemType == ItemType.Box)
             {
-                GetComponent<BoxScript>().Interact();
+                if (GetComponent<EnemyManager>()!= null && GetComponent<EnemyManager>().enabled)
+                {
+                    GetComponent<EnemyManager>().CarryEnemy();
+                }
+                else
+                {
+                    GetComponent<BoxScript>().Interact();
+                }
                 isBottleGrabbed = true; // used for Level 1
             }
             else if (itemType == ItemType.LadderPuttingArea)
@@ -124,6 +134,11 @@ namespace AdvancedHorrorFPS
                 }
                 
             }
+            else if(itemType == ItemType.Grave)
+            {
+                GetComponent<EnemyManager>().PutEnemyInGrave();
+                isEnemyPlaced = true;
+            }
         }
 
         
@@ -157,6 +172,15 @@ namespace AdvancedHorrorFPS
                     Interact();
                 }
             }
+            if (isEnemyPlaced && GetComponent<EnemyManager>() != null && GetComponent<EnemyManager>().enabled)
+            {
+                GetComponent<EnemyManager>().enemy.SetActive(true);
+            }
+            else if(GetComponent<EnemyManager>() != null && GetComponent<EnemyManager>().enabled)
+            {
+                GetComponent<EnemyManager>().enemy.SetActive(false);
+            }
+
         }
 
         private void OnTriggerEnter(Collider other)
@@ -194,6 +218,7 @@ namespace AdvancedHorrorFPS
         Drawer,
         Box,
         MedKit,
-        Table
+        Table,
+        Grave
     }
 }
