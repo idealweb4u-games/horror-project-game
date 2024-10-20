@@ -2,9 +2,12 @@ using UnityEngine;
 
 namespace AdvancedHorrorFPS
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class BoxScript : MonoBehaviour
     {
         public bool isHolding = false;
+        [SerializeField]private bool isLevelTwo = false;
+        [SerializeField] private Transform pointToFollow;
         //public float liftAmount = 0.2f;
         Rigidbody rigidbody;
         public Vector3 offset; // TEST
@@ -24,7 +27,7 @@ namespace AdvancedHorrorFPS
                 transform.parent = TouchpadFPSLook.Instance.transform;
                 //transform.localPosition = transform.localPosition + transform.up * liftAmount;
                 transform.localPosition = HeroPlayerScript.Instance.HoldingItemPoint.localPosition + offset; // Added
-               // transform.position = HeroPlayerScript.Instance.HoldingItemPoint.localPosition; // Added
+                //transform.position = HeroPlayerScript.Instance.HoldingItemPoint.transform.position; // Added
                 AudioManager.Instance.Play_Item_Grab();
             }
             else if(isHolding && HeroPlayerScript.Instance.isHoldingBox)

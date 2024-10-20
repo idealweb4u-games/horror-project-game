@@ -97,9 +97,12 @@ namespace AdvancedHorrorFPS
 
         private void FixedUpdate()
         {
-            if (TableManager.Instance.isBottlePlaced)
+            if(TableManager.Instance != null)
             {
-                State = EnemyState.Die;
+                if (TableManager.Instance.isBottlePlaced)
+                {
+                    State = EnemyState.Die;
+                }
             }
         }
 
