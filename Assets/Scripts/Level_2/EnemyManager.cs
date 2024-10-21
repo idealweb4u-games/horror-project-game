@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public GameObject enemy; //HACK later should be changed into cut scene or animation or anything else
+    public GameObject enemy; 
     [SerializeField] private GameObject enemyBodyToPut;
     [SerializeField] private GameObject enemnyBodyToDisable;
     [SerializeField] private GameObject enemyBodyToCarry;
+    [SerializeField] private GameObject hint2;
     
     //for box interactable
     public void CarryEnemy()
     {
         enemnyBodyToDisable.SetActive(false);
         enemyBodyToCarry.SetActive(true);
+        hint2.SetActive(true);
     } 
 
     //for grave interactable

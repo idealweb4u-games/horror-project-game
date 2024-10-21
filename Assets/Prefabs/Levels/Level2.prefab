@@ -3230,6 +3230,7 @@ MonoBehaviour:
   enemyBodyToPut: {fileID: 3718575554209257912}
   enemnyBodyToDisable: {fileID: 9096125836314103710}
   enemyBodyToCarry: {fileID: 0}
+  hint2: {fileID: 0}
 --- !u!114 &6585676317022304327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6082,8 +6083,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2906281017127136626}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 504.4, y: 16.820713, z: 406.78}
+  m_LocalRotation: {x: -0, y: -0.9635428, z: -0, w: 0.2675543}
+  m_LocalPosition: {x: 486.65, y: 16.626, z: 419.06}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6092,7 +6093,7 @@ Transform:
   - {fileID: 8404862304056328007}
   - {fileID: 3847502009940615261}
   m_Father: {fileID: 6409925932226643624}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -148.962, z: 0}
 --- !u!95 &7544373447057974964
 Animator:
   serializedVersion: 7
@@ -11309,8 +11310,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5325344643478524114}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08681462, y: 0.059317105, z: -0.026570555, w: 0.99410194}
-  m_LocalPosition: {x: -0.00954183, y: 1.2256508, z: -0.094319664}
+  m_LocalRotation: {x: 0.086814635, y: 0.059317105, z: -0.02657056, w: 0.994102}
+  m_LocalPosition: {x: -0.009532964, y: 1.2256508, z: -0.09432753}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20696,6 +20697,7 @@ MonoBehaviour:
   enemyBodyToPut: {fileID: 3718575554209257912}
   enemnyBodyToDisable: {fileID: 9096125836314103710}
   enemyBodyToCarry: {fileID: 0}
+  hint2: {fileID: 3217817564449249153}
 --- !u!114 &1887845279213590445
 MonoBehaviour:
   m_ObjectHideFlags: 0
