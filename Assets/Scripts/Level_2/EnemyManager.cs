@@ -9,14 +9,12 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private GameObject enemyBodyToPut;
     [SerializeField] private GameObject enemnyBodyToDisable;
     [SerializeField] private GameObject enemyBodyToCarry;
-    private bool isEnemyCarried = false;
-
+    
     //for box interactable
     public void CarryEnemy()
     {
         enemnyBodyToDisable.SetActive(false);
         enemyBodyToCarry.SetActive(true);
-        isEnemyCarried = true;
     } 
 
     //for grave interactable

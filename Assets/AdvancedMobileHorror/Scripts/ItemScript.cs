@@ -14,6 +14,7 @@ namespace AdvancedHorrorFPS
 
         [HideInInspector] public static bool isBottleGrabbed = false;
         [HideInInspector] public static bool isEnemyPlaced = false;
+        [HideInInspector] public static bool isEnemyCarried = false;
         public void Interact()
         {
             if (itemType == ItemType.Flashlight)
@@ -47,12 +48,14 @@ namespace AdvancedHorrorFPS
                 if (GetComponent<EnemyManager>()!= null && GetComponent<EnemyManager>().enabled)
                 {
                     GetComponent<EnemyManager>().CarryEnemy();
+                   
                 }
                 else
                 {
                     GetComponent<BoxScript>().Interact();
                 }
                 isBottleGrabbed = true; // used for Level 1
+                isEnemyCarried = true; //used for Level 2
             }
             else if (itemType == ItemType.LadderPuttingArea)
             {
@@ -136,8 +139,11 @@ namespace AdvancedHorrorFPS
             }
             else if(itemType == ItemType.Grave)
             {
-                GetComponent<EnemyManager>().PutEnemyInGrave();
-                isEnemyPlaced = true;
+                if (isEnemyCarried)
+                {
+                    GetComponent<EnemyManager>().PutEnemyInGrave();
+                    isEnemyPlaced = true;
+                }
             }
         }
 
