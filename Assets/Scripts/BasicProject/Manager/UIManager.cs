@@ -82,9 +82,7 @@ public class UIManager : Singleton<UIManager> {
             LevelManager.Instance.currentlevel.GetComponent<Level_Items>().intermediateCutSceneObjects.SetActive(false);
             if (FindObjectOfType<CutScenePriestManager>().wasPlayed)
             {
-                GameplayManager.Instance.Player.transform.position = FindObjectOfType<CutScenePriestManager>().intermediateCutScenePosition.transform.position;
-                Destroy(FindObjectOfType<CutScenePriestManager>().enemyInGrave);
-                AudioManager.Instance.Play_PriestShout();
+                FindObjectOfType<CutScenePriestManager>().StopCutScene();
             } 
         }
         LevelManager.Instance.currentlevel.GetComponent<Level_Items>().Enemy.SetActive(true);

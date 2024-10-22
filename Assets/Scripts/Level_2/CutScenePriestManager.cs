@@ -28,20 +28,23 @@ public class CutScenePriestManager : MonoBehaviour
     {
         if(director == playableDirector)
         {
-            mainCamera.gameObject.SetActive(true);
-            enemy.SetActive(true);
-            player.SetActive(true);
-            cutScene.SetActive(false);
-            cutSceneObjects.SetActive(false);
-            FindObjectOfType<UIManager>().pauseButton.SetActive(true);
-            FindObjectOfType<UIManager>().playerCanvas.SetActive(true);
-            FindObjectOfType<UIManager>().skipButton.SetActive(false);
-            GameplayManager.Instance.Player.transform.position = intermediateCutScenePosition.transform.position;
-            Destroy(enemyInGrave);
-            AudioManager.Instance.Play_PriestShout();
+            StopCutScene();
         }
     }
-
+    public void StopCutScene()
+    {
+        mainCamera.gameObject.SetActive(true);
+        enemy.SetActive(true);
+        player.SetActive(true);
+        cutScene.SetActive(false);
+        cutSceneObjects.SetActive(false);
+        FindObjectOfType<UIManager>().pauseButton.SetActive(true);
+        FindObjectOfType<UIManager>().playerCanvas.SetActive(true);
+        FindObjectOfType<UIManager>().skipButton.SetActive(false);
+        GameplayManager.Instance.Player.transform.position = intermediateCutScenePosition.transform.position;
+        Destroy(enemyInGrave);
+        AudioManager.Instance.Play_PriestShout();
+    }
     public void EnableCutScene()
     {
         if (ItemScript.isEnemyPlaced && !wasPlayed)
