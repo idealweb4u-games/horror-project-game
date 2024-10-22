@@ -24,7 +24,7 @@ namespace AdvancedHorrorFPS
         public AudioClip[] Audio_WoodBreakable;
         public AudioSource audioSource;
         public AudioSource audioSourceWalk;
-
+        public AudioSource audioSourcePriest;
         private void Awake()
         {
             Instance = this;
@@ -139,6 +139,12 @@ namespace AdvancedHorrorFPS
         public void Play_DemonKilling()
         {
             audioSource.PlayOneShot(Audio_DemonKilling[UnityEngine.Random.Range(0, Audio_DemonKilling.Length)]);
+        }
+
+        public void Play_PriestShout()
+        {
+           // audioSourcePriest.Play(); - doesn't work if player skips the cut scene
+           audioSourcePriest.gameObject.SetActive(true);
         }
     }
 }

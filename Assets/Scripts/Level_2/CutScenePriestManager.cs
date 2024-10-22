@@ -38,6 +38,7 @@ public class CutScenePriestManager : MonoBehaviour
             FindObjectOfType<UIManager>().skipButton.SetActive(false);
             GameplayManager.Instance.Player.transform.position = intermediateCutScenePosition.transform.position;
             Destroy(enemyInGrave);
+            AudioManager.Instance.Play_PriestShout();
         }
     }
 
