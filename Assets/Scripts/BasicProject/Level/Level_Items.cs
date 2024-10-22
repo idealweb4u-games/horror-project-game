@@ -5,6 +5,8 @@ using UnityEngine;
 public class Level_Items : Level {
     public bool completed;
     public GameObject CameraCutScene;
+    public GameObject intermediateCutScene;
+    public GameObject intermediateCutSceneObjects;
     public GameObject Enemy;
     public bool rain;
     public bool fire;

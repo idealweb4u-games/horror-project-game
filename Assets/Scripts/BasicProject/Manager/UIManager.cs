@@ -76,6 +76,15 @@ public class UIManager : Singleton<UIManager> {
         GameplayManager.Instance.Player.SetActive(true);
         GameplayManager.Instance.Camera.SetActive(true);
         LevelManager.Instance.currentlevel.GetComponent<Level_Items>().CameraCutScene.SetActive(false);
+        if(LevelManager.Instance.currentlevel.GetComponent<Level_Items>().intermediateCutScene != null) //used fore level2
+        {
+            LevelManager.Instance.currentlevel.GetComponent<Level_Items>().intermediateCutScene.SetActive(false);
+            LevelManager.Instance.currentlevel.GetComponent<Level_Items>().intermediateCutSceneObjects.SetActive(false);
+            if (FindObjectOfType<CutScenePriestManager>().wasPlayed)
+            {
+                GameplayManager.Instance.Player.transform.position = FindObjectOfType<CutScenePriestManager>().intermediateCutScenePosition.transform.position;
+            } 
+        }
         LevelManager.Instance.currentlevel.GetComponent<Level_Items>().Enemy.SetActive(true);
         playerCanvas.SetActive(true);
         pauseButton.SetActive(true);
