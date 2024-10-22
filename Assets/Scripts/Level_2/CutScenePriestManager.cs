@@ -11,7 +11,10 @@ public class CutScenePriestManager : MonoBehaviour
     [SerializeField] private GameObject cutScene;
     [SerializeField] private GameObject cutSceneObjects;
     [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject noteThree;
+
     [SerializeField] private GameObject player;
+
     [SerializeField] private PlayableDirector playableDirector;
     public GameObject enemyInGrave;
     public GameObject intermediateCutScenePosition;
@@ -44,6 +47,7 @@ public class CutScenePriestManager : MonoBehaviour
         GameplayManager.Instance.Player.transform.position = intermediateCutScenePosition.transform.position;
         Destroy(enemyInGrave);
         AudioManager.Instance.Play_PriestShout();
+        noteThree.SetActive(true);
     }
     public void EnableCutScene()
     {
