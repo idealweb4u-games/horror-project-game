@@ -13,7 +13,7 @@ public class CutScenePriestManager : MonoBehaviour
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject player;
     [SerializeField] private PlayableDirector playableDirector;
-    [SerializeField] private GameObject enemyInGrave;
+    public GameObject enemyInGrave;
     public GameObject intermediateCutScenePosition;
     [HideInInspector] public bool wasPlayed = false;
     private void OnEnable()

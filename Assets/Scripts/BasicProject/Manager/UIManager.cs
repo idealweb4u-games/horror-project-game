@@ -83,7 +83,7 @@ public class UIManager : Singleton<UIManager> {
             if (FindObjectOfType<CutScenePriestManager>().wasPlayed)
             {
                 GameplayManager.Instance.Player.transform.position = FindObjectOfType<CutScenePriestManager>().intermediateCutScenePosition.transform.position;
-                Debug.Log(GameplayManager.Instance.Player.transform.position.ToString() + ": " + FindObjectOfType<CutScenePriestManager>().intermediateCutScenePosition.transform.position);
+                Destroy(FindObjectOfType<CutScenePriestManager>().enemyInGrave);
                 AudioManager.Instance.Play_PriestShout();
             } 
         }
