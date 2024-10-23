@@ -9,8 +9,10 @@ namespace AdvancedHorrorFPS
     public class AttackWithWeaponManager : MonoBehaviour
     {
 
-        [SerializeField] private GameObject startThrowPoint, weaponPrefab, weaponContainer;
+        [SerializeField] private GameObject weaponPrefab, weaponContainer;
+        [SerializeField] private Transform startThrowPoint, throwPointTwo, throwPointThree;
         [SerializeField] private float speedForward, speedUpForward;
+        [SerializeField] private float speedOfWeaponPath;
         public static AttackWithWeaponManager Instance;
 
         [Header("UI responsible for weapons")]
@@ -44,9 +46,10 @@ namespace AdvancedHorrorFPS
             if (!wasThrownOnce)
             {
                 weaponInstantiated = Instantiate(weaponPrefab, startThrowPoint.transform.position, weaponPrefab.transform.rotation);
-                Vector3 throwDirection = mainCam.transform.forward * speedForward + transform.forward * speedUpForward;
-                weaponRb = weaponPrefab.GetComponent<Rigidbody>();
-                weaponRb.AddForce(throwDirection, ForceMode.Impulse);
+                //Vector3 throwDirection = mainCam.transform.forward * speedForward + transform.forward * speedUpForward;
+                //weaponRb = weaponPrefab.GetComponent<Rigidbody>();
+                //weaponRb.AddForce(throwDirection, ForceMode.Impulse);
+                weaponInstantiated.transform.position = SetPathOfWeapon();
                 weaponContainer.SetActive(true);
                 Debug.Log("Should throw weapon");
                 wasThrownOnce = true;
@@ -59,6 +62,16 @@ namespace AdvancedHorrorFPS
             Destroy(weaponInstantiated);
             wasThrownOnce=false;
         }
-    }
+
+        private Vector3 SetPathOfWeapon()
+        {
+            Vector3 startTwo = Vector3.Lerp(startThrowPoint.position, throwPointTwo.position, speedOfWeaponPath);
+            Vector3 twoThird = Vector3.Lerp(throwPointTwo.position, throwPointThree.position, speedOfWeaponPath);
+
+            Vector3 startThird = Vector3.Lerp(startTwo, twoThird, speedOfWeaponPath);
+            return startThird;
+        }
+    }   
+
 }
 
