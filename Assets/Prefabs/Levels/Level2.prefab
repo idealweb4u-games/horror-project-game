@@ -22285,6 +22285,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CutScenePriest
       objectReference: {fileID: 0}
+    - target: {fileID: 6184830209260978765, guid: f57d85246d5ee114fa413e251331712d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6442230545642757767, guid: f57d85246d5ee114fa413e251331712d,
         type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
