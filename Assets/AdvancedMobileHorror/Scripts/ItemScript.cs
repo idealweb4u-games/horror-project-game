@@ -48,7 +48,6 @@ namespace AdvancedHorrorFPS
                 if (GetComponent<EnemyManager>()!= null && GetComponent<EnemyManager>().enabled)
                 {
                     GetComponent<EnemyManager>().CarryEnemy();
-                   
                 }
                 else
                 {
@@ -145,6 +144,14 @@ namespace AdvancedHorrorFPS
                     isEnemyPlaced = true;
                 }
             }
+            else if(itemType == ItemType.Weapon){
+                if (AttackWithWeaponManager.Instance.gameObject.activeSelf && AttackWithWeaponManager.Instance != null)
+                {
+                    Debug.Log("Grab Weapon");
+                    AttackWithWeaponManager.Instance.weaponButton.gameObject.SetActive(true);
+                    AttackWithWeaponManager.Instance.GrabWeapon();
+                }
+            }
         }
 
         
@@ -225,6 +232,7 @@ namespace AdvancedHorrorFPS
         Box,
         MedKit,
         Table,
-        Grave
+        Grave,
+        Weapon
     }
 }
