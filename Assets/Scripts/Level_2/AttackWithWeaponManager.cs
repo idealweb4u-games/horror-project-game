@@ -9,7 +9,7 @@ namespace AdvancedHorrorFPS
     public class AttackWithWeaponManager : MonoBehaviour
     {
 
-        [SerializeField] private GameObject startThrowPoint, weapon;
+        [SerializeField] private GameObject startThrowPoint, weaponPrefab, weaponContainer;
         [SerializeField] private float speedForward, speedUpForward;
         public static AttackWithWeaponManager Instance;
 
@@ -17,8 +17,9 @@ namespace AdvancedHorrorFPS
         public Button weaponButton;
 
         private Transform mainCam;
-
         private Rigidbody weaponRb;
+        private GameObject weaponInstantiated;
+        private bool wasThrownOnce = false;
         private void Awake()
         {
             Instance = this;
@@ -27,19 +28,36 @@ namespace AdvancedHorrorFPS
         private void Start()
         {
             mainCam = GameplayManager.Instance.Camera.transform;
-            weaponRb = weapon.GetComponent<Rigidbody>();
+            
+        }
+
+        private void Update()
+        {
+            if(weaponInstantiated != null)
+            {
+                weaponContainer.transform.position = weaponInstantiated.transform.position;
+            }
         }
 
         public void ThrowObject()
         {
-            Vector3 throwDirection = mainCam.transform.forward * speedForward + transform.forward * speedUpForward;
-            weaponRb.AddForce(throwDirection, ForceMode.Impulse);
-            Debug.Log("Should throw weapon");
+            if (!wasThrownOnce)
+            {
+                weaponInstantiated = Instantiate(weaponPrefab, startThrowPoint.transform.position, weaponPrefab.transform.rotation);
+                Vector3 throwDirection = mainCam.transform.forward * speedForward + transform.forward * speedUpForward;
+                weaponRb = weaponPrefab.GetComponent<Rigidbody>();
+                weaponRb.AddForce(throwDirection, ForceMode.Impulse);
+                weaponContainer.SetActive(true);
+                Debug.Log("Should throw weapon");
+                wasThrownOnce = true;
+            }
         }
 
         public void GrabWeapon()
         {
-            weapon.transform.position = startThrowPoint.transform.position;
+            weaponContainer.SetActive(false);
+            Destroy(weaponInstantiated);
+            wasThrownOnce=false;
         }
     }
 }
