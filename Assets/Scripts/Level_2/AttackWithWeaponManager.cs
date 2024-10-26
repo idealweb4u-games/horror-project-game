@@ -52,6 +52,7 @@ namespace AdvancedHorrorFPS
                 weaponInstantiated.transform.position = SetPathOfWeapon();
                 weaponContainer.SetActive(true);
                 Debug.Log("Should throw weapon");
+                weaponButton.gameObject.SetActive(false);
                 wasThrownOnce = true;
             }
         }

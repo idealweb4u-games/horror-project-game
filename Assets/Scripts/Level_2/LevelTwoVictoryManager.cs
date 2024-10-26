@@ -1,3 +1,4 @@
+using AdvancedHorrorFPS;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class LevelTwoVictoryManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Weapon"))
         {
-            Debug.Log("We Win");
+           GameCanvas.Instance.Panel_LevelComplete.SetActive(true);
         }
     }
 }
