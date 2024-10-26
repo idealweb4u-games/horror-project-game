@@ -20,6 +20,7 @@ TagManager:
   - DeadBody
   - Book
   - Table
+  - Weapon
   layers:
   - Default
   - TransparentFX

@@ -83,6 +83,7 @@ public class UIManager : Singleton<UIManager> {
             if (FindObjectOfType<CutScenePriestManager>().wasPlayed)
             {
                 FindObjectOfType<CutScenePriestManager>().StopCutScene();
+                FindObjectOfType<CutScenePriestManager>().enemy.transform.position = new Vector3(482.0f, FindObjectOfType<CutScenePriestManager>().enemy.transform.position.y, 413.0f);
             } 
         }
         LevelManager.Instance.currentlevel.GetComponent<Level_Items>().Enemy.SetActive(true);

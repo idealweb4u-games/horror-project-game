@@ -25,6 +25,7 @@ namespace AdvancedHorrorFPS
         public GameObject Panel_Note_Text;
         public Text Button_Close_Note_Text;
         public GameObject Panel_GameOver;
+        public GameObject Panel_LevelComplete;
         public Image Image_Sprite_Blood;
         public GameObject Controller_Joystick;
         public GameObject Controller_Touchpad;

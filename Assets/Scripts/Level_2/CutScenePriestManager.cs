@@ -10,7 +10,7 @@ public class CutScenePriestManager : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject cutScene;
     [SerializeField] private GameObject cutSceneObjects;
-    [SerializeField] private GameObject enemy;
+    public GameObject enemy;
     [SerializeField] private GameObject noteThree;
     [SerializeField] private GameObject attackWithWeaponManager;
     [SerializeField] private GameObject player;
