@@ -21,7 +21,7 @@ namespace AdvancedHorrorFPS
 
         private Transform mainCam;
         private Rigidbody weaponRb;
-        private GameObject weaponInstantiated;
+        [HideInInspector] public GameObject weaponInstantiated;
         private bool wasThrownOnce = false;
         private void Awake()
         {
