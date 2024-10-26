@@ -20,6 +20,8 @@ namespace AdvancedHorrorFPS
         public AudioClip Audio_PadlockTry;
         public AudioClip Audio_Cabinet_Open;
         public AudioClip Audio_Drawer_Open;
+        public AudioClip Audio_Hit_With_Weapon;
+        public AudioClip Audio_Monster_Pain;
         public AudioClip[] Audio_DemonKilling;
         public AudioClip[] Audio_WoodBreakable;
         public AudioSource audioSource;
@@ -145,6 +147,12 @@ namespace AdvancedHorrorFPS
         {
            // audioSourcePriest.Play(); - doesn't work if player skips the cut scene
            audioSourcePriest.gameObject.SetActive(true);
+        }
+
+        public void Play_LevelComplete_Sounds()
+        {
+            audioSource.PlayOneShot(Audio_Hit_With_Weapon);
+            audioSource.PlayOneShot(Audio_Monster_Pain);
         }
     }
 }

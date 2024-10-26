@@ -15,6 +15,7 @@ public class LevelTwoVictoryManager : MonoBehaviour
             AttackWithWeaponManager.Instance.enemyPrefab.SetActive(false);
             AttackWithWeaponManager.Instance.weaponContainer.SetActive(false);
             AttackWithWeaponManager.Instance.weaponPrefab.SetActive(false);
+            AudioManager.Instance.Play_LevelComplete_Sounds();
         }
     }
 }
