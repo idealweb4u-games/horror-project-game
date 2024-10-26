@@ -14,6 +14,7 @@ namespace AdvancedHorrorFPS
         public GameObject Panel_WarningPanel;
         public GameObject Button_Flashlight;
         public GameObject Button_Jump;
+        public GameObject Button_Pauese;
         public LayerMask layerMaskForInteract;
         public Color BlueLightcolor;
         public Color WhiteLightColor;

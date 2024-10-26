@@ -9,7 +9,12 @@ public class LevelTwoVictoryManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Weapon"))
         {
-           GameCanvas.Instance.Panel_LevelComplete.SetActive(true);
+            GameCanvas.Instance.Panel_LevelComplete.SetActive(true);
+            GameCanvas.Instance.Panel_GameUI.SetActive(false);
+            GameCanvas.Instance.Button_Pauese.SetActive(false);
+            AttackWithWeaponManager.Instance.enemyPrefab.SetActive(false);
+            AttackWithWeaponManager.Instance.weaponContainer.SetActive(false);
+            AttackWithWeaponManager.Instance.weaponPrefab.SetActive(false);
         }
     }
 }

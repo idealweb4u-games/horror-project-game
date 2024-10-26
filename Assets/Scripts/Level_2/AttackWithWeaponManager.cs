@@ -9,14 +9,15 @@ namespace AdvancedHorrorFPS
     public class AttackWithWeaponManager : MonoBehaviour
     {
 
-        [SerializeField] private GameObject weaponPrefab, weaponContainer;
+        public GameObject weaponPrefab, weaponContainer;
         [SerializeField] private Transform startThrowPoint, throwPointTwo, throwPointThree;
         [SerializeField] private float speedForward, speedUpForward;
         [SerializeField] private float speedOfWeaponPath;
-        public static AttackWithWeaponManager Instance;
-
+        public GameObject enemyPrefab;
         [Header("UI responsible for weapons")]
         public Button weaponButton;
+
+        public static AttackWithWeaponManager Instance;
 
         private Transform mainCam;
         private Rigidbody weaponRb;
@@ -30,7 +31,6 @@ namespace AdvancedHorrorFPS
         private void Start()
         {
             mainCam = GameplayManager.Instance.Camera.transform;
-            
         }
 
         private void Update()
@@ -46,9 +46,6 @@ namespace AdvancedHorrorFPS
             if (!wasThrownOnce)
             {
                 weaponInstantiated = Instantiate(weaponPrefab, startThrowPoint.transform.position, weaponPrefab.transform.rotation);
-                //Vector3 throwDirection = mainCam.transform.forward * speedForward + transform.forward * speedUpForward;
-                //weaponRb = weaponPrefab.GetComponent<Rigidbody>();
-                //weaponRb.AddForce(throwDirection, ForceMode.Impulse);
                 weaponInstantiated.transform.position = SetPathOfWeapon();
                 weaponContainer.SetActive(true);
                 Debug.Log("Should throw weapon");
