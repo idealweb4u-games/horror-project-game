@@ -60,7 +60,8 @@ public class UIManager : Singleton<UIManager> {
         pauseButton.SetActive(false);
         skipButton.SetActive(true);
         ItemScript.isEnemyPlaced = false;
-        //AttackWithWeaponManager.Instance.weaponContainer.SetActive(false);
+        CutScenePriestManager.Instance.wasPlayed = false;
+        Debug.Log(CutScenePriestManager.Instance.wasPlayed);
         StartCoroutine(CutScene());
     }
     private void ShowLevelData() {

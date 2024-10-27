@@ -48,15 +48,14 @@ public class CutScenePriestManager : MonoBehaviour
         player.SetActive(true);
         cutScene.SetActive(false);
         cutSceneObjects.SetActive(false);
+        enemyInGrave.SetActive(false);
+        noteThree.SetActive(true);
+        attackWithWeaponManager.SetActive(true);
         FindObjectOfType<UIManager>().pauseButton.SetActive(true);
         FindObjectOfType<UIManager>().playerCanvas.SetActive(true);
         FindObjectOfType<UIManager>().skipButton.SetActive(false);
         GameplayManager.Instance.Player.transform.position = intermediateCutScenePosition.transform.position;
-        //Destroy(enemyInGrave);
-        enemyInGrave.SetActive(false);
         AudioManager.Instance.Play_PriestShout();
-        noteThree.SetActive(true);
-        attackWithWeaponManager.SetActive(true);
     }
     public void EnableCutScene()
     {
