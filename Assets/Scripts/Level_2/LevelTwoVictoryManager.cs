@@ -17,6 +17,7 @@ public class LevelTwoVictoryManager : MonoBehaviour
             AttackWithWeaponManager.Instance.weaponInstantiated.SetActive(false);
             AudioManager.Instance.Play_LevelComplete_Sounds();
             AudioManager.Instance.audioSourcePriest.gameObject.SetActive(false);
+            CutScenePriestManager.Instance.wasPlayed = false;
         }
     }
 }

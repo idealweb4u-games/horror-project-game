@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private GameObject enemnyBodyToDisable;
     [SerializeField] private GameObject enemyBodyToCarry;
     [SerializeField] private GameObject hint2;
-    
+
     //for box interactable
     public void CarryEnemy()
     {

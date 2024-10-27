@@ -59,6 +59,8 @@ public class UIManager : Singleton<UIManager> {
         playerCanvas.SetActive(false);
         pauseButton.SetActive(false);
         skipButton.SetActive(true);
+        ItemScript.isEnemyPlaced = false;
+        //AttackWithWeaponManager.Instance.weaponContainer.SetActive(false);
         StartCoroutine(CutScene());
     }
     private void ShowLevelData() {
@@ -80,7 +82,7 @@ public class UIManager : Singleton<UIManager> {
         {
             LevelManager.Instance.currentlevel.GetComponent<Level_Items>().intermediateCutScene.SetActive(false);
             LevelManager.Instance.currentlevel.GetComponent<Level_Items>().intermediateCutSceneObjects.SetActive(false);
-            if (FindObjectOfType<CutScenePriestManager>().wasPlayed)
+            if (CutScenePriestManager.Instance.wasPlayed)
             {
                 FindObjectOfType<CutScenePriestManager>().StopCutScene();
                 FindObjectOfType<CutScenePriestManager>().enemy.transform.position = new Vector3(482.0f, FindObjectOfType<CutScenePriestManager>().enemy.transform.position.y, 413.0f);

@@ -196,15 +196,7 @@ namespace AdvancedHorrorFPS
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        public void Click_LoadNextLevel()
-        {
-            Debug.Log("Should Load Next Level");
-        }
-        public void Click_LoadLevelSelection()
-        {
-            SceneManager.LoadScene(2);
-        }
-
+       
         public void Show_Note(string text)
         {
             Panel_GameUI.SetActive(false);
