@@ -172,6 +172,7 @@ namespace AdvancedHorrorFPS
             }
         }
 
+
         private void Update()
         {
             if(Input.GetKeyUp(KeyCode.E))

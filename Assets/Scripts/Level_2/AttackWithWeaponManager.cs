@@ -48,7 +48,6 @@ namespace AdvancedHorrorFPS
                 weaponInstantiated = Instantiate(weaponPrefab, startThrowPoint.transform.position, weaponPrefab.transform.rotation);
                 weaponInstantiated.transform.position = SetPathOfWeapon();
                 weaponContainer.SetActive(true);
-                Debug.Log("Should throw weapon");
                 weaponButton.gameObject.SetActive(false);
                 wasThrownOnce = true;
             }

@@ -32,6 +32,7 @@ public abstract class Level : MonoBehaviour
         //});
 
     }
+
     private void OnDisable() {
         //GameOverCollision.Instance.onGameOver.RemoveAllListeners();
         //PlayerCollision.Instance.onCompleteLevel.RemoveAllListeners();
