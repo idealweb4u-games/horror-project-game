@@ -50,7 +50,8 @@ namespace AdvancedHorrorFPS
 
         public void Click_BacktoMenu()
         {
-            SceneManager.LoadScene("Scene_MainMenu");
+            //SceneManager.LoadScene("Scene_MainMenu");
+            SceneManager.LoadScene(1);
         }
 
         public void Show_Blood_Effect()
@@ -194,6 +195,14 @@ namespace AdvancedHorrorFPS
         public void Click_Restart()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        public void Click_LoadNextLevel()
+        {
+            Debug.Log("Should Load Next Level");
+        }
+        public void Click_LoadLevelSelection()
+        {
+            SceneManager.LoadScene(2);
         }
 
         public void Show_Note(string text)

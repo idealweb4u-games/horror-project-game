@@ -8,7 +8,7 @@ using UnityEngine.Playables;
 public class CutScenePriestManager : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private GameObject cutScene;
+    public GameObject cutScene;
     [SerializeField] private GameObject cutSceneObjects;
     public GameObject enemy;
     [SerializeField] private GameObject noteThree;
@@ -19,6 +19,13 @@ public class CutScenePriestManager : MonoBehaviour
     public GameObject enemyInGrave;
     public GameObject intermediateCutScenePosition;
     [HideInInspector] public bool wasPlayed = false;
+
+    public static CutScenePriestManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void OnEnable()
     {
         playableDirector.stopped += OnPlayableDirectorStopped;

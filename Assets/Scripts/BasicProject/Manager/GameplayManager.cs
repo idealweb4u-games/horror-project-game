@@ -30,6 +30,7 @@ public class GameplayManager : Singleton<GameplayManager> {
     public void replay() {
         SceneLoad.Instance.LoadScene(3);
         SoundManager.Instance.PlayEffect();
+        
     }
     public void next() {
         if (session.level + 1 < LevelManager.Instance.Levels.Length) session.level++;
