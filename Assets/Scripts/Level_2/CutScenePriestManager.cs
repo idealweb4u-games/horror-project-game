@@ -14,7 +14,7 @@ public class CutScenePriestManager : MonoBehaviour
     [SerializeField] private GameObject noteThree;
     [SerializeField] private GameObject attackWithWeaponManager;
     [SerializeField] private GameObject player;
-
+    public GameObject fpsHands;
     [SerializeField] private PlayableDirector playableDirector;
     public GameObject enemyInGrave;
     public GameObject intermediateCutScenePosition;
@@ -55,6 +55,7 @@ public class CutScenePriestManager : MonoBehaviour
         FindObjectOfType<UIManager>().playerCanvas.SetActive(true);
         FindObjectOfType<UIManager>().skipButton.SetActive(false);
         GameplayManager.Instance.Player.transform.position = intermediateCutScenePosition.transform.position;
+        fpsHands.SetActive(true);
         AudioManager.Instance.Play_PriestShout();
     }
     public void EnableCutScene()
@@ -63,11 +64,13 @@ public class CutScenePriestManager : MonoBehaviour
         {
             cutScene.SetActive(true);
             cutSceneObjects.SetActive(true);
-            player.SetActive(false);
+            fpsHands.SetActive(false);
+            GameplayManager.Instance.Player.SetActive(false);
             FindObjectOfType<UIManager>().pauseButton.SetActive(false);
             FindObjectOfType<UIManager>().playerCanvas.SetActive(false);
             FindObjectOfType<UIManager>().skipButton.SetActive(true);
             wasPlayed = true;
         }
+        
     }
 }

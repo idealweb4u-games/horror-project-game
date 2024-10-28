@@ -61,6 +61,7 @@ public class UIManager : Singleton<UIManager> {
         skipButton.SetActive(true);
         ItemScript.isEnemyPlaced = false;
         CutScenePriestManager.Instance.wasPlayed = false;
+        CutScenePriestManager.Instance.fpsHands.SetActive(true);
         StartCoroutine(CutScene());
     }
     private void ShowLevelData() {
