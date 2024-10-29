@@ -1384,6 +1384,8 @@ MonoBehaviour:
       m_Calls: []
   completed: 0
   CameraCutScene: {fileID: 9143893983675057177}
+  intermediateCutScene: {fileID: 0}
+  intermediateCutSceneObjects: {fileID: 0}
   Enemy: {fileID: 188263686191258930}
   rain: 1
   fire: 1
@@ -5062,7 +5064,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d96e79d3d44b824381f64be7765f5c2, type: 2}
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7846,6 +7848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Window (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bdc8f2b9a66d51d438c656e7ea57558c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
