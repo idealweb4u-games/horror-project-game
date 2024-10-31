@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestScriptForCollisiion : MonoBehaviour
+public class Test : MonoBehaviour
 {
 
     private void Update()

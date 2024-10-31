@@ -21,6 +21,8 @@ TagManager:
   - Book
   - Table
   - Weapon
+  - LeftDoor
+  - RightDoor
   layers:
   - Default
   - TransparentFX
