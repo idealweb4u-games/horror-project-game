@@ -6,7 +6,7 @@ public class AltarManager : MonoBehaviour
 {
     [SerializeField] private ParticleSystem fire;
     public GameObject key;
-
+    private bool wasPlayed = false;
     public static AltarManager Instance;
 
     private void Awake()
@@ -16,10 +16,15 @@ public class AltarManager : MonoBehaviour
 
     public void BurnBones()
     {
-        fire.Play();
-        if (fire.isStopped)
+        if (!wasPlayed)
+        {
+            fire.Play();
+            wasPlayed = true;
+        }
+        else
         {
             key.SetActive(true);
+            gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }

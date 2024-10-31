@@ -151,6 +151,7 @@ namespace AdvancedHorrorFPS
             {
                 TableManager.Instance.bones.SetActive(false);
                 isBonesGrabbed = true;
+                AudioManager.Instance.Play_Item_Grab();
             }
             else if(itemType == ItemType.Altar)
             {
@@ -163,6 +164,7 @@ namespace AdvancedHorrorFPS
             {
                 AltarManager.Instance.key.SetActive(false);
                 isFinalKeyGrabbed = true;
+                AudioManager.Instance.Play_Item_Grab();
             }
             else if(itemType == ItemType.Gate)
             {
