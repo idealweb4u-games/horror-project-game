@@ -7,6 +7,8 @@ namespace AdvancedHorrorFPS
         public static AudioManager Instance;
         public AudioClip[] Door_Wooden_Open;
         public AudioClip[] Door_Close;
+        public AudioClip Door_IsOpening;
+        public AudioClip Door_IsClosing;
         public AudioClip[] PlayerShock;
         public AudioClip Door_TryOpen;
         public AudioClip Door_UnLock;
@@ -27,6 +29,7 @@ namespace AdvancedHorrorFPS
         public AudioSource audioSource;
         public AudioSource audioSourceWalk;
         public AudioSource audioSourcePriest;
+        
         private void Awake()
         {
             Instance = this;
@@ -86,6 +89,15 @@ namespace AdvancedHorrorFPS
         public void Play_Door_Close()
         {
             audioSource.PlayOneShot(Door_Close[UnityEngine.Random.Range(0, Door_Close.Length)]);
+        }
+
+        public void Play_Door_SelfOpen()
+        {
+            audioSource.PlayOneShot(Door_IsOpening);
+        }
+        public void Play_Door_SelfClose()
+        {
+            audioSource.PlayOneShot(Door_IsClosing);
         }
 
         public void Play_Note_Reading()
