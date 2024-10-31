@@ -245,7 +245,13 @@ namespace AdvancedHorrorFPS
         {
             transform.position = finalDollPosition.position; //teleport enemy to the player 
             transform.LookAt(Player.transform.position);
-            Debug.Log("Enemy turns into bones");
+            Invoke("DisableEnemy", 2.0f);
+        }
+
+        private void DisableEnemy()
+        {
+            gameObject.SetActive(false);
+            TableManager.Instance.ActivateFinalItems();
         }
 
         private void Attack() // Attack script from Demon

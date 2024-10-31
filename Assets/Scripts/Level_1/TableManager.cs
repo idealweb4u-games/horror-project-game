@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class TableManager : MonoBehaviour
 {
-    [SerializeField] private GameObject bottleToPlace;
+    [SerializeField] private GameObject bottleToPlace, note;
+    public GameObject bones;
     [HideInInspector] public bool isBottlePlaced = false;
     public static TableManager Instance;
 
@@ -20,4 +21,9 @@ public class TableManager : MonoBehaviour
         bottleToPlace.gameObject.SetActive(true);
     }
     
+    public void ActivateFinalItems()
+    {
+        bones.SetActive(true);
+        note.SetActive(true);
+    }
 }

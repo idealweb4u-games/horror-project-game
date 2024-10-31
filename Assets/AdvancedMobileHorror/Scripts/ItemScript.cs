@@ -10,8 +10,9 @@ namespace AdvancedHorrorFPS
         public bool isOpened = false;
         public bool playerInRange = false;
 
-        
 
+        [HideInInspector] public static bool isBonesGrabbed = false;
+        [HideInInspector] public static bool isFinalKeyGrabbed = false;
         [HideInInspector] public static bool isBottleGrabbed = false;
         [HideInInspector] public static bool isEnemyPlaced = false;
         [HideInInspector] public static bool isEnemyCarried = false;
@@ -127,12 +128,7 @@ namespace AdvancedHorrorFPS
             {
                 if(isBottleGrabbed)
                 {
-                    GetComponent<TableManager>().PlaceBottle();
-                    Debug.Log(isBottleGrabbed);
-                }
-                else
-                {
-                    Debug.Log(isBottleGrabbed);
+                    TableManager.Instance.PlaceBottle();
                 }
                 
             }
@@ -147,9 +143,32 @@ namespace AdvancedHorrorFPS
             else if(itemType == ItemType.Weapon){
                 if (AttackWithWeaponManager.Instance.gameObject.activeSelf && AttackWithWeaponManager.Instance != null)
                 {
-                    Debug.Log("Grab Weapon");
                     AttackWithWeaponManager.Instance.weaponButton.gameObject.SetActive(true);
                     AttackWithWeaponManager.Instance.GrabWeapon();
+                }
+            }
+            else if(itemType == ItemType.Bones)
+            {
+                TableManager.Instance.bones.SetActive(false);
+                isBonesGrabbed = true;
+            }
+            else if(itemType == ItemType.Altar)
+            {
+                if (isBonesGrabbed)
+                {
+                    AltarManager.Instance.BurnBones();
+                }
+            }
+            else if(itemType == ItemType.FinalKey)
+            {
+                AltarManager.Instance.key.SetActive(false);
+                isFinalKeyGrabbed = true;
+            }
+            else if(itemType == ItemType.Gate)
+            {
+                if (isFinalKeyGrabbed)
+                {
+                    UIManager.Instance.showlevelComplete();
                 }
             }
         }
@@ -234,6 +253,10 @@ namespace AdvancedHorrorFPS
         MedKit,
         Table,
         Grave,
-        Weapon
+        Weapon,
+        Bones,
+        Altar,
+        FinalKey,
+        Gate,
     }
 }
