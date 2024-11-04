@@ -16,8 +16,14 @@ public class ClownActivation : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player")){
-            Debug.Log("Player enters the room");
             Invoke("MakeClownHunt", 2.0f);
+        }
+        if (gameObject.CompareTag("Finish"))
+        {
+            if (other.gameObject.CompareTag("Clown"))
+            {
+                Debug.Log("CLowns enter the room");
+            }
         }
     }
 

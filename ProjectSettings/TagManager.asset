@@ -23,6 +23,7 @@ TagManager:
   - Weapon
   - LeftDoor
   - RightDoor
+  - Clown
   layers:
   - Default
   - TransparentFX

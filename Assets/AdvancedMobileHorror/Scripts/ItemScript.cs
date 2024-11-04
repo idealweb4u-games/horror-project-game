@@ -173,6 +173,12 @@ namespace AdvancedHorrorFPS
                     UIManager.Instance.showlevelComplete();
                 }
             }
+            else if(itemType == ItemType.Mirror) {
+
+                //activate cut scene
+                Debug.Log("Interact with mirror");
+            
+            }
         }
 
         
@@ -260,5 +266,6 @@ namespace AdvancedHorrorFPS
         Altar,
         FinalKey,
         Gate,
+        Mirror
     }
 }
