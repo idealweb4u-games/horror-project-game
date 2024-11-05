@@ -24,12 +24,14 @@ namespace AdvancedHorrorFPS
         public AudioClip Audio_Drawer_Open;
         public AudioClip Audio_Hit_With_Weapon;
         public AudioClip Audio_Monster_Pain;
+        public AudioClip Audio_Clown_Pain;
         public AudioClip[] Audio_DemonKilling;
         public AudioClip[] Audio_WoodBreakable;
         public AudioSource audioSource;
         public AudioSource audioSourceWalk;
         public AudioSource audioSourcePriest;
-        
+        public AudioSource[] audioSourceClownLaugh;
+
         private void Awake()
         {
             Instance = this;
@@ -165,6 +167,26 @@ namespace AdvancedHorrorFPS
         {
             audioSource.PlayOneShot(Audio_Hit_With_Weapon);
             audioSource.PlayOneShot(Audio_Monster_Pain);
+        }
+
+        public void Play_Clown_Pain()
+        {
+            audioSource.PlayOneShot(Audio_Clown_Pain);
+        }
+
+        public void Play_Clown_Laugh()
+        {
+            foreach(AudioSource audioSource in audioSourceClownLaugh)
+            {
+                audioSource.gameObject.SetActive(true);
+            }
+        }
+        public void Stop_Clown_Laugh()
+        {
+            foreach (AudioSource audioSource in audioSourceClownLaugh)
+            {
+                audioSource.gameObject.SetActive(false);
+            }
         }
     }
 }

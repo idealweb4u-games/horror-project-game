@@ -37,6 +37,8 @@ public class MirrorCutSceneManager : MonoBehaviour
         FindObjectOfType<UIManager>().pauseButton.SetActive(false);
         FindObjectOfType<UIManager>().playerCanvas.SetActive(false);
         FindObjectOfType<UIManager>().skipButton.SetActive(false);
+        AudioManager.Instance.Play_Clown_Pain();
+        AudioManager.Instance.Stop_Clown_Laugh();
         foreach (var enemy in FindObjectsOfType<EnemyMovement>())
         {
             if (enemy.gameObject.CompareTag("Clown"))
@@ -49,5 +51,6 @@ public class MirrorCutSceneManager : MonoBehaviour
     private void StopCutScene()
     {
         FindObjectOfType<UIManager>().levelComplete.SetActive(true);
+        
     }
 }

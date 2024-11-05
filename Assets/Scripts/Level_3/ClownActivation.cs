@@ -18,6 +18,7 @@ public class ClownActivation : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player")){
+            AudioManager.Instance.Play_Clown_Laugh();
             Invoke("MakeClownHunt", 2.0f);
         }
         if (gameObject.CompareTag("Finish"))
@@ -36,6 +37,7 @@ public class ClownActivation : MonoBehaviour
         {
             clown.SetActive(true);
         }
+        
     }
     
 }
