@@ -2731,6 +2731,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mirrorCutScene: {fileID: 2578070940706856397}
   objectsCutScene: {fileID: 1211041335617187915}
+  fpsHands: {fileID: 0}
+  playableDirector: {fileID: 3438900163844093429}
 --- !u!1 &3951007457895617198
 GameObject:
   m_ObjectHideFlags: 0

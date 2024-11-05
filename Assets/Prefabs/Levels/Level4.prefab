@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 8260843898889455457}
   - component: {fileID: 9167314274470393664}
   - component: {fileID: 5410907546328647922}
+  - component: {fileID: 7076058621073404628}
   m_Layer: 0
   m_Name: pumpkin1 Right way (7)
   m_TagString: Untagged
@@ -232,6 +233,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &7076058621073404628
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71138842031197754}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &91195157516542837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,6 +1791,7 @@ GameObject:
   - component: {fileID: 3071326206810715750}
   - component: {fileID: 246648788127694296}
   - component: {fileID: 5674452960608621712}
+  - component: {fileID: 7952360101962047488}
   m_Layer: 0
   m_Name: pumpkin1 Right way (13)
   m_TagString: Untagged
@@ -1841,6 +1864,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &7952360101962047488
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680616881557653199}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &705492235910736269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,7 +2401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826172860793076594}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3627,6 +3671,7 @@ GameObject:
   - component: {fileID: 7381427340276426593}
   - component: {fileID: 2173813791690503140}
   - component: {fileID: 3157141202631434822}
+  - component: {fileID: 433608179639200655}
   m_Layer: 0
   m_Name: pumpkin1 Right way (1)
   m_TagString: Untagged
@@ -3699,6 +3744,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &433608179639200655
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415999816287000358}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &1417480924054650970
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,6 +3808,7 @@ GameObject:
   - component: {fileID: 3783855936377536084}
   - component: {fileID: 7546019487313397791}
   - component: {fileID: 7096328589236261060}
+  - component: {fileID: 2037020143871451276}
   m_Layer: 0
   m_Name: pumpkin3 Wrong way (3)
   m_TagString: Untagged
@@ -3814,6 +3881,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &2037020143871451276
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435051071606135191}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.32133108
+  m_Center: {x: -0.0041768244, y: 0.0005773157, z: -0.03456427}
 --- !u!1 &1462438647774790645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3866,7 +3954,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 22.8
+  m_Radius: 50
   m_Center: {x: 0, y: 6.52, z: 0}
 --- !u!114 &5623610521055175524
 MonoBehaviour:
@@ -3883,9 +3971,9 @@ MonoBehaviour:
   collider: {fileID: 7626397725114952311}
   lineOfSightLayer:
     serializedVersion: 2
-    m_Bits: 257
-  fieldOfView: 282
-  threshold: 7.61
+    m_Bits: 256
+  fieldOfView: 70
+  threshold: 7
 --- !u!1 &1469837698705995074
 GameObject:
   m_ObjectHideFlags: 0
@@ -4385,6 +4473,7 @@ GameObject:
   - component: {fileID: 4657871955680915658}
   - component: {fileID: 7759468551353697716}
   - component: {fileID: 6461106067024991587}
+  - component: {fileID: 4484736834822569588}
   m_Layer: 0
   m_Name: pumpkin1 Right way (11)
   m_TagString: Untagged
@@ -4457,6 +4546,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &4484736834822569588
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670944047919771222}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &1697984126175682982
 GameObject:
   m_ObjectHideFlags: 0
@@ -4768,6 +4878,7 @@ GameObject:
   - component: {fileID: 680611158497758660}
   - component: {fileID: 5928341397625796248}
   - component: {fileID: 8210304309700066450}
+  - component: {fileID: 8350966360137536695}
   m_Layer: 0
   m_Name: pumpkin1 Right way (2)
   m_TagString: Untagged
@@ -4840,6 +4951,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &8350966360137536695
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872076350397047501}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &1877749979552331951
 GameObject:
   m_ObjectHideFlags: 0
@@ -5013,6 +5145,7 @@ GameObject:
   - component: {fileID: 5566521012673835993}
   - component: {fileID: 8891648494884414011}
   - component: {fileID: 8808231026844016342}
+  - component: {fileID: 1975514561923259564}
   m_Layer: 0
   m_Name: pumpkin1 Right way (9)
   m_TagString: Untagged
@@ -5085,6 +5218,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &1975514561923259564
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001136939507156448}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &2011514877872118354
 GameObject:
   m_ObjectHideFlags: 0
@@ -7614,6 +7768,7 @@ GameObject:
   - component: {fileID: 6841145701663386936}
   - component: {fileID: 8272851189209879535}
   - component: {fileID: 7467147623131147538}
+  - component: {fileID: 6698697024178739169}
   m_Layer: 0
   m_Name: pumpkin3 Wrong way (5)
   m_TagString: Untagged
@@ -7686,6 +7841,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &6698697024178739169
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074438711251413950}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.32133108
+  m_Center: {x: -0.0041768244, y: 0.0005773157, z: -0.03456427}
 --- !u!1 &3101698086184564049
 GameObject:
   m_ObjectHideFlags: 0
@@ -8108,6 +8284,7 @@ GameObject:
   - component: {fileID: 4191124621372673106}
   - component: {fileID: 1035869008906653102}
   - component: {fileID: 6991713618961036112}
+  - component: {fileID: 8489346536974685773}
   m_Layer: 0
   m_Name: pumpkin3 Wrong way (4)
   m_TagString: Untagged
@@ -8180,6 +8357,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &8489346536974685773
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220923718354292215}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.32133108
+  m_Center: {x: -0.0041768244, y: 0.0005773157, z: -0.03456427}
 --- !u!1 &3241476989365036779
 GameObject:
   m_ObjectHideFlags: 0
@@ -8272,7 +8470,7 @@ Transform:
   m_GameObject: {fileID: 3306687886925364573}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.677167, z: -0, w: 0.73582935}
-  m_LocalPosition: {x: 560.5, y: 18.06, z: 435.46}
+  m_LocalPosition: {x: 560.5, y: 16.8, z: 435.46}
   m_LocalScale: {x: 0.30000022, y: 0.3, z: 0.30000022}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10299,12 +10497,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.7484741, y: 2.215718, z: 4.127228}
-  m_Center: {x: -0.015533447, y: 1.137859, z: -0.17262268}
+  m_Size: {x: 1.8793335, y: 2.7822692, z: 4.066223}
+  m_Center: {x: -0.005340576, y: 1.4211346, z: -0.203125}
 --- !u!54 &7640948861467039052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11046,6 +11244,7 @@ GameObject:
   - component: {fileID: 6845339985392944981}
   - component: {fileID: 7850248241853022699}
   - component: {fileID: 6653639951128280056}
+  - component: {fileID: 8427146973317841151}
   m_Layer: 0
   m_Name: pumpkin1 Right way (10)
   m_TagString: Untagged
@@ -11118,6 +11317,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &8427146973317841151
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499312480348786707}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &4545632058856181980
 GameObject:
   m_ObjectHideFlags: 0
@@ -11519,6 +11739,7 @@ GameObject:
   - component: {fileID: 8183404975273371568}
   - component: {fileID: 7847769710071832444}
   - component: {fileID: 3231328352505198281}
+  - component: {fileID: 7540428688501910812}
   m_Layer: 0
   m_Name: pumpkin1 Right way (6)
   m_TagString: Untagged
@@ -11591,6 +11812,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &7540428688501910812
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665737654909626126}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &4723145762812176715
 GameObject:
   m_ObjectHideFlags: 0
@@ -11674,6 +11916,7 @@ GameObject:
   - component: {fileID: 1867998769770743724}
   - component: {fileID: 3611349781807567215}
   - component: {fileID: 5941058458248936693}
+  - component: {fileID: 5757408918246573334}
   m_Layer: 0
   m_Name: pumpkin1 Right way
   m_TagString: Untagged
@@ -11746,6 +11989,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &5757408918246573334
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783726011758903045}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006593093, y: 0.02638464, z: -0.03798326}
 --- !u!1 &4848150149603958701
 GameObject:
   m_ObjectHideFlags: 0
@@ -11878,9 +12142,9 @@ MonoBehaviour:
   collider: {fileID: 3347712032949475983}
   lineOfSightLayer:
     serializedVersion: 2
-    m_Bits: 257
-  fieldOfView: 115
-  threshold: 2
+    m_Bits: 256
+  fieldOfView: 70
+  threshold: 1
 --- !u!1 &4898859068918629965
 GameObject:
   m_ObjectHideFlags: 0
@@ -13200,6 +13464,7 @@ GameObject:
   - component: {fileID: 9115774715576163241}
   - component: {fileID: 8477810418939234705}
   - component: {fileID: 7993380456832058763}
+  - component: {fileID: 8889136643023769125}
   m_Layer: 0
   m_Name: pumpkin3 Wrong way (1)
   m_TagString: Untagged
@@ -13272,6 +13537,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &8889136643023769125
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344134740947319060}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.32133108
+  m_Center: {x: -0.0041768244, y: 0.0005773157, z: -0.03456427}
 --- !u!1 &5416986637055357114
 GameObject:
   m_ObjectHideFlags: 0
@@ -14089,6 +14375,7 @@ GameObject:
   - component: {fileID: 2352709152954200953}
   - component: {fileID: 1486625530955437560}
   - component: {fileID: 3032646851525927166}
+  - component: {fileID: 4339786621239086788}
   m_Layer: 0
   m_Name: pumpkin3 Wrong way (6)
   m_TagString: Untagged
@@ -14161,6 +14448,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &4339786621239086788
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5833764123338152661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.32133108
+  m_Center: {x: -0.0041768244, y: 0.0005773157, z: -0.03456427}
 --- !u!1 &5917366276006911392
 GameObject:
   m_ObjectHideFlags: 0
@@ -16451,6 +16759,7 @@ GameObject:
   - component: {fileID: 13930529761851744}
   - component: {fileID: 1902675166781359374}
   - component: {fileID: 3864796445098331086}
+  - component: {fileID: 5429709720347068214}
   m_Layer: 0
   m_Name: pumpkin1 Right way (5)
   m_TagString: Untagged
@@ -16523,6 +16832,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &5429709720347068214
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768447652879482993}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &6794748213751450003
 GameObject:
   m_ObjectHideFlags: 0
@@ -16728,6 +17058,7 @@ GameObject:
   - component: {fileID: 7501045619057807122}
   - component: {fileID: 8515426621141057611}
   - component: {fileID: 1203868050612628166}
+  - component: {fileID: 3695044280756881437}
   m_Layer: 0
   m_Name: pumpkin1 Right way (12)
   m_TagString: Untagged
@@ -16800,6 +17131,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &3695044280756881437
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900865024337940292}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &6915651255125571253
 GameObject:
   m_ObjectHideFlags: 0
@@ -17738,6 +18090,7 @@ GameObject:
   - component: {fileID: 3580189362186341665}
   - component: {fileID: 49195431867667192}
   - component: {fileID: 6626078127108232809}
+  - component: {fileID: 1394183634367683190}
   m_Layer: 0
   m_Name: pumpkin3 Wrong way
   m_TagString: Untagged
@@ -17810,6 +18163,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &1394183634367683190
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7426366491017197729}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.32133108
+  m_Center: {x: -0.0041768244, y: 0.0005773157, z: -0.03456427}
 --- !u!1 &7435237090267751209
 GameObject:
   m_ObjectHideFlags: 0
@@ -18389,6 +18763,7 @@ GameObject:
   - component: {fileID: 4734501542833604965}
   - component: {fileID: 8565430795123822723}
   - component: {fileID: 5835502108096158884}
+  - component: {fileID: 8607150883929097685}
   m_Layer: 0
   m_Name: pumpkin1 Right way (4)
   m_TagString: Untagged
@@ -18461,6 +18836,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &8607150883929097685
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633826082544833705}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &7637732734276641490
 GameObject:
   m_ObjectHideFlags: 0
@@ -18932,7 +19328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7451486611634017810
 Transform:
   m_ObjectHideFlags: 0
@@ -20016,6 +20412,7 @@ GameObject:
   - component: {fileID: 2789939330847864906}
   - component: {fileID: 6543519167848668190}
   - component: {fileID: 352313269052359283}
+  - component: {fileID: 5026407841552016425}
   m_Layer: 0
   m_Name: pumpkin3 Wrong way (2)
   m_TagString: Untagged
@@ -20088,6 +20485,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &5026407841552016425
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120082316288584286}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.32133108
+  m_Center: {x: -0.0041768244, y: 0.0005773157, z: -0.03456427}
 --- !u!1 &8133614921948831891
 GameObject:
   m_ObjectHideFlags: 0
@@ -20336,6 +20754,7 @@ GameObject:
   - component: {fileID: 6277156327200298342}
   - component: {fileID: 563480851283449010}
   - component: {fileID: 8850464140438304167}
+  - component: {fileID: 4541682711161276546}
   m_Layer: 0
   m_Name: pumpkin3 Wrong way (7)
   m_TagString: Untagged
@@ -20408,6 +20827,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &4541682711161276546
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260140951026023959}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.32133108
+  m_Center: {x: -0.0041768244, y: 0.0005773157, z: -0.03456427}
 --- !u!1 &8274758912477983868
 GameObject:
   m_ObjectHideFlags: 0
@@ -22062,6 +22502,7 @@ GameObject:
   - component: {fileID: 3924152425596611303}
   - component: {fileID: 6848784838102911246}
   - component: {fileID: 559073371385889545}
+  - component: {fileID: 7421701578928432192}
   m_Layer: 0
   m_Name: pumpkin1 Right way (3)
   m_TagString: Untagged
@@ -22134,6 +22575,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &7421701578928432192
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801487495789321556}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &8808079563876414153
 GameObject:
   m_ObjectHideFlags: 0
@@ -22261,6 +22723,7 @@ GameObject:
   - component: {fileID: 8640378748920151398}
   - component: {fileID: 3755775291876850000}
   - component: {fileID: 1229151418160127737}
+  - component: {fileID: 675463540396285048}
   m_Layer: 0
   m_Name: pumpkin1 Right way (8)
   m_TagString: Untagged
@@ -22333,6 +22796,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &675463540396285048
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816105860539512686}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2929704
+  m_Center: {x: 0.006654128, y: 0.02638464, z: -0.03798326}
 --- !u!1 &8819365168662563712
 GameObject:
   m_ObjectHideFlags: 0
@@ -22459,13 +22943,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8862777134175742263}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.70899993, z: -0, w: -0.70520854}
-  m_LocalPosition: {x: -66.3, y: -0.482, z: 159}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.27516344, y: -0.65280145, z: -0.2766428, w: -0.6493106}
+  m_LocalPosition: {x: -92.166, y: -0.625, z: 166.171}
+  m_LocalScale: {x: 1.5834, y: 1.5834, z: 1.5834}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7699478252015580246}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -45.932, y: 90.307, z: 0}
 --- !u!33 &5836046678725046513
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22964,6 +23448,7 @@ GameObject:
   - component: {fileID: 3888161518613121049}
   - component: {fileID: 4780016430534993075}
   - component: {fileID: 3156894981876095394}
+  - component: {fileID: 377331359346718290}
   m_Layer: 0
   m_Name: pumpkin3 Wrong way (8)
   m_TagString: Untagged
@@ -23036,6 +23521,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &377331359346718290
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000328208315630715}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.3213311
+  m_Center: {x: -0.004176825, y: 0.00057731575, z: -0.03456427}
 --- !u!1 &9029707568716112004
 GameObject:
   m_ObjectHideFlags: 0
