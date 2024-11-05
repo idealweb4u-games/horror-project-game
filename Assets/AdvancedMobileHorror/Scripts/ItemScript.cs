@@ -183,7 +183,7 @@ namespace AdvancedHorrorFPS
                 }
                 else
                 {
-                    Debug.Log("There is no clowns");
+                    GameCanvas.Instance.Show_Warning("Bring clowns first!");
                 }
             }
         }
