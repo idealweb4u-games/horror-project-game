@@ -2394,6 +2394,8 @@ MonoBehaviour:
       m_Calls: []
   completed: 0
   CameraCutScene: {fileID: 3551878053671659611}
+  intermediateCutScene: {fileID: 0}
+  intermediateCutSceneObjects: {fileID: 0}
   Enemy: {fileID: 1877749979552331951}
   rain: 0
   fire: 1
@@ -5498,7 +5500,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.046666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: e2ed851d858b11d45a24088bc726818b, type: 2}
   m_BuildHeightMesh: 0
@@ -6267,7 +6269,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.046666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 17d30fc95063d28478c899c3daeca4f3, type: 2}
   m_BuildHeightMesh: 0
@@ -8351,6 +8353,7 @@ MonoBehaviour:
   - {x: 560, y: 18.06, z: 435}
   attacked: 0
   DefaultState: 2
+  finalDollPosition: {fileID: 0}
   IdleLocationRadius: 5
   sprintSpeed: 4.8
   idleSpeed: 2.5
@@ -9627,7 +9630,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.046666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: af523738fcd13ee4783a78983aa0dbf1, type: 2}
   m_BuildHeightMesh: 0
@@ -10208,7 +10211,6 @@ GameObject:
   - component: {fileID: 1555345090867719210}
   - component: {fileID: 4207336847246194562}
   - component: {fileID: 1060657146433059791}
-  - component: {fileID: 4100819418199441520}
   - component: {fileID: 7640948861467039052}
   m_Layer: 0
   m_Name: Tomb_6
@@ -10303,21 +10305,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.7484741, y: 2.215718, z: 4.127228}
   m_Center: {x: -0.015533447, y: 1.137859, z: -0.17262268}
---- !u!114 &4100819418199441520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4025848935905048967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b1acebadb2dbb4e81427a374cc604b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: {fileID: 8529186715275340811}
-  collectable: {fileID: 727463770906335180}
-  ExtraItems: {fileID: 0}
 --- !u!54 &7640948861467039052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12315,7 +12302,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.046666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: dc944663b8e0eeb4daa0f6dde3a7aaf6, type: 2}
   m_BuildHeightMesh: 0
@@ -18648,6 +18635,7 @@ GameObject:
   - component: {fileID: 139751969357081433}
   - component: {fileID: 727463770906335180}
   - component: {fileID: 133283922632805380}
+  - component: {fileID: 1057814419526510764}
   m_Layer: 0
   m_Name: Collectable
   m_TagString: Collectable
@@ -18772,6 +18760,33 @@ MonoBehaviour:
   Lock: {fileID: 0}
   isOpened: 0
   playerInRange: 0
+--- !u!54 &1057814419526510764
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7714399522905553801}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7729023246234906076
 GameObject:
   m_ObjectHideFlags: 0
@@ -19008,6 +19023,7 @@ MonoBehaviour:
   - {x: 589, y: 18, z: 554}
   attacked: 0
   DefaultState: 2
+  finalDollPosition: {fileID: 0}
   IdleLocationRadius: 5
   sprintSpeed: 4.8
   idleSpeed: 2.5
@@ -21175,6 +21191,7 @@ MonoBehaviour:
   - {x: 568, y: 18, z: 579}
   attacked: 0
   DefaultState: 2
+  finalDollPosition: {fileID: 0}
   IdleLocationRadius: 5
   sprintSpeed: 4.8
   idleSpeed: 2.5
