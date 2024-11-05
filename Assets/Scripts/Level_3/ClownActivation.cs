@@ -6,8 +6,10 @@ using UnityEngine;
 public class ClownActivation : MonoBehaviour
 {
     [SerializeField] GameObject[] clownsSight;
+    [HideInInspector] public static bool isClownEntered;
     private void Start()
     {
+        isClownEntered = false;
         foreach (GameObject clown in clownsSight)
         {
             clown.SetActive(false);
@@ -23,6 +25,7 @@ public class ClownActivation : MonoBehaviour
             if (other.gameObject.CompareTag("Clown"))
             {
                 Debug.Log("CLowns enter the room");
+                isClownEntered = true;
             }
         }
     }

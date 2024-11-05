@@ -177,7 +177,14 @@ namespace AdvancedHorrorFPS
 
                 //activate cut scene
                 Debug.Log("Interact with mirror");
-            
+                if(ClownActivation.isClownEntered)
+                {
+                    MirrorCutSceneManager.Instance.StartCutScene();
+                }
+                else
+                {
+                    Debug.Log("There is no clowns");
+                }
             }
         }
 
