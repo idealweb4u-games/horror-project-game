@@ -41,15 +41,32 @@ namespace AdvancedHorrorFPS
             }
         }
 
+        //public void ThrowObject()
+        //{
+        //    if (!wasThrownOnce)
+        //    {
+        //        weaponInstantiated = Instantiate(weaponPrefab, startThrowPoint.transform.position, weaponPrefab.transform.rotation);
+        //        weaponInstantiated.transform.position = SetPathOfWeapon();
+        //        weaponContainer.SetActive(true);
+        //        weaponButton.gameObject.SetActive(false);
+        //        wasThrownOnce = true;
+        //    }
+        //}
         public void ThrowObject()
         {
             if (!wasThrownOnce)
             {
                 weaponInstantiated = Instantiate(weaponPrefab, startThrowPoint.transform.position, weaponPrefab.transform.rotation);
-                weaponInstantiated.transform.position = SetPathOfWeapon();
                 weaponContainer.SetActive(true);
                 weaponButton.gameObject.SetActive(false);
-                wasThrownOnce = true;
+
+                Sequence weaponPathSequence = DOTween.Sequence();
+
+                weaponPathSequence.Append(weaponInstantiated.transform.DOMove(throwPointTwo.position, speedOfWeaponPath))
+                                  .Append(weaponInstantiated.transform.DOMove(throwPointThree.position, speedOfWeaponPath))
+                                  .OnComplete(() => {
+                                      wasThrownOnce = true;
+                                  });
             }
         }
 
@@ -60,14 +77,14 @@ namespace AdvancedHorrorFPS
             wasThrownOnce=false;
         }
 
-        private Vector3 SetPathOfWeapon()
-        {
-            Vector3 startTwo = Vector3.Lerp(startThrowPoint.position, throwPointTwo.position, speedOfWeaponPath);
-            Vector3 twoThird = Vector3.Lerp(throwPointTwo.position, throwPointThree.position, speedOfWeaponPath);
+        //private Vector3 SetPathOfWeapon()
+        //{
+        //    Vector3 startTwo = Vector3.Lerp(startThrowPoint.position, throwPointTwo.position, speedOfWeaponPath);
+        //    Vector3 twoThird = Vector3.Lerp(throwPointTwo.position, throwPointThree.position, speedOfWeaponPath);
 
-            Vector3 startThird = Vector3.Lerp(startTwo, twoThird, speedOfWeaponPath);
-            return startThird;
-        }
+        //    Vector3 startThird = Vector3.Lerp(startTwo, twoThird, speedOfWeaponPath);
+        //    return startThird;
+        //}
     }   
 
 }
