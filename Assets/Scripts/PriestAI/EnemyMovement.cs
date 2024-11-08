@@ -246,6 +246,7 @@ namespace AdvancedHorrorFPS
         {
             transform.position = finalDollPosition.position; //teleport enemy to the player 
             transform.LookAt(Player.transform.position);
+            animator.SetBool("Chase", false);
             animator.SetTrigger("Crazy");
             Invoke("DisableEnemy", 2.0f);
         }
