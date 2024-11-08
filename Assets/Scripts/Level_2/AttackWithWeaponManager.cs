@@ -63,7 +63,7 @@ namespace AdvancedHorrorFPS
                 Sequence weaponPathSequence = DOTween.Sequence();
 
                 weaponPathSequence.Append(weaponInstantiated.transform.DOMove(throwPointTwo.position, speedOfWeaponPath))
-                                  .Append(weaponInstantiated.transform.DOMove(throwPointThree.position, speedOfWeaponPath))
+                                  .Append(weaponInstantiated.transform.DOMove(throwPointThree.position, speedOfWeaponPath/2))
                                   .OnComplete(() => {
                                       wasThrownOnce = true;
                                   });

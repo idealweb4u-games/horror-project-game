@@ -77,6 +77,7 @@ namespace AdvancedHorrorFPS
             Agent.speed = idleSpeed;
             Debug.Log("Lost Sight Of Player");
             animator.SetBool("Chase", false);
+            animator.SetTrigger("Default");//for boy level 1
         }
 
         private void OnDisable()
@@ -245,6 +246,7 @@ namespace AdvancedHorrorFPS
         {
             transform.position = finalDollPosition.position; //teleport enemy to the player 
             transform.LookAt(Player.transform.position);
+            animator.SetTrigger("Crazy");
             Invoke("DisableEnemy", 2.0f);
         }
 
@@ -254,7 +256,7 @@ namespace AdvancedHorrorFPS
             TableManager.Instance.ActivateFinalItems();
         }
 
-        private void Attack() // Attack script from Demon
+        public void Attack() // Attack script from Demon
         {
             /*
             if (Agent.enabled)
