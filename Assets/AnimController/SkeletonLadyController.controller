@@ -42,6 +42,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -3859053175407310509}
     m_Position: {x: 480, y: 130, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 4550136039149390808}
+    m_Position: {x: 480, y: 200, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -95,6 +98,33 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 5329333650402814155, guid: 2dce921ba740340a08eb7851fe00c5ff,
+    type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &4550136039149390808
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Armature|dinner
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 8869473386612059761, guid: 2dce921ba740340a08eb7851fe00c5ff,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
