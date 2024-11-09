@@ -5,11 +5,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
+/// <summary>
+/// <summary>This class is used for both Level 3 and 4 cut scene logic</summary>
+/// </summary>
 public class MirrorCutSceneManager : MonoBehaviour
 {
     public static MirrorCutSceneManager Instance;
-    [SerializeField] private GameObject mirrorCutScene, objectsCutScene, fpsHands;
+    [SerializeField] private GameObject mirrorCutScene, graveCutScene, objectsCutScene, fpsHands;
     [SerializeField] private PlayableDirector playableDirector;
+    [SerializeField] private bool isLevel3;
 
     private void Awake()
     {
@@ -30,7 +34,15 @@ public class MirrorCutSceneManager : MonoBehaviour
 
     public void StartCutScene()
     {
-        mirrorCutScene.SetActive(true);
+        if (isLevel3)
+        {
+            mirrorCutScene.SetActive(true);
+        }
+        if (!isLevel3)
+        {
+            graveCutScene.SetActive(true);
+        }
+        
         objectsCutScene.SetActive(true);
         fpsHands.SetActive(false);
         GameplayManager.Instance.Player.SetActive(false);
@@ -41,7 +53,7 @@ public class MirrorCutSceneManager : MonoBehaviour
         AudioManager.Instance.Stop_Clown_Laugh();
         foreach (var enemy in FindObjectsOfType<EnemyMovement>())
         {
-            if (enemy.gameObject.CompareTag("Clown"))
+            if (enemy.gameObject.CompareTag("Clown") || enemy.gameObject.CompareTag("Pumpkin"))
             {
                 enemy.enabled = false;
             }

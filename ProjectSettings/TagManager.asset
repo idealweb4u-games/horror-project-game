@@ -24,6 +24,7 @@ TagManager:
   - LeftDoor
   - RightDoor
   - Clown
+  - Pumpkin
   layers:
   - Default
   - TransparentFX

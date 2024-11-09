@@ -173,10 +173,8 @@ namespace AdvancedHorrorFPS
                     UIManager.Instance.showlevelComplete();
                 }
             }
-            else if(itemType == ItemType.Mirror) {
-
-                //activate cut scene
-                Debug.Log("Interact with mirror");
+            else if(itemType == ItemType.Mirror) 
+            {
                 if(ClownActivation.isClownEntered)
                 {
                     MirrorCutSceneManager.Instance.StartCutScene();
@@ -185,6 +183,9 @@ namespace AdvancedHorrorFPS
                 {
                     GameCanvas.Instance.Show_Warning("Bring clowns first!");
                 }
+            }
+            else if(itemType == ItemType.Tomb) {
+                MirrorCutSceneManager.Instance.StartCutScene();
             }
         }
 
@@ -273,6 +274,7 @@ namespace AdvancedHorrorFPS
         Altar,
         FinalKey,
         Gate,
-        Mirror
+        Mirror,
+        Tomb
     }
 }

@@ -2592,6 +2592,7 @@ Transform:
   - {fileID: 7699478252015580246}
   - {fileID: 2212386706679357542}
   - {fileID: 6132734081711484132}
+  - {fileID: 3990932694186122475}
   - {fileID: 8768101045526658273}
   - {fileID: 9073089023208921961}
   m_Father: {fileID: 0}
@@ -9066,7 +9067,7 @@ GameObject:
   - component: {fileID: 452629770739635573}
   m_Layer: 0
   m_Name: Pumpkin_King (1)
-  m_TagString: Untagged
+  m_TagString: Pumpkin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11158,8 +11159,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.8793335, y: 2.7822692, z: 4.066223}
-  m_Center: {x: -0.005340576, y: 1.4211346, z: -0.203125}
+  m_Size: {x: 2.1875541, y: 2.7822692, z: 4.777466}
+  m_Center: {x: 0.0137956515, y: 1.4211346, z: 0.15249634}
 --- !u!54 &7640948861467039052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11199,8 +11200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df050c2274bf4d1469480b6e8655168a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
-  Name: 
+  itemType: 21
+  Name: Tomb
   Lock: {fileID: 0}
   isOpened: 0
   playerInRange: 0
@@ -11543,6 +11544,56 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 400, y: 30, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4272799315176526499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3990932694186122475}
+  - component: {fileID: 3179951366275358662}
+  m_Layer: 0
+  m_Name: FinalCutSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3990932694186122475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272799315176526499}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 471.49, y: 15.385, z: 445.15}
+  m_LocalScale: {x: 2.3182, y: 2.3182, z: 2.7897217}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5743850415463735808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3179951366275358662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272799315176526499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4390800f6cb66904e92bc0c4ab8eb095, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mirrorCutScene: {fileID: 0}
+  graveCutScene: {fileID: 9131348551389756703}
+  objectsCutScene: {fileID: 8858577450638686473}
+  fpsHands: {fileID: 0}
+  playableDirector: {fileID: 4278099118886693834}
+  isLevel3: 0
 --- !u!1 &4309410681938708195
 GameObject:
   m_ObjectHideFlags: 0
@@ -20312,7 +20363,7 @@ GameObject:
   - component: {fileID: 5950571344913200646}
   m_Layer: 0
   m_Name: Pumpkin_King
-  m_TagString: Untagged
+  m_TagString: Pumpkin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22751,7 +22802,7 @@ GameObject:
   - component: {fileID: 157529022737040254}
   m_Layer: 0
   m_Name: Pumpkin_King (2)
-  m_TagString: Untagged
+  m_TagString: Pumpkin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24314,7 +24365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9073089023208921961
 Transform:
   m_ObjectHideFlags: 0
@@ -25384,7 +25435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8768101045526658273
 Transform:
   m_ObjectHideFlags: 0
