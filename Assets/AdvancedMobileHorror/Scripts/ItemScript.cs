@@ -52,7 +52,18 @@ namespace AdvancedHorrorFPS
                 }
                 else
                 {
-                    GetComponent<BoxScript>().Interact();
+                    if(Name == "Milk")
+                    {
+                        TableManager.Instance.ActivateMilkBoxOpenning();
+                        if (TableManager.Instance.milkBoxIsOpened)
+                        {
+                            GetComponent<BoxScript>().Interact();
+                        }
+                    }
+                    else
+                    {
+                        GetComponent<BoxScript>().Interact();
+                    }
                 }
                 isBottleGrabbed = true; // used for Level 1
                 isEnemyCarried = true; //used for Level 2

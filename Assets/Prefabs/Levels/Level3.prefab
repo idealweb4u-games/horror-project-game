@@ -1343,7 +1343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1186734134372277382
 Transform:
   m_ObjectHideFlags: 0
@@ -3120,7 +3120,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 13
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2722933235824889030
 MonoBehaviour:
@@ -3138,7 +3138,7 @@ MonoBehaviour:
   lineOfSightLayer:
     serializedVersion: 2
     m_Bits: 256
-  fieldOfView: 30
+  fieldOfView: 20
   threshold: 1
 --- !u!1 &3390084423222258861
 GameObject:
@@ -3534,7 +3534,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 13
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4226157185878019050
 MonoBehaviour:
@@ -3552,7 +3552,7 @@ MonoBehaviour:
   lineOfSightLayer:
     serializedVersion: 2
     m_Bits: 256
-  fieldOfView: 30
+  fieldOfView: 20
   threshold: 1
 --- !u!1 &3692366835579446199
 GameObject:
@@ -3929,9 +3929,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mirrorCutScene: {fileID: 2578070940706856397}
+  graveCutScene: {fileID: 0}
   objectsCutScene: {fileID: 1211041335617187915}
   fpsHands: {fileID: 0}
   playableDirector: {fileID: 3438900163844093429}
+  isLevel3: 1
 --- !u!1 &3951007457895617198
 GameObject:
   m_ObjectHideFlags: 0
@@ -7797,7 +7799,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 13
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &923179544719665576
 MonoBehaviour:
@@ -7815,7 +7817,7 @@ MonoBehaviour:
   lineOfSightLayer:
     serializedVersion: 2
     m_Bits: 256
-  fieldOfView: 30
+  fieldOfView: 20
   threshold: 1
 --- !u!1 &8223365162817902137
 GameObject:
