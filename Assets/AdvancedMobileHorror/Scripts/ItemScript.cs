@@ -181,7 +181,7 @@ namespace AdvancedHorrorFPS
             {
                 if (isFinalKeyGrabbed)
                 {
-                    UIManager.Instance.showlevelComplete();
+                    GateManager.Instance.UnlockNextLevel();
                 }
             }
             else if(itemType == ItemType.Mirror) 
