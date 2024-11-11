@@ -4721,7 +4721,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 8.5
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &378933439247051593
 MonoBehaviour:
@@ -4738,7 +4738,7 @@ MonoBehaviour:
   collider: {fileID: 4550416074825221338}
   lineOfSightLayer:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
   fieldOfView: 2
   threshold: 2
 --- !u!114 &4709952390043315724
