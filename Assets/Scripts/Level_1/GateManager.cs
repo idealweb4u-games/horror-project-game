@@ -30,10 +30,10 @@ public class GateManager : MonoBehaviour
 
         while (currentValue < 100)
         {
-            currentValue += 40.0f;
+            currentValue += 50.0f;
             gate.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, currentValue);
             SetNultipleBlendShapeWeight(currentValue);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(.5f);
         }
 
         gateIsOpened = true;
