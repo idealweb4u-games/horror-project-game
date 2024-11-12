@@ -24,6 +24,10 @@ public class GameplayManager : Singleton<GameplayManager> {
     }
    
     public void home() {
+        if(SceneLoad.Instance != null)
+        {
+            Debug.Log("Load Scene Home");
+        }
         SceneLoad.Instance.LoadScene(1);
         SoundManager.Instance.PlayEffect();
     }
