@@ -9,6 +9,10 @@ public class GameUIManager : MonoBehaviour
     [Header("Home Page UI Elements")]
     [SerializeField] private Image settings;
     [SerializeField] private Image store;
+    [Header("Settings components")]
+    [SerializeField] private Slider soundSlider;
+    [SerializeField] private Slider brightnessSlider;
+    [SerializeField] private Slider vibrationSlider;
 
     public void Play()
     {
@@ -44,5 +48,20 @@ public class GameUIManager : MonoBehaviour
         //TODO: open level selection scene
         SceneManager.LoadScene(2);
     }
-    
+    #region settings controller
+    public void ChangeSound(float volume)
+    {
+        soundSlider.value = volume;
+    }
+    public void ChangeBrightness(float brightValue)
+    {
+        brightnessSlider.value = brightValue;
+    }
+    public void ChangeVibrationStrength(float vibrationValue)
+    {
+        vibrationSlider.value = vibrationValue;
+    }
+    #endregion
+
 }
+
