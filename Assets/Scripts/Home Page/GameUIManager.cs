@@ -13,6 +13,7 @@ public class GameUIManager : MonoBehaviour
 {
     [Header("Home Page UI Elements")]
     [SerializeField] private Image settings, store;
+    [SerializeField] private SceneLoad sceneLoad;
     [Header("Settings components")]
     [SerializeField] private Slider soundSlider, brightnessSlider, vibrationSlider;
     [SerializeField] private TextMeshProUGUI volumeTextValue, brightnessTextValue, vibrationTextValue;
@@ -30,7 +31,12 @@ public class GameUIManager : MonoBehaviour
     public void Play()
     {
         //TODO: implement opening last opened(complete) level
-        SceneManager.LoadScene(1);
+        sceneLoad.LoadScene(2);
+    }
+
+    public void OpenLevelselection()
+    {
+        sceneLoad.LoadScene(3);
     }
 
     public void OpenSettings()
@@ -55,11 +61,6 @@ public class GameUIManager : MonoBehaviour
     {
         //TODO: implement loading money amount, all purchased items
         store.gameObject.SetActive(false);
-    }
-    public void OpenLevelSelection()
-    {
-        //TODO: open level selection scene
-        SceneManager.LoadScene(2);
     }
     #region settings controller
     public void ChangeSound(float volume)

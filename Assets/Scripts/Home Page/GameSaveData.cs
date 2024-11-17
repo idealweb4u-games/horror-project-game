@@ -10,7 +10,7 @@ public class GameSaveData : MonoBehaviour
     public float brightness;
     public float vibration;
 
-    public static GameSaveData Instance;
+    public static GameSaveData Instance { get; private set; }
 
     private void Awake()
     {

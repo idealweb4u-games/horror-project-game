@@ -8,7 +8,7 @@ public class SceneLoad : Singleton<SceneLoad> {
     public Session session;
     private GameObject loadingScreen;
     public void LoadScene(int n) {
-        SoundManager.Instance.AssignMusicClip(SoundManager.Instance. loadingClip);
+        SoundManager.Instance.AssignMusicClip(SoundManager.Instance.loadingClip);
         SoundManager.Instance.PlayMusic();
         loadingScreen = Instantiate(session.Loading, transform);
         StartCoroutine(StartLoad(n));
