@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private Slider soundSlider;
     [SerializeField] private Slider brightnessSlider;
     [SerializeField] private Slider vibrationSlider;
+    [SerializeField] private AudioMixer audioMixer;
 
     public void Play()
     {
@@ -52,6 +54,7 @@ public class GameUIManager : MonoBehaviour
     public void ChangeSound(float volume)
     {
         soundSlider.value = volume;
+        audioMixer.SetFloat("AllMusic", volume);
     }
     public void ChangeBrightness(float brightValue)
     {
