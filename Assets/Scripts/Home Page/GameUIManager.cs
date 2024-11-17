@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
@@ -10,12 +12,10 @@ using UnityEngine.UI;
 public class GameUIManager : MonoBehaviour
 {
     [Header("Home Page UI Elements")]
-    [SerializeField] private Image settings;
-    [SerializeField] private Image store;
+    [SerializeField] private Image settings, store;
     [Header("Settings components")]
-    [SerializeField] private Slider soundSlider;
-    [SerializeField] private Slider brightnessSlider;
-    [SerializeField] private Slider vibrationSlider;
+    [SerializeField] private Slider soundSlider, brightnessSlider, vibrationSlider;
+    [SerializeField] private TextMeshProUGUI volumeTextValue, brightnessTextValue, vibrationTextValue;
     [SerializeField] private AudioMixer audioMixer;
     [Header("Brightness")]
     [SerializeField] private Volume brightnessAdjusment;
@@ -60,6 +60,8 @@ public class GameUIManager : MonoBehaviour
     {
         soundSlider.value = volume;
         audioMixer.SetFloat("AllMusic", volume);
+        volumeTextValue.text = ConvertValuesToPercentage(volume, soundSlider.maxValue, soundSlider.minValue) + "%";
+
     }
     public void ChangeBrightness(float brightValue)
     {
@@ -68,12 +70,19 @@ public class GameUIManager : MonoBehaviour
         {
             colorAdjustments.postExposure.value = brightValue;
         }
+        brightnessTextValue.text = ConvertValuesToPercentage(brightValue, brightnessSlider.maxValue, brightnessSlider.minValue) + "%";
     }
     public void ChangeVibrationStrength(float vibrationValue)
     {
         vibrationSlider.value = vibrationValue;
+        vibrationTextValue.text = ConvertValuesToPercentage(vibrationValue, vibrationSlider.maxValue, vibrationSlider.minValue) + "%";
     }
     #endregion
 
+    private int ConvertValuesToPercentage(float currentValue, float maxValue, float minValue)
+    {
+        float percentageValue = ((currentValue - minValue) / (maxValue - minValue)) * 100f;
+        return Mathf.RoundToInt(percentageValue);
+    }
 }
 
