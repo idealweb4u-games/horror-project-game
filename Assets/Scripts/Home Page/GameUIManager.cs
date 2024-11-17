@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -15,6 +17,9 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private Slider brightnessSlider;
     [SerializeField] private Slider vibrationSlider;
     [SerializeField] private AudioMixer audioMixer;
+    [Header("Brightness")]
+    [SerializeField] private Volume brightnessAdjusment;
+    private ColorAdjustments colorAdjustments;
 
     public void Play()
     {
@@ -59,6 +64,10 @@ public class GameUIManager : MonoBehaviour
     public void ChangeBrightness(float brightValue)
     {
         brightnessSlider.value = brightValue;
+        if (brightnessAdjusment.profile.TryGet(out colorAdjustments))
+        {
+            colorAdjustments.postExposure.value = brightValue;
+        }
     }
     public void ChangeVibrationStrength(float vibrationValue)
     {
