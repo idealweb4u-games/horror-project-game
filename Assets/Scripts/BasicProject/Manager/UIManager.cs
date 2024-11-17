@@ -41,7 +41,7 @@ public class UIManager : Singleton<UIManager> {
     public void pause() {
         Time.timeScale = 0;
         SoundManager.Instance.PlayEffect();
-       pauseDlg.SetActive(true);
+        pauseDlg.SetActive(true);
     }
     public void resume() {
         Time.timeScale = 1;

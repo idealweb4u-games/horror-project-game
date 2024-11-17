@@ -23,9 +23,10 @@ public class GameUIManager : MonoBehaviour
     private ColorAdjustments colorAdjustments;
 
     //in case of unexpected behabiour change it to Update
-    private void Start()
+    private void Update()
     {
         ChangeVolumeSliderAppearance();
+        ChangeBrightnessSliderAppearance();
     }
 
     public void Play()
@@ -66,19 +67,15 @@ public class GameUIManager : MonoBehaviour
     public void ChangeSound(float volume)
     {
         GameSaveData.Instance.volume = volume;
-        soundSlider.value = GameSaveData.Instance.volume;
-        audioMixer.SetFloat("AllMusic", GameSaveData.Instance.volume);
+        ChangeVolumeSliderAppearance();
         volumeTextValue.text = ConvertValuesToPercentage(GameSaveData.Instance.volume, soundSlider.maxValue, soundSlider.minValue) + "%";
 
     }
     public void ChangeBrightness(float brightValue)
     {
-        brightnessSlider.value = brightValue;
-        if (brightnessAdjusment.profile.TryGet(out colorAdjustments))
-        {
-            colorAdjustments.postExposure.value = brightValue;
-        }
-        brightnessTextValue.text = ConvertValuesToPercentage(brightValue, brightnessSlider.maxValue, brightnessSlider.minValue) + "%";
+        GameSaveData.Instance.brightness = brightValue;
+        ChangeBrightnessSliderAppearance();
+        brightnessTextValue.text = ConvertValuesToPercentage(GameSaveData.Instance.brightness, brightnessSlider.maxValue, brightnessSlider.minValue) + "%";
     }
     public void ChangeVibrationStrength(float vibrationValue)
     {
@@ -98,6 +95,15 @@ public class GameUIManager : MonoBehaviour
     {
         soundSlider.value = GameSaveData.Instance.volume;
         audioMixer.SetFloat("AllMusic", GameSaveData.Instance.volume);
+    }
+    private void ChangeBrightnessSliderAppearance()
+    {
+        brightnessSlider.value = GameSaveData.Instance.brightness;
+        if (brightnessAdjusment.profile.TryGet(out colorAdjustments))
+        {
+            Debug.Log("We get color adjustment");
+            colorAdjustments.postExposure.value = GameSaveData.Instance.brightness;
+        }
     }
 
     
