@@ -31,12 +31,12 @@ public class GameUIManager : MonoBehaviour
     public void Play()
     {
         //TODO: implement opening last opened(complete) level
-        sceneLoad.LoadScene(2);
+        sceneLoad.LoadScene(3);
     }
 
     public void OpenLevelselection()
     {
-        sceneLoad.LoadScene(3);
+        sceneLoad.LoadScene(2);
     }
 
     public void OpenSettings()
