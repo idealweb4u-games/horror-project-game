@@ -21,6 +21,12 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private Volume brightnessAdjusment;
     private ColorAdjustments colorAdjustments;
 
+    //in case of unexpected behabiour change it to Update
+    private void Start()
+    {
+        ChangeVolumeSliderAppearance();
+    }
+
     public void Play()
     {
         //TODO: implement opening last opened(complete) level
@@ -29,13 +35,13 @@ public class GameUIManager : MonoBehaviour
 
     public void OpenSettings()
     {
-        //TODO: implement loading saved settings
         settings.gameObject.SetActive(true);
     }
 
     public void CloseSettings()
     {
         //TODO: implement save settings
+        GameSaveData.Instance.SaveData();
         settings.gameObject.SetActive(false);
     }
 
@@ -58,9 +64,10 @@ public class GameUIManager : MonoBehaviour
     #region settings controller
     public void ChangeSound(float volume)
     {
-        soundSlider.value = volume;
-        audioMixer.SetFloat("AllMusic", volume);
-        volumeTextValue.text = ConvertValuesToPercentage(volume, soundSlider.maxValue, soundSlider.minValue) + "%";
+        GameSaveData.Instance.volume = volume;
+        soundSlider.value = GameSaveData.Instance.volume;
+        audioMixer.SetFloat("AllMusic", GameSaveData.Instance.volume);
+        volumeTextValue.text = ConvertValuesToPercentage(GameSaveData.Instance.volume, soundSlider.maxValue, soundSlider.minValue) + "%";
 
     }
     public void ChangeBrightness(float brightValue)
@@ -79,10 +86,19 @@ public class GameUIManager : MonoBehaviour
     }
     #endregion
 
+    //formula for converting slider values into percentages
     private int ConvertValuesToPercentage(float currentValue, float maxValue, float minValue)
     {
         float percentageValue = ((currentValue - minValue) / (maxValue - minValue)) * 100f;
         return Mathf.RoundToInt(percentageValue);
     }
+
+    private void ChangeVolumeSliderAppearance()
+    {
+        soundSlider.value = GameSaveData.Instance.volume;
+        audioMixer.SetFloat("AllMusic", GameSaveData.Instance.volume);
+    }
+
+    
 }
 
