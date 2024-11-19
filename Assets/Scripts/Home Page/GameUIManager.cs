@@ -101,7 +101,6 @@ public class GameUIManager : MonoBehaviour
         brightnessSlider.value = GameSaveData.Instance.brightness;
         if (brightnessAdjusment.profile.TryGet(out colorAdjustments))
         {
-            Debug.Log("We get color adjustment");
             colorAdjustments.postExposure.value = GameSaveData.Instance.brightness;
         }
     }
