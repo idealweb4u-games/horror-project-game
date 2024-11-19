@@ -33,6 +33,7 @@ public class UIManager : Singleton<UIManager> {
         Time.timeScale = 0;
         SoundManager.Instance.PlayEffect();
         levelComplete.SetActive(true);
+
     }
     public void showLevelFail() {
         SoundManager.Instance.PlayEffect();
