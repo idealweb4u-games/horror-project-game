@@ -7,10 +7,12 @@ public class CreditsManager : MonoBehaviour
     private RectTransform rectTransform;
     private Vector2 initialPos;
     private const float SPEED = 50.0f, TOPLIMIT = 485.0f; //hard coded and tested values. Limit for reseting image position
+    public static CreditsManager Instance { get; private set; }
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        Instance = this;
     }
     private void Start()
     {
@@ -20,7 +22,7 @@ public class CreditsManager : MonoBehaviour
     {
         RunCredits();
     }
-    private void RunCredits()
+    public void RunCredits()
     {
         if(rectTransform.anchoredPosition.y > TOPLIMIT)
         {

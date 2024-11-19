@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class GameUIManager : MonoBehaviour
 {
     [Header("Home Page UI Elements")]
-    [SerializeField] private Image settings, store;
+    [SerializeField] private Image settings, store, about;
     [SerializeField] private SceneLoad sceneLoad;
     [Header("Settings components")]
     [SerializeField] private Slider soundSlider, brightnessSlider, vibrationSlider;
@@ -63,6 +63,18 @@ public class GameUIManager : MonoBehaviour
         //TODO: implement loading money amount, all purchased items
         store.gameObject.SetActive(false);
     }
+
+    public void OpenAbout()
+    {
+        about.gameObject.SetActive(true);
+        CreditsManager.Instance.enabled = true;
+    }
+    public void CloseAbout()
+    {
+        about.gameObject.SetActive(false);
+        CreditsManager.Instance.enabled = false;
+    }
+
     #region settings controller
     public void ChangeSound(float volume)
     {
@@ -84,6 +96,7 @@ public class GameUIManager : MonoBehaviour
     }
     #endregion
 
+    #region private methods for help
     //formula for converting slider values into percentages
     private int ConvertValuesToPercentage(float currentValue, float maxValue, float minValue)
     {
@@ -104,7 +117,7 @@ public class GameUIManager : MonoBehaviour
             colorAdjustments.postExposure.value = GameSaveData.Instance.brightness;
         }
     }
+    #endregion
 
-    
 }
 
