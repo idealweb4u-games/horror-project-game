@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -73,6 +74,12 @@ public class GameUIManager : MonoBehaviour
     {
         about.gameObject.SetActive(true);
         CreditsManager.Instance.enabled = true;
+        Time.timeScale = 1;
+        foreach(var enemy in FindObjectsOfType<NavMeshAgent>())
+        {
+            enemy.enabled = false;
+        }
+        FindObjectOfType<NavMeshAgent>().enabled = false;
     }
     public void CloseAbout()
     {

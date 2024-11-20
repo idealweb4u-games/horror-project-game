@@ -11,9 +11,17 @@ public class CreditsManager : MonoBehaviour
 
     private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
+        DontDestroyOnLoad(gameObject);
+        rectTransform = GetComponent<RectTransform>();
     }
+
     private void Start()
     {
         initialPos = rectTransform.anchoredPosition;

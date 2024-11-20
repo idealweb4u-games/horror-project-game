@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using AdvancedHorrorFPS;
+using UnityEngine.AI;
 
 public class UIManager : Singleton<UIManager> {
     public LevelsData levelData;
@@ -48,6 +49,10 @@ public class UIManager : Singleton<UIManager> {
         Time.timeScale = 1;
         SoundManager.Instance.PlayEffect();
         pauseDlg.SetActive(false);
+        foreach (var enemy in FindObjectsOfType<NavMeshAgent>())
+        {
+            enemy.enabled = true;
+        }
     }
     public void startButton() {
         Time.timeScale = 1f;
