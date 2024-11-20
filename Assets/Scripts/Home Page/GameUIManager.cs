@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class GameUIManager : MonoBehaviour
 {
     [Header("Home Page UI Elements")]
-    [SerializeField] private Image settings, store, about;
+    [SerializeField] private Image settings, store, about, exit;
     [SerializeField] private SceneLoad sceneLoad;
     [Header("Settings components")]
     [SerializeField] private Slider soundSlider, brightnessSlider, vibrationSlider;
@@ -38,6 +38,11 @@ public class GameUIManager : MonoBehaviour
     public void OpenLevelselection()
     {
         sceneLoad.LoadScene(2);
+    }
+
+    public void GoHome()
+    {
+        sceneLoad.LoadScene(1);
     }
 
     public void OpenSettings()
@@ -73,6 +78,21 @@ public class GameUIManager : MonoBehaviour
     {
         about.gameObject.SetActive(false);
         CreditsManager.Instance.enabled = false;
+    }
+
+    public void OpenExitScreen()
+    {
+        exit.gameObject.SetActive(true);
+    }
+    public void CloseExitScreen()
+    {
+        exit.gameObject.SetActive(false);
+    }
+
+    public void ExitApp()
+    {
+        GameSaveData.Instance.SaveData(); //check for properties which chould be saved
+        Application.Quit();
     }
 
     #region settings controller
