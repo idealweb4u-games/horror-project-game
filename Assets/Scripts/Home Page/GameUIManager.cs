@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Audio;
@@ -22,7 +21,8 @@ public class GameUIManager : MonoBehaviour
     [Header("Brightness")]
     [SerializeField] private Volume brightnessAdjusment;
     private ColorAdjustments colorAdjustments;
-
+    public Session session;
+    public GameObject loadingScreen;
     //in case of unexpected behabiour change it to Update
     private void Update()
     {
@@ -33,17 +33,25 @@ public class GameUIManager : MonoBehaviour
     public void Play()
     {
         //TODO: implement opening last opened(complete) level
-        sceneLoad.LoadScene(3);
+        StartCoroutine(LoadSceneAfterDelay(3));
     }
 
     public void OpenLevelselection()
     {
-        sceneLoad.LoadScene(2);
+        StartCoroutine(LoadSceneAfterDelay(2));
     }
 
     public void GoHome()
     {
-        sceneLoad.LoadScene(1);
+        loadingScreen.SetActive(true);
+        SceneManager.LoadScene(1);
+    }
+
+    private IEnumerator LoadSceneAfterDelay(int n)
+    {
+        loadingScreen.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(n);
     }
 
     public void OpenSettings()
@@ -53,7 +61,6 @@ public class GameUIManager : MonoBehaviour
 
     public void CloseSettings()
     {
-        //TODO: implement save settings
         GameSaveData.Instance.SaveData();
         settings.gameObject.SetActive(false);
     }
