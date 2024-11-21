@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class GameUIManager : MonoBehaviour
 {
     [Header("Home Page UI Elements")]
-    [SerializeField] private Image settings, store, about, exit;
+    [SerializeField] private Image settings, store, about, exit, profilePage;
     [SerializeField] private SceneLoad sceneLoad;
     [Header("Settings components")]
     [SerializeField] private Slider soundSlider, brightnessSlider, vibrationSlider;
@@ -35,25 +35,15 @@ public class GameUIManager : MonoBehaviour
         //TODO: implement opening last opened(complete) level
         StartCoroutine(LoadSceneAfterDelay(3));
     }
-
     public void OpenLevelselection()
     {
         StartCoroutine(LoadSceneAfterDelay(2));
     }
-
     public void GoHome()
     {
         loadingScreen.SetActive(true);
         SceneManager.LoadScene(1);
     }
-
-    private IEnumerator LoadSceneAfterDelay(int n)
-    {
-        loadingScreen.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene(n);
-    }
-
     public void OpenSettings()
     {
         settings.gameObject.SetActive(true);
@@ -64,19 +54,24 @@ public class GameUIManager : MonoBehaviour
         GameSaveData.Instance.SaveData();
         settings.gameObject.SetActive(false);
     }
-
     public void OpenStore()
     {
         //TODO: implement loading money amount, all purchased items
         store.gameObject.SetActive(true);
     }
-
     public void CloseStore()
     {
         //TODO: implement loading money amount, all purchased items
         store.gameObject.SetActive(false);
     }
-
+    public void OpenProfilePage()
+    {
+        profilePage.gameObject.SetActive(true);
+    }
+    public void CloseProfilePage()
+    {
+        profilePage.gameObject?.SetActive(false);
+    }
     public void OpenAbout()
     {
         about.gameObject.SetActive(true);
@@ -93,7 +88,6 @@ public class GameUIManager : MonoBehaviour
         about.gameObject.SetActive(false);
         CreditsManager.Instance.enabled = false;
     }
-
     public void OpenExitScreen()
     {
         exit.gameObject.SetActive(true);
@@ -102,7 +96,6 @@ public class GameUIManager : MonoBehaviour
     {
         exit.gameObject.SetActive(false);
     }
-
     public void ExitApp()
     {
         GameSaveData.Instance.SaveData(); //check for properties which chould be saved
@@ -150,6 +143,12 @@ public class GameUIManager : MonoBehaviour
         {
             colorAdjustments.postExposure.value = GameSaveData.Instance.brightness;
         }
+    }
+    private IEnumerator LoadSceneAfterDelay(int n)
+    {
+        loadingScreen.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(n);
     }
     #endregion
 
