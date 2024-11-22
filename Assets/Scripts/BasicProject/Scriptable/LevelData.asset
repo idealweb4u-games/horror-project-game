@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: LevelData
   m_EditorClassIdentifier: 
   levelClasses:
-  - levelName: The head pined baby boy
+  - levelName: The baby boy
     levelDescription: '"Behind every door, a nightmare waits patiently, ready to
       consume the curious." The Pinned head baby doll is waiting impatiently for
       you to bring what she wants. There are some notes she left for you. Be careful
       !! Don''t get caught by her.'
-    levelImage: {fileID: 21300000, guid: 4a6e1333612814e488605c8c15217df0, type: 3}
+    levelImage: {fileID: 21300000, guid: 16ef867d99e8cc44f99cb14b0b48f8ae, type: 3}
   - levelName: The Blind Follower
     levelDescription: '"In the shadows, something stirs, whispering secrets only
       the bravest would dare to hear." Someone is gonna follow you, a restless creature
       haven''t sleept for long time. Its time to make them sleep. But they won''t
       let you do it.'
-    levelImage: {fileID: 21300000, guid: c7a00d8f4a2b5954e91f695c961b0dc8, type: 3}
+    levelImage: {fileID: 21300000, guid: bb08f98b16cf3f648ab85d54876841e0, type: 3}
   - levelName: The Clawn Chaser
     levelDescription: '"Locked doors can be opened, but beware the secrets they guard.
       Some doors should never be unlocked."  If you dare to open them make sure you
       don''t get these doors locked again.'
-    levelImage: {fileID: 21300000, guid: 2cc0d8d6b52b97d41be56a377bb33316, type: 3}
+    levelImage: {fileID: 21300000, guid: 8626dd7e6b804974599fa1b012ebd84d, type: 3}
   - levelName: The Graveyard pumpkin
     levelDescription: '"Footsteps echo in the darkness, but you''re not alone. Unseen
       eyes watch your every move." There are two paths for each way, but you have
       to choose your right one, so not to get harmed.'
-    levelImage: {fileID: 21300000, guid: d70c1f3db4828784d8e8f27bdbfc47b7, type: 3}
+    levelImage: {fileID: 21300000, guid: 7683d6b58c33d87419b803deffdbac17, type: 3}
   - levelName: The Witch Skeleton
     levelDescription: '"A distant cry pierces the air, a desperate plea from the
       depths of despair. Can you save them, or are you already lost?" As the full

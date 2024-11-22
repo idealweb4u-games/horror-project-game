@@ -146,7 +146,10 @@ public class GameUIManager : MonoBehaviour
     }
     private IEnumerator LoadSceneAfterDelay(int n)
     {
+        Time.timeScale = 1;
         loadingScreen.SetActive(true);
+        SoundManager.Instance.AssignMusicClip(SoundManager.Instance.loadingClip);
+        SoundManager.Instance.PlayMusic();
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene(n);
     }
