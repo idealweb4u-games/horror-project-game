@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f13db91bf111d45b15745ffed4546a, type: 3}
   m_Name: Session
   m_EditorClassIdentifier: 
-  level: 0
-  carNumber: 0
+  level: 2
+  levelLoad: 0
   totalLevel: 0
   unlocklevels: 0
   Loading: {fileID: 3195883360817006213, guid: effe64b7e06817448b822f6876dca9ea, type: 3}

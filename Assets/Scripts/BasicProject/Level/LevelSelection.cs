@@ -17,7 +17,7 @@ public class LevelSelection : MonoBehaviour {
         ;
     private void Start() {
         SoundManager.Instance.PlayBackgroundMusic();
-        PlayerPrefs.SetInt("unlocklevels",8);
+        //PlayerPrefs.SetInt("unlocklevels",8);
       foreach(Transform child in transform) {
             levels.Add(child);
       }
@@ -29,16 +29,16 @@ public class LevelSelection : MonoBehaviour {
             levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelNumber.text = ""+ ++count;
             levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelName.text = levelsData.levelClasses[i].levelName;
         }
-       unlocklevels= PlayerPrefs.GetInt("unlocklevels");
-        Debug.Log("unlocklevels"+unlocklevels);
-        for (int i = 0; i <= unlocklevels; i++) {
-            levels[i].transform.GetComponent<LevelButtonSizeUp>().Lock.SetActive(false);
-           // levels[i].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true);
-        }
-        for (int i = 0; i <= unlocklevels; i++) {
-            levels[i].transform.GetComponent<LevelButtonSizeUp>().Lock.SetActive(false);
-          //  levels[i].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true);
-        }
+       //unlocklevels= PlayerPrefs.GetInt("unlocklevels");
+        //Debug.Log("unlocklevels"+unlocklevels);
+        //for (int i = 0; i <= unlocklevels; i++) {
+        //    levels[i].transform.GetComponent<LevelButtonSizeUp>().Lock.SetActive(false);
+        //   // levels[i].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true);
+        //}
+        //for (int i = 0; i <= unlocklevels; i++) {
+        //    levels[i].transform.GetComponent<LevelButtonSizeUp>().Lock.SetActive(false);
+        //  //  levels[i].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true);
+        //}
     }
     public void levelNumber(int index) {
         if (!levels[index].transform.GetComponent<LevelButtonSizeUp>().Lock.activeInHierarchy) {
