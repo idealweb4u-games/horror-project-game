@@ -48,12 +48,12 @@ public class LevelSelection : MonoBehaviour {
     }
     public void OnSelectButton(int index) {
         foreach (Transform level in levels) {
-            level.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
-            level.transform.GetComponent<LevelButtonSizeUp>().Details.SetActive(false);
+            //level.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
+            //level.transform.GetComponent<LevelButtonSizeUp>().Details.SetActive(false);
             level.transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(false); // TEST
         }
-        levels[index].GetComponent<RectTransform>().localScale = new Vector2(1, 1.12f);
-        levels[index].transform.GetComponent<LevelButtonSizeUp>().Details.SetActive(true);
+        //levels[index].GetComponent<RectTransform>().localScale = new Vector2(1, 1.12f);
+        //levels[index].transform.GetComponent<LevelButtonSizeUp>().Details.SetActive(true);
         levels[index].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true); // TEST
         levelNumber(index);
         SoundManager.Instance.PlayEffect();
