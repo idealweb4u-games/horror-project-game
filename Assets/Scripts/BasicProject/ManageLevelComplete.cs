@@ -32,6 +32,10 @@ public class ManageLevelComplete : MonoBehaviour
         timer.text = i.ToString();
         timerWithSeconds.text = i.ToString() + " seconds";
         i--;
+        if (i < 0)
+        {
+            i = 5;
+        }
     }
 
     //TODO: Implement ads

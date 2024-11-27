@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class GameUIManager : MonoBehaviour
 {
     [Header("Home Page UI Elements")]
-    [SerializeField] private Image settings, store, about, exit, profilePage;
+    [SerializeField] private Image settings, store, about, exit, profilePage, addPage;
     [SerializeField] private SceneLoad sceneLoad;
     [Header("Settings components")]
     [SerializeField] private Slider soundSlider, brightnessSlider, vibrationSlider;
@@ -33,10 +33,12 @@ public class GameUIManager : MonoBehaviour
     public void Play()
     {
         //TODO: implement opening last opened(complete) level
+        Time.timeScale = 1.0f;
         StartCoroutine(LoadSceneAfterDelay(3));
     }
     public void OpenLevelselection()
     {
+        Time.timeScale = 1.0f;
         StartCoroutine(LoadSceneAfterDelay(2));
     }
     public void GoHome()
@@ -101,6 +103,14 @@ public class GameUIManager : MonoBehaviour
         GameSaveData.Instance.SaveData(); //check for properties which chould be saved
         Application.Quit();
     }
+    public void OpenAdd()
+    {
+        addPage.gameObject.SetActive(true);
+    }
+    public void CloseAdd()
+    {
+        addPage.gameObject.SetActive(false);
+    }
 
     #region settings controller
     public void ChangeSound(float volume)
@@ -136,6 +146,7 @@ public class GameUIManager : MonoBehaviour
         soundSlider.value = GameSaveData.Instance.volume;
         audioMixer.SetFloat("AllMusic", GameSaveData.Instance.volume);
     }
+   
     private void ChangeBrightnessSliderAppearance()
     {
         brightnessSlider.value = GameSaveData.Instance.brightness;
