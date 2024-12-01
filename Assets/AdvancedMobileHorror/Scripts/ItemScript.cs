@@ -182,6 +182,8 @@ namespace AdvancedHorrorFPS
                 if (isFinalKeyGrabbed)
                 {
                     GateManager.Instance.UnlockNextLevel();
+                    FindObjectOfType<UnlockedLevelsManager>().UnlockLevels(1);
+                    Debug.Log(Time.timeScale);
                 }
                 else
                 {
@@ -193,6 +195,7 @@ namespace AdvancedHorrorFPS
                 if(ClownActivation.isClownEntered)
                 {
                     MirrorCutSceneManager.Instance.StartCutScene();
+                    FindObjectOfType<UnlockedLevelsManager>().UnlockLevels(3);
                 }
                 else
                 {
@@ -200,7 +203,7 @@ namespace AdvancedHorrorFPS
                 }
             }
             else if(itemType == ItemType.Tomb) {
-                MirrorCutSceneManager.Instance.StartCutScene();
+                MirrorCutSceneManager.Instance.StartCutScene(); // just has the necessary logic for both cut secene(level2 and 4)
             }
         }
 

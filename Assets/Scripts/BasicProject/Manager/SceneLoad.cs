@@ -19,5 +19,6 @@ public class SceneLoad : Singleton<SceneLoad> {
         SceneManager.LoadScene(n);
         yield return new WaitForSeconds(0.4f);
         Destroy(loadingScreen);
+        GameSaveData.Instance.LoadData();
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UnlockedLevelsManager : MonoBehaviour
 {
-    [SerializeField] protected LevelsData levelsData;
-    protected void UnlockLevels(int currentLevel)
+    [SerializeField] private LevelsData levelsData;
+    public void UnlockLevels(int currentLevel)
     {
         LevelClass currentLevelClass = levelsData.levelClasses[currentLevel];
         currentLevelClass.isLocked = false;

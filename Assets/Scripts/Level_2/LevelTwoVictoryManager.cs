@@ -18,6 +18,7 @@ public class LevelTwoVictoryManager : MonoBehaviour
             AudioManager.Instance.Play_LevelComplete_Sounds();
             AudioManager.Instance.audioSourcePriest.gameObject.SetActive(false);
             CutScenePriestManager.Instance.wasPlayed = false;
+            FindObjectOfType<UnlockedLevelsManager>().UnlockLevels(2);
         }
     }
 }

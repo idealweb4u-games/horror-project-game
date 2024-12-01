@@ -19,6 +19,7 @@ public class LevelSelection : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI textToDisplay;
 
     private void Start() {
+        Time.timeScale = 1;
         SoundManager.Instance.PlayBackgroundMusic();
         GameSaveData.Instance.LoadData();
         //PlayerPrefs.SetInt("unlocklevels",8);
