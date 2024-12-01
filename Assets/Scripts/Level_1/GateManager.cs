@@ -31,9 +31,10 @@ public class GateManager : MonoBehaviour
             SetNultipleBlendShapeWeight(currentValue);
             yield return new WaitForSeconds(.5f);
         }
+        
         gate.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, 100.0f);
         UIManager.Instance.showlevelComplete();
-
+       
     }
 
     private void SetNultipleBlendShapeWeight(float currentValue)
@@ -55,4 +56,6 @@ public class GateManager : MonoBehaviour
             chain.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, currentValue);
         }
     }
+
+    
 }

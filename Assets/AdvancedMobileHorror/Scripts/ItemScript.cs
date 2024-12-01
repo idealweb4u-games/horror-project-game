@@ -183,6 +183,10 @@ namespace AdvancedHorrorFPS
                 {
                     GateManager.Instance.UnlockNextLevel();
                 }
+                else
+                {
+                    GameCanvas.Instance.Show_Warning("Get a key!");
+                }
             }
             else if(itemType == ItemType.Mirror) 
             {

@@ -9,6 +9,8 @@ public class GameSaveData : MonoBehaviour
     public float volume;
     public float brightness;
     public float vibration;
+    //levels status
+    public bool[] levelsLocked = new bool []{ false, true, true, true, true, true, true, true, true, true };
 
     public static GameSaveData Instance { get; private set; }
 
@@ -21,6 +23,7 @@ public class GameSaveData : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        levelsLocked = new bool[] { false, true, true, true, true, true, true, true, true, true };
         LoadData();
     }
 
@@ -30,7 +33,9 @@ public class GameSaveData : MonoBehaviour
         public float volume;
         public float brightness;
         public float vibration;
-        //TODO: save level index
+        //levels status
+        public bool[] levelsLocked;
+
     }
 
     public void SaveData()
@@ -39,6 +44,8 @@ public class GameSaveData : MonoBehaviour
         data.volume = volume;
         data.brightness = brightness;
         data.vibration = vibration;
+
+        data.levelsLocked = levelsLocked;
 
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/horrorGameSavings.json", json);
@@ -49,7 +56,7 @@ public class GameSaveData : MonoBehaviour
     {
         string path = Application.persistentDataPath + "/horrorGameSavings.json";
 
-        if(File.Exists(path))
+        if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
             DataToSave data = JsonUtility.FromJson<DataToSave>(json);
@@ -57,9 +64,26 @@ public class GameSaveData : MonoBehaviour
             volume = data.volume;
             brightness = data.brightness;
             vibration = data.vibration;
+
+      
+            levelsLocked = data.levelsLocked != null && data.levelsLocked.Length == levelsLocked.Length
+                           ? data.levelsLocked
+                           : new bool[] { false, true, true, true, true, true, true, true, true, true };
+
             Debug.Log(path);
         }
-        Debug.Log("Load was called");
+        else
+        {
+            SetDefaultLevelsStatus();
+        }
+    }
+
+    private void SetDefaultLevelsStatus()
+    {
+        levelsLocked = new bool[] { false, true, true, true, true, true, true, true, true, true };
 
     }
 }
+
+
+

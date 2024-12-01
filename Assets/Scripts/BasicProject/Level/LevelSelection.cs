@@ -20,8 +20,9 @@ public class LevelSelection : MonoBehaviour {
 
     private void Start() {
         SoundManager.Instance.PlayBackgroundMusic();
+        GameSaveData.Instance.LoadData();
         //PlayerPrefs.SetInt("unlocklevels",8);
-      foreach(Transform child in transform) {
+        foreach (Transform child in transform) {
             levels.Add(child);
       }
         int count;
@@ -31,17 +32,9 @@ public class LevelSelection : MonoBehaviour {
             levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelImage.sprite = levelsData.levelClasses[i].levelImage; 
             levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelNumber.text = ""+ ++count;
             levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelName.text = levelsData.levelClasses[i].levelName;
+            //GameSaveData.Instance.levelsLocked[i] = levelsData.levelClasses[i].isLocked;
         }
-       //unlocklevels= PlayerPrefs.GetInt("unlocklevels");
-        //Debug.Log("unlocklevels"+unlocklevels);
-        //for (int i = 0; i <= unlocklevels; i++) {
-        //    levels[i].transform.GetComponent<LevelButtonSizeUp>().Lock.SetActive(false);
-        //   // levels[i].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true);
-        //}
-        //for (int i = 0; i <= unlocklevels; i++) {
-        //    levels[i].transform.GetComponent<LevelButtonSizeUp>().Lock.SetActive(false);
-        //  //  levels[i].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true);
-        //}
+       
     }
     public void levelNumber(int index) {
         if (!levels[index].transform.GetComponent<LevelButtonSizeUp>().Lock.activeInHierarchy) {
@@ -60,7 +53,7 @@ public class LevelSelection : MonoBehaviour {
         levels[index].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true); // TEST
         levelNumber(index);
         LevelClass levelClass = levelsData.levelClasses[index];
-        if (levelClass.isLocked)
+        if (GameSaveData.Instance.levelsLocked[index])
         {
             textToDisplay.text = $"unlock Level {levelClass.levelIndex - 1} to play.";
         }
@@ -73,17 +66,18 @@ public class LevelSelection : MonoBehaviour {
     public void NextScene()
     {
         LevelClass currentLevelClass = levelsData.levelClasses[currentLevel];
-        if (!currentLevelClass.isLocked)
+        if (!GameSaveData.Instance.levelsLocked[currentLevel])
         {
-            SceneLoad.Instance.LoadScene(currentLevelClass.levelIndex); 
+            SceneLoad.Instance.LoadScene(3);
             SoundManager.Instance.PlayEffect();
         }
         else
         {
-            textToDisplay.text = $"Unlock Level {currentLevelClass.levelIndex - 1} to play.";
+            textToDisplay.text = $"unlock Level {currentLevelClass.levelIndex - 1} to play.";
             SoundManager.Instance.PlayEffect();
         }
     }
+
 
     public void BackScene() {
         SceneLoad.Instance.LoadScene(1);
