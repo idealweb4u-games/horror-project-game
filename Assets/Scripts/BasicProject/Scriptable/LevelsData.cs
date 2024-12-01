@@ -7,6 +7,8 @@ public class LevelsData : ScriptableObject {
 }
 [System.Serializable]
 public class LevelClass {
+    public bool isLocked;
+    public int levelIndex;
     public string levelName;
     public string levelDescription;
     public Sprite levelImage;

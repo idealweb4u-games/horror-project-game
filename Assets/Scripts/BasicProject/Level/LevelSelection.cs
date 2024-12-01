@@ -15,6 +15,9 @@ public class LevelSelection : MonoBehaviour {
         levelnumbertext=1,
         unlocklevels
         ;
+    [SerializeField] private Button currentLevelBtnPrefab;
+    [SerializeField] private TextMeshProUGUI textToDisplay;
+
     private void Start() {
         SoundManager.Instance.PlayBackgroundMusic();
         //PlayerPrefs.SetInt("unlocklevels",8);
@@ -56,12 +59,32 @@ public class LevelSelection : MonoBehaviour {
         //levels[index].transform.GetComponent<LevelButtonSizeUp>().Details.SetActive(true);
         levels[index].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true); // TEST
         levelNumber(index);
+        LevelClass levelClass = levelsData.levelClasses[index];
+        if (levelClass.isLocked)
+        {
+            textToDisplay.text = $"unlock Level {levelClass.levelIndex - 1} to play.";
+        }
+        else
+        {
+            textToDisplay.text = "press to play";
+        }
         SoundManager.Instance.PlayEffect();
     }
-    public void NextScene() {
-        SceneLoad.Instance.LoadScene(3);
-        SoundManager.Instance.PlayEffect();
+    public void NextScene()
+    {
+        LevelClass currentLevelClass = levelsData.levelClasses[currentLevel];
+        if (!currentLevelClass.isLocked)
+        {
+            SceneLoad.Instance.LoadScene(currentLevelClass.levelIndex); 
+            SoundManager.Instance.PlayEffect();
+        }
+        else
+        {
+            textToDisplay.text = $"Unlock Level {currentLevelClass.levelIndex - 1} to play.";
+            SoundManager.Instance.PlayEffect();
+        }
     }
+
     public void BackScene() {
         SceneLoad.Instance.LoadScene(1);
         SoundManager.Instance.PlayEffect();
