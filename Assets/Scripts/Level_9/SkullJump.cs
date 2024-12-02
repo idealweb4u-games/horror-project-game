@@ -40,7 +40,13 @@ public class SkullJump : MonoBehaviour
         yield return new WaitForSeconds(.25f);
         Vector3 direction = (PlayersLastLocation - transform.position).normalized;
         rb.velocity = direction * speed;
-
+        //handle vibration for jumpscapre
+        GameSaveData.Instance.LoadData();
+        if(GameSaveData.Instance.vibration == 1)
+        {
+            Debug.Log("Should vibrate");
+            Handheld.Vibrate();
+        }
         yield return new WaitForSeconds(3.5f);
         transform.position = SkullsLastLocation;
         rb.velocity = Vector3.zero;

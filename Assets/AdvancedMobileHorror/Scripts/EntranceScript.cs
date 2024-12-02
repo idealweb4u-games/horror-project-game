@@ -51,6 +51,7 @@ namespace AdvancedHorrorFPS
             if (hasPlayerShock)
             {
                 AudioManager.Instance.Play_PlayerShock();
+                HandleVibraion();
             }
         }
 
@@ -67,6 +68,7 @@ namespace AdvancedHorrorFPS
             if (hasPlayerShock)
             {
                 AudioManager.Instance.Play_PlayerShock();
+                HandleVibraion();
             }
         }
 
@@ -83,6 +85,17 @@ namespace AdvancedHorrorFPS
             if (hasPlayerShock)
             {
                 AudioManager.Instance.Play_PlayerShock();
+                HandleVibraion();
+            }
+        }
+
+        private void HandleVibraion()
+        {
+            //handle vibration for jumpscapre
+            GameSaveData.Instance.LoadData();
+            if (GameSaveData.Instance.vibration == 1)
+            {
+                Handheld.Vibrate();
             }
         }
     }

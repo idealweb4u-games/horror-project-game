@@ -15,14 +15,12 @@ public class LevelSelection : MonoBehaviour {
         levelnumbertext=1,
         unlocklevels
         ;
-    [SerializeField] private Button currentLevelBtnPrefab;
     [SerializeField] private TextMeshProUGUI textToDisplay;
-
+    
     private void Start() {
         Time.timeScale = 1;
         SoundManager.Instance.PlayBackgroundMusic();
         GameSaveData.Instance.LoadData();
-        //PlayerPrefs.SetInt("unlocklevels",8);
         foreach (Transform child in transform) {
             levels.Add(child);
       }
@@ -33,24 +31,44 @@ public class LevelSelection : MonoBehaviour {
             levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelImage.sprite = levelsData.levelClasses[i].levelImage; 
             levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelNumber.text = ""+ ++count;
             levels[i].transform.GetComponent<LevelButtonSizeUp>().LevelName.text = levelsData.levelClasses[i].levelName;
-            //GameSaveData.Instance.levelsLocked[i] = levelsData.levelClasses[i].isLocked;
         }
        
     }
+
+    private void Update()
+    {
+        //foreach(Button btn in GetComponentsInChildren<Button>())
+        //{
+        //    btn.enabled = false;
+        //}
+    }
     public void levelNumber(int index) {
-        if (!levels[index].transform.GetComponent<LevelButtonSizeUp>().Lock.activeInHierarchy) {
-            currentLevel = index;
-            session.level = index;
+        if (levels[index].transform.GetComponent<LevelButtonSizeUp>().Lock.activeInHierarchy)
+        {
+            Debug.Log($"Level {index} is locked and cannot be selected.");
+            return;
         }
+
+        currentLevel = index;
+        session.level = index;
+        if (!GameSaveData.Instance.levelsLocked[index])
+        {
+            GameSaveData.Instance.levelIndex = index;
+        }
+        else
+        {
+            GameSaveData.Instance.levelIndex = IndexOfActiveLevel(GameSaveData.Instance.levelsLocked);
+        }
+        
+        GameSaveData.Instance.SaveData();
+        Debug.Log($"Level {index} selected.");
     }
     public void OnSelectButton(int index) {
         foreach (Transform level in levels) {
-            //level.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
-            //level.transform.GetComponent<LevelButtonSizeUp>().Details.SetActive(false);
+           
             level.transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(false); // TEST
         }
-        //levels[index].GetComponent<RectTransform>().localScale = new Vector2(1, 1.12f);
-        //levels[index].transform.GetComponent<LevelButtonSizeUp>().Details.SetActive(true);
+        
         levels[index].transform.GetComponent<LevelButtonSizeUp>().Play.SetActive(true); // TEST
         levelNumber(index);
         LevelClass levelClass = levelsData.levelClasses[index];
@@ -83,5 +101,18 @@ public class LevelSelection : MonoBehaviour {
     public void BackScene() {
         SceneLoad.Instance.LoadScene(1);
         SoundManager.Instance.PlayEffect();
+    }
+
+    private int IndexOfActiveLevel(bool[] levels)
+    {
+        int currentUnlockedLevel = 0;
+        for(int i = 0; i < levels.Length; i++)
+        {
+            if (!levels[i])
+            {
+                currentUnlockedLevel = i;
+            }
+        }
+        return currentUnlockedLevel;
     }
 }

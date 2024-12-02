@@ -20,6 +20,8 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [Header("Brightness")]
     [SerializeField] private Volume brightnessAdjusment;
+    [Header("Levels loading")]
+   
     private ColorAdjustments colorAdjustments;
     public Session session;
     public GameObject loadingScreen;
@@ -28,11 +30,14 @@ public class GameUIManager : MonoBehaviour
     {
         ChangeVolumeSliderAppearance();
         ChangeBrightnessSliderAppearance();
+        ChangeVibrationSliderAppearance();
     }
 
     public void Play()
     {
         //TODO: implement opening last opened(complete) level
+        Debug.Log(GameSaveData.Instance.levelIndex);
+        session.level = GameSaveData.Instance.levelIndex;
         Time.timeScale = 1.0f;
         StartCoroutine(LoadSceneAfterDelay(3));
     }
@@ -128,8 +133,9 @@ public class GameUIManager : MonoBehaviour
     }
     public void ChangeVibrationStrength(float vibrationValue)
     {
-        vibrationSlider.value = vibrationValue;
-        vibrationTextValue.text = ConvertValuesToPercentage(vibrationValue, vibrationSlider.maxValue, vibrationSlider.minValue) + "%";
+        GameSaveData.Instance.vibration = vibrationValue;
+        ChangeVibrationSliderAppearance();
+        vibrationTextValue.text = ConvertValuesToPercentage(GameSaveData.Instance.vibration, vibrationSlider.maxValue, vibrationSlider.minValue) + "%";
     }
     #endregion
 
@@ -154,6 +160,10 @@ public class GameUIManager : MonoBehaviour
         {
             colorAdjustments.postExposure.value = GameSaveData.Instance.brightness;
         }
+    }
+    private void ChangeVibrationSliderAppearance()
+    {
+        vibrationSlider.value = GameSaveData.Instance.vibration;
     }
     private IEnumerator LoadSceneAfterDelay(int n)
     {

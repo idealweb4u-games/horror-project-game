@@ -12,6 +12,8 @@ public class GameSaveData : MonoBehaviour
     //levels status
     public bool[] levelsLocked = new bool []{ false, true, true, true, true, true, true, true, true, true };
 
+    public int levelIndex;
+
     public static GameSaveData Instance { get; private set; }
 
     private void Awake()
@@ -36,6 +38,8 @@ public class GameSaveData : MonoBehaviour
         //levels status
         public bool[] levelsLocked;
 
+        public int levelIndex;
+
     }
 
     public void SaveData()
@@ -46,6 +50,8 @@ public class GameSaveData : MonoBehaviour
         data.vibration = vibration;
 
         data.levelsLocked = levelsLocked;
+
+        data.levelIndex = levelIndex;
 
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/horrorGameSavings.json", json);
@@ -70,6 +76,8 @@ public class GameSaveData : MonoBehaviour
                            ? data.levelsLocked
                            : new bool[] { false, true, true, true, true, true, true, true, true, true };
 
+            levelIndex = data.levelIndex;
+
             Debug.Log(path);
         }
         else
@@ -81,6 +89,7 @@ public class GameSaveData : MonoBehaviour
     private void SetDefaultLevelsStatus()
     {
         levelsLocked = new bool[] { false, true, true, true, true, true, true, true, true, true };
+        levelIndex = 0;
 
     }
 }
