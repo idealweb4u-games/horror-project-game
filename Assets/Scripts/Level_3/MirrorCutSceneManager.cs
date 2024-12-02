@@ -13,7 +13,7 @@ public class MirrorCutSceneManager : MonoBehaviour
     public static MirrorCutSceneManager Instance;
     [SerializeField] private GameObject mirrorCutScene, graveCutScene, objectsCutScene, fpsHands;
     [SerializeField] private PlayableDirector playableDirector;
-    [SerializeField] private bool isLevel3;
+    [SerializeField] private bool isLevel3, isLevel4; //test for beta version of the game
 
     private void Awake()
     {
@@ -62,7 +62,15 @@ public class MirrorCutSceneManager : MonoBehaviour
 
     private void StopCutScene()
     {
-        FindObjectOfType<UIManager>().levelComplete.SetActive(true);
+        
+        if (isLevel4)
+        {
+            FindObjectOfType<UIManager>().allBetaLevelsAreCompleted.SetActive(true);
+        }
+        else
+        {
+            FindObjectOfType<UIManager>().levelComplete.SetActive(true);
+        }
         
     }
 }

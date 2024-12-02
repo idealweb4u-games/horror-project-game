@@ -16,6 +16,7 @@ public class UIManager : Singleton<UIManager> {
     public Session session;
     public GameObject
         levelComplete,
+        allBetaLevelsAreCompleted, //should be removed, used for beta
         levelFail,
         pauseDlg,
         startDlg,
