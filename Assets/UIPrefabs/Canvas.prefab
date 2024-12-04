@@ -2933,6 +2933,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6106159893137120228, guid: 56c7d8b9dd6774e45a20c741054acce3,
+        type: 3}
+      propertyPath: m_text
+      value: '<link = "https://delobogames.com/" >www.delobogames.com</link>
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 8198260742265341419, guid: 56c7d8b9dd6774e45a20c741054acce3,
         type: 3}
       propertyPath: m_Name
